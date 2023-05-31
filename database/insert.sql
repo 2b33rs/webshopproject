@@ -81,7 +81,7 @@ VALUES (22, 8, 'SoundCloud', 'Plattform für Musiker zum Teilen und Entdecken vo
 INSERT INTO `webshop`.`product` (`product_id`, `subcategorie_id`, `name`, `description`, `price`) 
 VALUES (23, 8, 'Bandcamp', 'Unabhängige Musikplattform für Künstler', 1337.88);
 INSERT INTO `webshop`.`product` (`product_id`, `subcategorie_id`, `name`, `description`, `price`) 
-VALUES (24, 8, 'Spotify for Artists', 'Tools für Musiker zur Verwaltung und Promotion ihrer Musik', 0.00);
+VALUES (24, 8, 'Spotify for Artists', 'Tools für Musiker zur Verwaltung und Promotion ihrer Musik', 1263.45);
 
 INSERT INTO `webshop`.`product` (`product_id`, `subcategorie_id`, `name`, `description`, `price`) 
 VALUES (25, 9, 'Vimeo', 'Plattform für Video-Hosting und -Sharing', 1337.88);
