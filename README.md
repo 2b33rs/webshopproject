@@ -43,10 +43,10 @@ renkorb erfolgreich über Paypal (s.u.) bezahlt, dann sollen die gekauften
 Artikel mit Kaufdatum in der Datenbank abgespeichert werden (natürlich
 mit Zuordnung zum Kunden).
 - Es gibt es Suchfunktion, bei der Produktbeschreibung und Produktbe-
-zeichnung nach dem eingegebenen Suchbegri durchsucht werden und die
-Treer danach angezeigt werden.
+zeichnung nach dem eingegebenen Suchbegriff durchsucht werden und die
+Treffer danach angezeigt werden.
 - Das Bezahlen der Produkte im Warenkorb soll über Paypal erfolgen. Unter
-folgendem Link nden Sie ein Anleitung, wie sich Paypal anbinden lässt:
+folgendem Link finden Sie ein Anleitung, wie sich Paypal anbinden lässt:
 https://www.codexworld.com/paypal-standard-payment-gateway-integration-php/.
 Hinweis: Man übergibt bei dieser Paypal-Schnittstelle lediglich ein Pro-
 dukt und die dazugehörige Produktnummer. Da wir aber einen Warenkorb
@@ -75,7 +75,8 @@ den.
 mindestens in zwei Unterkategorien aufgeteilt sind.
 - In jeder Unterkategorie müssen mindestens drei Artikel enthalten sein.
 2
-Abgabe
+
+## Abgabe
 Die Abgabe der Projekts erfolgt über den Moodle-Kurs. Dabei muss enthalten
 sein:
 - Ein Datenmodell als ER-Diagramm.
