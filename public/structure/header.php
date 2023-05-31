@@ -1,5 +1,8 @@
-<header>
-    <nav class="navbar navbar-expand-lg navbar-light">
+<header class="header-main bg-dark fixed-top">
+    <div class="container">
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top">
+
+
         <a href="index.php"><img class="logo" src="../images/logo.png" alt="Fehler" height="80vh"></a>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
@@ -40,5 +43,6 @@ Logout</a></li>';
             </ul>
         </div>
     </nav>
+    </div>
 </header>
                 
