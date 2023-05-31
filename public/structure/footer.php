@@ -115,7 +115,7 @@
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-  <footer class="footer-main bg-dark fixed-bottom">
+  <footer class="footer-main bg-dark static-bottom">
   <div class="container">
     <div class="row address-main">
       <div class="col-lg-4 col-sm-12 col-xs-12">

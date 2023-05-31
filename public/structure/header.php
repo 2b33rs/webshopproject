@@ -1,8 +1,6 @@
-<header class="header-main bg-dark fixed-top">
+<header class="header-main bg-dark static-top">
     <div class="container">
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top">
-
-
         <a href="index.php"><img class="logo" src="../images/logo.png" alt="Fehler" height="80vh"></a>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
@@ -32,8 +30,7 @@
                     echo '<li class="nav-item"><a class="nav-link" href="login.php"><i class="bi bi-person-fill"></i>
                     Login</a></li>';
                 } else {
-                    echo '<li class="nav-item"><a class="nav-link" href="logoutScript.php"><i class="bi bi-box-arrow-right"></i></i>
-Logout</a></li>';
+                    echo '<li class="nav-item"><a class="nav-link" href="logoutScript.php"><i class="bi bi-box-arrow-right"></i></i>Logout</a></li>';
                 }
 
                 ?>
@@ -43,6 +40,6 @@ Logout</a></li>';
             </ul>
         </div>
     </nav>
-    </div>
+            </div>
 </header>
                 
