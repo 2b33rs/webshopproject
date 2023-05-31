@@ -1,8 +1,8 @@
-<?php include_once 'head.php' ?>
+<?php include_once 'structure/head.php' ?>
 
 <body>
     <div class="container">
-    <?php include_once 'header.php' ?>
+    <?php include_once 'structure/header.php' ?>
         <main>
 
             <!-- Login -->
