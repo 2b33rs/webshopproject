@@ -1,82 +1,8 @@
-<!doctype html>
-<html lang="de">
-
-<head>
-
-    <title>Landesgartenschau 2032</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!--mind. geforderte Meta-Informationen-->
-
-    <meta name="language" content="de">
-    <meta name="author" content="Jonas Tisch">
-    <meta name="date" content="2020-10-29T08:49:37+02:00">
-    <meta name="keywords" content="Landesgartenschau 2032, Landesgartenschau, Gartenschau, 2032">
-    <meta name="description" content="Alle Informationen zur Landesgartensch 2032 finden Sie auf dieser Webseite">
-    <meta name="robots" content="index,follow">
-    <meta name="audience" content="alle">
-    <meta name="page-topic" content="Landesgartenschau 2032">
-    <meta name="revisit-after" content="7 days">
-
-    <!-- Bootstrap CSS v5.0.2 -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css">
-    <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32x32.png">
-    <script src="../js/registrierung.js"></script>
-    <link rel="stylesheet" href="../css/default.css">
-
-</head>
+<?php include_once 'head.php' ?>
 
 <body>
     <div class="container">
-        <header>
-            <nav class="navbar navbar-expand-lg navbar-light">
-                <!--in diesem HTML-Element soll das Logo als Bild-Element integriert werden-->
-                <img class="logo" src="../images/logo1.png" alt="Fehler" width="143" height="55">
-
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                    <ul id="nav_1" class="navbar-nav">
-                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                        <!--Vision als Dropdown-Menü-->
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="vision.html" id="navbarDarkDropdownMenuLink"
-                                role="button" data-bs-toggle="dropdown" aria-expanded="false">Vision</a>
-                            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-                                <li><a class="dropdown-item" href="vision.html#allgemeines">Allgemeines</a></li>
-                                <li><a class="dropdown-item" href="vision.html#idee">Die Idee dahinter</a></li>
-                                <li><a class="dropdown-item" href="vision.html#unterstuetzer">Unterstützer</a></li>
-                                <li><a class="dropdown-item" href="vision.html#mehrwert">Mehrwert für den Leser</a></li>
-                                <li><a class="dropdown-item" href="vision.html#partner">Partner</a></li>
-                                <li><a class="dropdown-item" href="vision.html#pressebericht">Pressebericht</a></li>
-                                <li><a class="dropdown-item" href="lageplan.html">Lagepläne</a></li>
-                            </ul>
-                        </li>
-
-                        <li class="nav-item"><a class="nav-link" href="aktuelles.html">Aktuelles</a></li>
-                        <li class="nav-item"><a class="nav-link" href="veranstaltungen.html">Veranstaltungen</a></li>
-                        <li class="nav-item"><a class="nav-link" href="infothek.html">Infothek</a></li>
-                        <li class="nav-item"><a class="nav-link" href="allerlei.html">Allerlei</a></li>
-                    </ul>
-                    <ul id="nav_2" class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link" href="suche.html"><i class="bi bi-search"></i>
-                                Suche</a> </li>
-                        <li class="nav-item"><a class="nav-link" href="meinKonto.html"><i class="bi bi-person-fill"></i>
-                                mein Konto</a></li>
-                        <li class="nav-item"><a class="nav-link" href="kontakt.html"><i class="bi bi-envelope-fill"></i>
-                                Kontakt</a></li>
-                    </ul>
-                </div>
-            </nav>
-        </header>
+    <?php include_once 'header.php' ?>
         <main>
 
             <!-- Login -->
