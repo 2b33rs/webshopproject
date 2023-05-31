@@ -1,5 +1,5 @@
 INSERT INTO `webshop`.`categorie` (`categroie_id`, `name`) 
-VALUES (1, 'Cloud Storage');
+VALUES (1, 'Kostenlose Cloud-Speicher');
 INSERT INTO `webshop`.`categorie` (`categroie_id`, `name`) 
 VALUES (2, 'Bezahlte Cloud-Speicher');
 INSERT INTO `webshop`.`categorie` (`categroie_id`, `name`) 
