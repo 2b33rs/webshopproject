@@ -12,14 +12,14 @@
                 </div>
                 <div class="card-body">
 
-                    <form class="row g-3 " action="http://141.79.64.139/cstippek/FormCheck.php" target="_blank">
+                    <form class="row g-3 " action="loginScript.php" target="_blank">
                         <div class="col-md-4">
-                            <label for="kundennummer" class="form-label">Kundennummer</label>
+                            <label for="username" class="form-label">Benutzername</label>
                             <input type="text" class="form-control" id="kundennummer" autofocus autocomplete="on"
                                 tabindex="1">
                         </div>
                         <div class="col-md-4">
-                            <label for="pw" class="form-label">Passwort</label>
+                            <label for="password" class="form-label">Passwort</label>
                             <input type="password" class="form-control" id="pw" autocomplete="off" tabindex="2">
                         </div>
                         <div>
