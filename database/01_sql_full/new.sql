@@ -1,18 +1,13 @@
--- -----------------------------------------------------
 -- Schema webshop
--- -----------------------------------------------------
 DROP SCHEMA IF EXISTS `webshop`;
 
--- -----------------------------------------------------
+
 -- Schema webshop
--- -----------------------------------------------------
 CREATE SCHEMA IF NOT EXISTS `webshop` DEFAULT CHARACTER SET utf8;
 
--- -----------------------------------------------------
--- Table `webshop`.`user`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `webshop`.`user`;
 
+-- Table `webshop`.`user`
+DROP TABLE IF EXISTS `webshop`.`user`;
 CREATE TABLE IF NOT EXISTS `webshop`.`user` (
   `user_id` INT NOT NULL,
   `username` VARCHAR(45) NOT NULL,
@@ -24,28 +19,24 @@ CREATE TABLE IF NOT EXISTS `webshop`.`user` (
   PRIMARY KEY (`user_id`)
 );
 
--- -----------------------------------------------------
--- Table `webshop`.`categorie`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `webshop`.`categorie`;
 
+-- Table `webshop`.`categorie`
+DROP TABLE IF EXISTS `webshop`.`categorie`;
 CREATE TABLE IF NOT EXISTS `webshop`.`categorie` (
   `categroie_id` INT NOT NULL,
   `name` VARCHAR(255) NOT NULL,
   PRIMARY KEY (`categroie_id`)
 );
 
--- -----------------------------------------------------
--- Table `webshop`.`subcategorie`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `webshop`.`subcategorie`;
 
+-- Table `webshop`.`subcategorie`
+DROP TABLE IF EXISTS `webshop`.`subcategorie`;
 CREATE TABLE IF NOT EXISTS `webshop`.`subcategorie` (
   `subcategorie_id` INT NOT NULL,
   `categroie_id` INT NOT NULL,
   `name` VARCHAR(255) NOT NULL,
   PRIMARY KEY (`subcategorie_id`),
-  -- INDEX `fk_subcategorie_categorie1_idx` (`categroie_id` ASC) VISIBLE,
+  INDEX `fk_subcategorie_categorie1_idx` (`categroie_id` ASC),
   CONSTRAINT `fk_subcategorie_categorie1`
     FOREIGN KEY (`categroie_id`)
     REFERENCES `webshop`.`categorie` (`categroie_id`)
@@ -53,11 +44,9 @@ CREATE TABLE IF NOT EXISTS `webshop`.`subcategorie` (
     ON UPDATE NO ACTION
 );
 
--- -----------------------------------------------------
--- Table `webshop`.`products`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `webshop`.`products`;
 
+-- Table `webshop`.`products`
+DROP TABLE IF EXISTS `webshop`.`products`;
 CREATE TABLE IF NOT EXISTS `webshop`.`products` (
   `products_id` INT NOT NULL,
   `subcategorie_id` INT NOT NULL,
@@ -65,7 +54,7 @@ CREATE TABLE IF NOT EXISTS `webshop`.`products` (
   `description` VARCHAR(255) NOT NULL,
   `price` DECIMAL(10,2) NOT NULL,
   PRIMARY KEY (`products_id`),
-  -- INDEX `fk_products_subcategorie1_idx` (`subcategorie_id` ASC) VISIBLE,
+  INDEX `fk_products_subcategorie1_idx` (`subcategorie_id` ASC) ,
   CONSTRAINT `fk_products_subcategorie1`
     FOREIGN KEY (`subcategorie_id`)
     REFERENCES `webshop`.`subcategorie` (`subcategorie_id`)
@@ -73,16 +62,14 @@ CREATE TABLE IF NOT EXISTS `webshop`.`products` (
     ON UPDATE NO ACTION
 );
 
--- -----------------------------------------------------
--- Table `webshop`.`cart`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `webshop`.`cart`;
 
+-- Table `webshop`.`cart`
+DROP TABLE IF EXISTS `webshop`.`cart`;
 CREATE TABLE IF NOT EXISTS `webshop`.`cart` (
   `cart_id` INT NOT NULL,
   `user_id` INT NOT NULL,
   PRIMARY KEY (`cart_id`),
-  -- INDEX `fk_cart_user1_idx` (`user_id` ASC) VISIBLE,
+  INDEX `fk_cart_user1_idx` (`user_id` ASC) ,
   CONSTRAINT `fk_cart_user1`
     FOREIGN KEY (`user_id`)
     REFERENCES `webshop`.`user` (`user_id`)
@@ -90,17 +77,15 @@ CREATE TABLE IF NOT EXISTS `webshop`.`cart` (
     ON UPDATE NO ACTION
 );
 
--- -----------------------------------------------------
--- Table `webshop`.`orders`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `webshop`.`orders`;
 
+-- Table `webshop`.`orders`
+DROP TABLE IF EXISTS `webshop`.`orders`;
 CREATE TABLE IF NOT EXISTS `webshop`.`orders` (
   `orders_id` INT NOT NULL,
   `user_id` INT NOT NULL,
   `purchase_date` DATE NOT NULL,
   PRIMARY KEY (`orders_id`),
-  -- INDEX `fk_orders_user1_idx` (`user_id` ASC) VISIBLE,
+  INDEX `fk_orders_user1_idx` (`user_id` ASC) ,
   CONSTRAINT `fk_orders_user1`
     FOREIGN KEY (`user_id`)
     REFERENCES `webshop`.`user` (`user_id`)
@@ -108,18 +93,16 @@ CREATE TABLE IF NOT EXISTS `webshop`.`orders` (
     ON UPDATE NO ACTION
 );
 
--- -----------------------------------------------------
--- Table `webshop`.`cart_products`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `webshop`.`cart_products`;
 
+-- Table `webshop`.`cart_products`
+DROP TABLE IF EXISTS `webshop`.`cart_products`;
 CREATE TABLE IF NOT EXISTS `webshop`.`cart_products` (
   `cart_products_id` INT NOT NULL,
   `cart_id` INT NOT NULL,
   `products_id` INT NOT NULL,
   PRIMARY KEY (`cart_products_id`),
-  -- INDEX `fk_cart_products_cart1_idx` (`cart_id` ASC) VISIBLE,
- -- INDEX `fk_cart_products_products1_idx` (`products_id` ASC) VISIBLE,
+  INDEX `fk_cart_products_cart1_idx` (`cart_id` ASC) ,
+  INDEX `fk_cart_products_products1_idx` (`products_id` ASC) ,
   CONSTRAINT `fk_cart_products_cart1`
     FOREIGN KEY (`cart_id`)
     REFERENCES `webshop`.`cart` (`cart_id`)
@@ -132,18 +115,16 @@ CREATE TABLE IF NOT EXISTS `webshop`.`cart_products` (
     ON UPDATE NO ACTION
 );
 
--- -----------------------------------------------------
--- Table `webshop`.`orders_products`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `webshop`.`orders_products`;
 
+-- Table `webshop`.`orders_products`
+DROP TABLE IF EXISTS `webshop`.`orders_products`;
 CREATE TABLE IF NOT EXISTS `webshop`.`orders_products` (
   `orders_products_id` INT NOT NULL,
   `orders_id` INT NOT NULL,
   `products_id` INT NOT NULL,
   PRIMARY KEY (`orders_products_id`),
- -- INDEX `fk_orders_products_orders1_idx` (`orders_id` ASC) VISIBLE,
- -- INDEX `fk_orders_products_products1_idx` (`products_id` ASC) VISIBLE,
+ INDEX `fk_orders_products_orders1_idx` (`orders_id` ASC) ,
+ INDEX `fk_orders_products_products1_idx` (`products_id` ASC) ,
   CONSTRAINT `fk_orders_products_orders1`
     FOREIGN KEY (`orders_id`)
     REFERENCES `webshop`.`orders` (`orders_id`)
@@ -157,10 +138,7 @@ CREATE TABLE IF NOT EXISTS `webshop`.`orders_products` (
 );
 
 
--- -----------------------------------------------------
 -- Insert `webshop`.`categorie`
--- -----------------------------------------------------
-
 INSERT INTO `webshop`.`categorie` (`categroie_id`, `name`) 
 VALUES (1, 'Kostenlose Cloud-Speicher');
 INSERT INTO `webshop`.`categorie` (`categroie_id`, `name`) 
@@ -168,22 +146,22 @@ VALUES (2, 'Bezahlte Cloud-Speicher');
 INSERT INTO `webshop`.`categorie` (`categroie_id`, `name`) 
 VALUES (3, 'Spezialisierte Cloud-Speicher');
 
--- -----------------------------------------------------
--- Insert `webshop`.`subcategorie`
--- -----------------------------------------------------
 
+-- Insert `webshop`.`subcategorie`
 INSERT INTO `webshop`.`subcategorie` (`subcategorie_id`, `categroie_id`, `name`) 
 VALUES (1, 1, 'Allgemeine kostenlose Cloud-Speicher');
 INSERT INTO `webshop`.`subcategorie` (`subcategorie_id`, `categroie_id`, `name`) 
 VALUES (2, 1, 'Kostenlose Cloud-Speicher für große Dateien');
 INSERT INTO `webshop`.`subcategorie` (`subcategorie_id`, `categroie_id`, `name`) 
 VALUES (3, 1, 'Kostenlose Cloud-Speicher mit erweiterten Sicherheitsfunktionen');
+
 INSERT INTO `webshop`.`subcategorie` (`subcategorie_id`, `categroie_id`, `name`) 
 VALUES (4, 2, 'Allgemeine Bezahlte Cloud-Speicher');
 INSERT INTO `webshop`.`subcategorie` (`subcategorie_id`, `categroie_id`, `name`) 
 VALUES (5, 2, 'Bezahlte Cloud-Speicher mit erweiterten Funktionen');
 INSERT INTO `webshop`.`subcategorie` (`subcategorie_id`, `categroie_id`, `name`) 
 VALUES (6, 2, 'Bezahlte Cloud-Speicher für Unternehmen');
+
 INSERT INTO `webshop`.`subcategorie` (`subcategorie_id`, `categroie_id`, `name`) 
 VALUES (7, 3, 'Cloud-Speicher für Fotografen');
 INSERT INTO `webshop`.`subcategorie` (`subcategorie_id`, `categroie_id`, `name`) 
@@ -191,10 +169,8 @@ VALUES (8, 3, 'Cloud-Speicher für Musiker');
 INSERT INTO `webshop`.`subcategorie` (`subcategorie_id`, `categroie_id`, `name`) 
 VALUES (9, 3, 'Cloud-Speicher für Videos und Filme');
 
--- -----------------------------------------------------
--- Insert `webshop`.`products`
--- -----------------------------------------------------
 
+-- Insert `webshop`.`products`
 INSERT INTO `webshop`.`products` (`products_id`, `subcategorie_id`, `name`, `description`, `price`) 
 VALUES (1, 1, 'Google Drive', 'Kostenloser Cloud-Speicher von Google', 0.00);
 INSERT INTO `webshop`.`products` (`products_id`, `subcategorie_id`, `name`, `description`, `price`) 
@@ -259,8 +235,6 @@ INSERT INTO `webshop`.`products` (`products_id`, `subcategorie_id`, `name`, `des
 VALUES (27, 9, 'Brightcove', 'Video-Plattform für Unternehmen und Content-Ersteller', 12.39);
 
 
--- -----------------------------------------------------
--- Insert `webshop`.`user`
--- -----------------------------------------------------
 
-INSERT INTO `webshop`.`user` (user_id, username, password, name,firstname,address,email) VALUES (1,"Max69",123,"Max","Mustermann","Musterstrasse 11", "maxmustermann@gmail.com");
+-- Insert `webshop`.`user`
+INSERT INTO `webshop`.`user` (user_id, username, password, name,firstname,address,email) VALUES (0,"Max69",123,"Max","Mustermann","Musterstrasse 11", "maxmustermann@gmail.com");
