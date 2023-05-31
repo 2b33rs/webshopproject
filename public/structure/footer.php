@@ -121,10 +121,10 @@
       <div class="col-lg-4 col-sm-12 col-xs-12">
         <div class="address-box clearfix">
           <div class="add-icon">
-            <img src="Img/footer-icon-01.png" alt="" />
+            <img src="images/footer-icon-01.png" alt="" />
           </div>
           <div class="add-content">
-            <h5>Address</h5>
+            <h5>Wer wir sind</h5>
             <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit,
 			sed do eiusmod tempor incididunt ut veniam </p>
           </div>
@@ -137,8 +137,8 @@
           </div>
           <div class="add-content">
             <h5>Phone</h5>
-            <p>  +(91) 000000000 <br />
-            +(91) 000000000  </p>
+            <p>  +(69) 123 456789
+           </p>
           </div>
         </div>
       </div>
@@ -149,7 +149,7 @@
           </div>
           <div class="add-content">
             <h5>Email</h5>
-            <p> <a href="mailto:" style="text-decoration:none"></a> </p>
+            <p> <a href="mailto:" style="text-decoration:none"></a>solid@clouds.de </p>
           </div>
         </div>
       </div>
