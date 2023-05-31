@@ -35,6 +35,8 @@
             </div>
             
         </main>
+
+        <?php include_once 'structure/footer.php' ?>
     </div>
 
 </body>
@@ -62,6 +64,4 @@
 </script>
 
  
-</script>
-
 </html>

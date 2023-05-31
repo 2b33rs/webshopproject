@@ -113,18 +113,7 @@
         </div>
         </main>
 
-        <footer>
-            <nav id="nav_3">
-                <!--Fußzeile mit verlinkungen-->
-                <a>&copy;2021</a>
-                <a>|</a>
-                <a href="impressum.html">Impressum</a>
-                <a>|</a>
-                <a href="datenschutz.html">Datenschutz</a>
-                <a>|</a>
-                <a href="erklaerungBF.html">Erklärung zur Barrierefreiheit</a>
-            </nav>
-        </footer>
+        <?php include_once 'structure/footer.php' ?>
     </div>
 
     <!-- Bootstrap JavaScript Libraries -->
