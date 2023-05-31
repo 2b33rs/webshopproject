@@ -12,22 +12,29 @@
                 </div>
                 <div class="card-body">
 
-                    <form class="row g-3 needs-validation" action="loginScript.php" method="GET">
+                    <form class="row g-3 needs-validation" action="loginScript.php" method="GET" novalidate>
                         <div class="col-md-4">
                             <label for="username" class="form-label">Benutzername</label>
                             <input type="text"  class="form-control" id="username" name="username"autofocus autocomplete="on"
-                                tabindex="1">
+                                tabindex="1" required>
+                                <div class="invalid-feedback">
+                                Benutzername wird benötigt.
+                            </div>
                         </div>
                         <div class="col-md-4">
                             <label for="password" class="form-label">Passwort</label>
-                            <input type="password" class="form-control" id="password" name="password" autocomplete="off" tabindex="2">
+                            <input type="password" class="form-control" id="password" name="password" autocomplete="off" tabindex="2" required>
+                            <div class="invalid-feedback">
+                                Passwort wird benötigt.
+                            </div>
                         </div>
                         <div>
-                            <input type="submit"  name="submit" value="Login" tabindex="3" disabled>
+                            <input type="submit"  name="submit" value="Login" tabindex="3">
                         </div>
                     </form>
                 </div>
             </div>
+
 
             <div>
                 <br>
@@ -39,29 +46,27 @@
         <?php include_once 'structure/footer.php' ?>
     </div>
 
-</body>
+
 
 <script>
-    const usernameInput = document.getElementById('username');
-    const passwordInput = document.getElementById('password');
-    const submitButton = document.querySelector('input[type="submit"]');
+        (function () {
+            'use strict';
 
-    usernameInput.addEventListener('input', () => {
-        if (usernameInput.value && passwordInput.value) {
-            submitButton.disabled = false;
-        } else {
-            submitButton.disabled = true;
-        }
-    });
+            // Form Validierung aktivieren
+            var forms = document.querySelectorAll('.needs-validation');
 
-    passwordInput.addEventListener('input', () => {
-        if (usernameInput.value && passwordInput.value) {
-            submitButton.disabled = false;
-        } else {
-            submitButton.disabled = true;
-        }
-    });
-</script>
+            Array.prototype.slice.call(forms).forEach(function (form) {
+                form.addEventListener('submit', function (event) {
+                    if (!form.checkValidity()) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
 
+                    form.classList.add('was-validated');
+                }, false);
+            });
+        })();
+    </script>
+</body>
  
 </html>
