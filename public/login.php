@@ -2,7 +2,7 @@
 
 <body>
     <div class="container">
-    <?php include_once 'structure/header.php' ?>
+        <?php include_once 'structure/header.php' ?>
         <main>
 
             <!-- Login -->
@@ -15,12 +15,12 @@
                     <form class="row g-3 " action="loginScript.php" target="_blank">
                         <div class="col-md-4">
                             <label for="username" class="form-label">Benutzername</label>
-                            <input type="text" class="form-control" id="kundennummer" autofocus autocomplete="on"
+                            <input type="text" class="form-control" id="username" autofocus autocomplete="on"
                                 tabindex="1">
                         </div>
                         <div class="col-md-4">
                             <label for="password" class="form-label">Passwort</label>
-                            <input type="password" class="form-control" id="pw" autocomplete="off" tabindex="2">
+                            <input type="password" class="form-control" id="password" autocomplete="off" tabindex="2">
                         </div>
                         <div>
                             <input type="submit" name="btng" value="Login" tabindex="3">
@@ -35,137 +35,63 @@
                     <h1>Registrierung</h1>
                 </div>
                 <div class="card-body">
+                    <form action="registerScript.php" target="_blank">
 
-                    <form action="http://141.79.64.139/cstippek/FormCheck.php" target="_blank">
-
-                        <!-- Anrede -->
+                        <!-- Username -->
                         <div class="row mb-3">
-                            <label class="col-sm-2 col-form-label">Anrede</label>
+                            <label for="username" class="col-sm-2 col-form-label">Benutzername*</label>
                             <div class="col-sm-10">
-                                <label class="radio-inline">
-                                    <input type="radio" name="optradio" checked tabindex="4">Frau&nbsp;&nbsp;&nbsp;
-                                </label>
-                                <label class="radio-inline">
-                                    <input type="radio" name="optradio" tabindex="4">Herr
-                                </label>
-                            </div>
-                        </div>
-
-                        <!-- Titel -->
-                        <div class="row mb-3">
-                            <label for="titel" class="col-sm-2 col-form-label">Titel</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" id="titel" maxlength="10" list="titelList"
-                                    autocomplete="on" tabindex="5">
-                                <datalist id="titelList">
-                                    <option>Master</option>
-                                    <option>Bachelor</option>
-                                    <option>Dr.</option>
-                                    <option>Diplom</option>
-                                </datalist>
+                                <input type="text" class="form-control" id="username" autocomplete="on" tabindex="5"
+                                    required>
                             </div>
                         </div>
 
                         <!-- Vorname & Nachname -->
                         <div class="row mb-3">
-                            <label for="vorname" class="col-sm-2 col-form-label">Vorname*</label>
+                            <label for="firstname" class="col-sm-2 col-form-label">Vorname*</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="vorname" maxlength="20" required
+                                <input type="text" class="form-control" id="firstname" maxlength="20" required
                                     autocomplete="on" tabindex="6">
                             </div>
                         </div>
 
                         <div class="row mb-3">
-                            <label for="nachname" class="col-sm-2 col-form-label">Nachname*</label>
+                            <label for="name" class="col-sm-2 col-form-label">Nachname*</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="nachname" maxlength="20" required
+                                <input type="text" class="form-control" id="name" maxlength="20" required
                                     autocomplete="on" tabindex="7">
                             </div>
                         </div>
 
                         <!-- Strase -->
                         <div class="row mb-3">
-                            <label for="strasse"
+                            <label for="address"
                                 class="col-sm-2 col-form-label">Straße&nbsp;und&nbsp;Hausnummer*</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="strasse" maxlength="40" required
+                                <input type="text" class="form-control" id="address" maxlength="40" required
                                     autocomplete="on" tabindex="8">
                             </div>
                         </div>
 
                         <!--PLZ -->
                         <div class="row mb-3">
-                            <label for="plz" class="col-sm-2 col-form-label">Postleitzahl*</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" id="plz" required pattern=".{5}"
-                                    autocomplete="on" tabindex="9">
-                            </div>
-                        </div>
-
-                        <!--Ort -->
-                        <div class="row mb-3">
-                            <label for="ort" class="col-sm-2 col-form-label">Ort*</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" id="ort" maxlength="40" required list="orte"
-                                    autocomplete="on" tabindex="10">
-                                <datalist id="orte">
-                                    <option>Achern</option>
-                                    <option>Offenburg</option>
-                                    <option>Karlsruhe</option>
-                                    <option>Appenweier</option>
-                                    <option>Renchen</option>
-                                </datalist>
-                            </div>
-                        </div>
-
-                        <!--Land (Da ein land vorausgewält ist muss man kein required mehr reinschreiben, 
-                            da man immer ein Land in dem Feld stehen hat) -->
-                        <div class="row mb-3">
-                            <label for="land" class="col-sm-2 col-form-label">Land*</label>
-                            <div class="col-sm-10">
-                                <select id="land" name="lang" class="form-control" autocomplete="on" tabindex="11">
-                                    <option selected="selected">Deutschland</option>
-                                    <option>Italien</option>
-                                    <option>Frankreich</option>
-                                    <option>Spanien</option>
-                                    <option>Schweden</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <!--EMail -->
-                        <div class="row mb-3">
                             <label for="email" class="col-sm-2 col-form-label">E-Mail*</label>
                             <div class="col-sm-10">
-                                <input class="form-control" id="email" required autocomplete="on" tabindex="12">
+                                <input type="text" class="form-control" id="email" required autocomplete="on"
+                                    tabindex="9">
                             </div>
                         </div>
 
-                        <!--Telefonnummer -->
-                        <div class="row mb-3">
-                            <label for="telnummer" class="col-sm-2 col-form-label">Telefonnummer</label>
-                            <div class="col-sm-10">
-                                <input class="form-control" id="telnummer" type="tel" autocomplete="on" tabindex="13">
-                            </div>
-                        </div>
 
-                        <!--Geburtsdatum -->
-                        <div class="row mb-3">
-                            <label for="geburtsdatum" class="col-sm-2 col-form-label">Geburtsdatum*</label>
-                            <div class="col-sm-10">
-                                <input class="form-control" id="geburtsdatum" type="date" autocomplete="on"
-                                    tabindex="14">
-                            </div>
-                        </div>
 
                         <!--Passwort -->
-                        <!-- <i class="bi bi-eye"></i> -->
-                        <!-- <i class="bi bi-eye-slash"></i> -->
+                     
                         <div class="form-group row mb-3">
                             <label for="passwordA" class="col-sm-2 col-form-label" id="pw1">Passwort*</label>
                             <div class="col sm-10 input-group">
                                 <input onblur="pwGleichheit()" value="" class="form-control" type="password"
-                                    id="passwordA" name="passwordA" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                                    id="passwordA" name="passwordA" 
+                                    
                                     title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
                                     autocomplete="off" tabindex="15">
                                 <div class="input-group-append">
@@ -178,10 +104,12 @@
 
                         <!--Passwort bestätigen -->
                         <div class="row mb-3">
-                            <label for="passwordB" class="col-sm-2 col-form-label" id="pw2">Passwort&nbsp;bestätigen*</label>
+                            <label for="passwordB" class="col-sm-2 col-form-label"
+                                id="pw2">Passwort&nbsp;bestätigen*</label>
                             <div class="col sm-10 input-group">
                                 <input onblur="pwGleichheit()" value="" class="form-control" type="password"
-                                    id="passwordB" name="passwordB" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                                    id="passwordB" name="passwordB" 
+                                  
                                     title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
                                     autocomplete="off" tabindex="16">
 
@@ -234,6 +162,49 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
         integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
         crossorigin="anonymous"></script>
+
+    <script>
+        'use strict';
+
+        function loginTrue() {
+            if (document.getElementById("gridCheck1").checked) {
+                document.getElementById("loginBtn").disabled = false;
+            } else {
+                document.getElementById("loginBtn").disabled = true;
+            }
+        }
+
+
+        function resetLogin() {
+            document.getElementById("loginBtn").disabled = true;
+            document.getElementById("pw1").innerHTML = 'Passwort*';
+            document.getElementById("pw2").innerHTML = 'Passwort bestätigen*';
+        }
+
+
+        function pwGleichheit() {
+
+            let pA = document.getElementById('passwordA');
+            let pB = document.getElementById('passwordB');
+
+            if (pA.value && pB.value) {
+                if (pA.value == pB.value) {
+                    document.getElementById("pw1").innerHTML = 'Passwort* <i class="bi bi-check btn-success"></i>';
+                    document.getElementById("pw2").innerHTML = 'Passwort bestätigen* <i class="bi bi-check btn-success"></i>';
+                }
+                if (pA.value != pB.value) {
+                    document.getElementById("pw1").innerHTML = 'Passwort* <i class="bi bi-x btn-danger"></i>';
+                    document.getElementById("pw2").innerHTML = 'Passwort bestätigen* <i class="bi bi-x btn-danger"></i>';
+                    let meldung = confirm("Achtung! Passwörter stimmen nicht überein!");
+                    if (meldung == true) {
+                        pA.value = "";
+                        pB.value = "";
+                        pA.focus();
+                    }
+                }
+            }
+        }
+    </script>
 </body>
 
 </html>

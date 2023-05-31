@@ -2,7 +2,7 @@
 
 <header>
     <nav class="navbar navbar-expand-lg navbar-light">
-        <img class="logo" src="../images/logo.png" alt="Fehler" width="143" height="55">
+        <a href="index.php"><img class="logo" src="../images/logo.png" alt="Fehler" height="80vh"></a>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
             aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -13,10 +13,8 @@
             <ul id="nav_1" class="navbar-nav">
                 <li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
 
-                <li class="nav-item"><a class="nav-link" href="aktuelles.html">Aktuelles</a></li>
-                <li class="nav-item"><a class="nav-link" href="veranstaltungen.html">Veranstaltungen</a></li>
-                <li class="nav-item"><a class="nav-link" href="infothek.html">Infothek</a></li>
-                <li class="nav-item"><a class="nav-link" href="allerlei.html">Allerlei</a></li>
+                <li class="nav-item"><a class="nav-link" href="cart.php">Warenkorb</a></li>
+           
             </ul>
             <ul id="nav_2" class="navbar-nav ms-auto">
                 <li class="nav-item"><a class="nav-link" href="suche.html"><i class="bi bi-search"></i>
