@@ -1,43 +1,13 @@
-<!DOCTYPE html>
-<html>
-	<head>
-	</head>
-	<body>
-
 <?php
 
-    //username
-    $username="";
-    if (isset($_POST["username"])) {
-        $username = $_POST["username"];
-    }
-    echo "Username: " . $username;
-    //firstname
-    $firstname="";
-    if (isset($_POST["firstname"])) {
-        $firstname = $_POST["firstname"];
-    }
-    //lastname
-    $name="";
-    if (isset($_POST["name"])) {
-        $name = $_POST["name"];
-    }
-    //email
-    $email="";
-    if (isset($_POST["email"])) {
-        $email = $_POST["email"];
-    }
-    //address
-    $address="";
-    if (isset($_POST["address"])) {
-        $address = $_POST["address"];
-    }
-    //password
-    $password="";
-    if (isset($_POST["password"])) {
-        $password = $_POST["password"];
-    }
-
+if (isset($_POST["submit"])) {
+    $username = $_POST["username"];
+    $password = $_POST["passwordA"];
+    $name = $_POST["name"];
+    $firstname = $_POST["firstname"];
+    $email = $_POST["email"];
+    $address = $_POST["address"];
+}
 
     $mysqli = new mysqli("localhost", "root", "", "webshop");
     if ($mysqli->connect_errno) {
@@ -49,11 +19,8 @@
     $statement->bind_param("ssssss",$username,$password,$name,$firstname,$email,$address);
     //echo $statement->get_result();
 
-
     $statement->execute();
-
     
-
     $result = $statement->get_result();
 
     if ($result->num_rows > 0) {
@@ -64,12 +31,6 @@
         echo $result;
     }
     $statement->close();
-
     //redirect to login
-    //header("Location: login.php");
-
-
-
+    header("Location: login.php");
 ?>
-
-</body>
