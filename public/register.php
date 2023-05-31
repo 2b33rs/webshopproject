@@ -11,13 +11,13 @@
                 <h1>Registrierung</h1>
             </div>
             <div class="card-body">
-                <form id="register" action="registerScript.php" method="POST">
+                <form id="register" action="registerScript.php" method="post">
 
                     <!-- Username -->
                     <div class="row mb-3">
                         <label for="username" class="col-sm-2 col-form-label">Benutzername*</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="username" autocomplete="on" tabindex="5"
+                            <input type="text" class="form-control" name="username" id="username" autocomplete="on" tabindex="5"
                                 required>
                         </div>
                     </div>
@@ -26,15 +26,15 @@
                     <div class="row mb-3">
                         <label for="firstname" class="col-sm-2 col-form-label">Vorname*</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="firstname" maxlength="20" required
-                                autocomplete="on" tabindex="6">
+                            <input type="text" class="form-control" name="firstname" id="firstname"  maxlength="24" 
+                                autocomplete="on" tabindex="6" required>
                         </div>
                     </div>
 
                     <div class="row mb-3">
                         <label for="name" class="col-sm-2 col-form-label">Nachname*</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="name" maxlength="20" required autocomplete="on"
+                            <input type="text" class="form-control" id="name" name="name" maxlength="24" required autocomplete="on"
                                 tabindex="7">
                         </div>
                     </div>
@@ -43,7 +43,7 @@
                     <div class="row mb-3">
                         <label for="address" class="col-sm-2 col-form-label">Straße&nbsp;und&nbsp;Hausnummer*</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="address" maxlength="40" required
+                            <input type="text" class="form-control" id="address" name="address" maxlength="40" required
                                 autocomplete="on" tabindex="8">
                         </div>
                     </div>
@@ -52,7 +52,7 @@
                     <div class="row mb-3">
                         <label for="email" class="col-sm-2 col-form-label">E-Mail*</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="email" required autocomplete="on" tabindex="9">
+                            <input type="text" class="form-control" id="email" name="email" required autocomplete="on" tabindex="9">
                         </div>
                     </div>
 
@@ -106,7 +106,7 @@
                             </div>
                         </div>
                     </div>
-                    <input id="registerBtn" type="submit" name="btng" value="Register" disabled tabindex="20">
+                    <input id="registerBtn" type="submit" name="submit" value="Register" disabled tabindex="20">
                     <input type="reset" onclick="resetLogin()" name="btng" value="Reset" tabindex="21">
                 </form>
             </div>
