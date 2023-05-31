@@ -1,5 +1,3 @@
-
-
 <header>
     <nav class="navbar navbar-expand-lg navbar-light">
         <a href="index.php"><img class="logo" src="../images/logo.png" alt="Fehler" height="80vh"></a>
@@ -13,17 +11,34 @@
             <ul id="nav_1" class="navbar-nav">
                 <li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
 
-                <li class="nav-item"><a class="nav-link" href="cart.php">Warenkorb</a></li>
-           
+                <?php
+                session_start();
+                if (isset($_SESSION['username'])) {
+                    echo '<li class="nav-item"><a class="nav-link" href="cart.php">Warenkorb von ' . $_SESSION["username"] .'</a></li>';
+                }
+
+                ?>
+
             </ul>
             <ul id="nav_2" class="navbar-nav ms-auto">
                 <li class="nav-item"><a class="nav-link" href="suche.html"><i class="bi bi-search"></i>
                         Suche</a> </li>
 
-                <!-- TODO: Wenn Angemeldet sollte hier der Benutzername stehen -->
-                <li class="nav-item"><a class="nav-link" href="login.php"><i class="bi bi-person-fill"></i>
-                        Log-In</a></li>
+                <?php
+                if (!isset($_SESSION['username'])) {
+                    echo '<li class="nav-item"><a class="nav-link" href="login.php"><i class="bi bi-person-fill"></i>
+                    Login</a></li>';
+                } else {
+                    echo '<li class="nav-item"><a class="nav-link" href="logoutScript.php"><i class="bi bi-box-arrow-right"></i></i>
+Logout</a></li>';
+                }
+
+                ?>
+
+
+
             </ul>
         </div>
     </nav>
 </header>
+                
