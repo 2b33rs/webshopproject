@@ -196,3 +196,6 @@ SolidClouds © 2023 All Rights Reserved.
 <!-- Copyright -->
 </footer>
 </footer>
+
+</body>
+</html>
