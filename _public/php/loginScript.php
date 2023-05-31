@@ -1,10 +1,3 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-</head>
-
-<body>
 	<?php
 
 	$username = "";
@@ -42,6 +35,3 @@
 
 	}
 	?>
-</body>
-
-</html>

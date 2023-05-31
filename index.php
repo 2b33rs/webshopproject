@@ -1,5 +1,5 @@
 # weiterleitung zum public Ordner
 <?php
-header("Location: ./public/index.php");
+header("Location: ./_public/php/index.php");
 exit();
 ?>
