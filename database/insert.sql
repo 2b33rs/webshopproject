@@ -91,3 +91,7 @@ INSERT INTO `webshop`.`product` (`product_id`, `subcategorie_id`, `name`, `descr
 VALUES (27, 9, 'Brightcove', 'Video-Plattform für Unternehmen und Content-Ersteller', 12.39);
 
 
+-- Benutzer einfügen
+INSERT INTO user (user_id, username, password, name,firstname,address,email) VALUES (1,"Max69",123,"Max","Mustermann","Musterstrasse 11", "maxmustermann@gmail.com");
+
+
