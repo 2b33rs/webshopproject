@@ -17,15 +17,20 @@ $statement->execute();
 $result = $statement->get_result();
 $cart = $result->fetch_assoc();
 
-if ($cart == null) {
-    //create a new cart
+//when the user has no cart yet, create one
+if ($result->num_rows == 0) {
     $sql = "INSERT INTO cart (user_id) VALUES (?)";
+    $statement = $mysqli->prepare($sql);
+    $statement->bind_param("i", $user_id);
+    $statement->execute();
+    $sql = "SELECT * FROM cart WHERE user_id=?";
     $statement = $mysqli->prepare($sql);
     $statement->bind_param("i", $user_id);
     $statement->execute();
     $result = $statement->get_result();
     $cart = $result->fetch_assoc();
 }
+
 
 $cart_id = $cart["cart_id"];
 
