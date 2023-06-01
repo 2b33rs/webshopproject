@@ -1,6 +1,8 @@
 <?php include_once '../php/header.php' ?>
 <main>
-<div class="container">
+
+<div class="container" style="min-height:80vh">
+
 
 
 </div>
