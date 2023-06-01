@@ -13,13 +13,15 @@
         $sql = "SELECT * FROM cart WHERE user_id = '" . $_SESSION["user_id"] . "'";
         $result = $mysqli->query($sql);
         $row = $result->fetch_assoc();
-        $cart_id = $row["cart_id"];
-
-        $sql = "SELECT products_id FROM cart_products WHERE cart_id = '" . $cart_id . "'";
+        if (!$result->num_rows == 0) {
+            $cart_id = $row["cart_id"];
+            $sql = "SELECT products_id FROM cart_products WHERE cart_id = '" . $cart_id . "'";
         
-        $result = $mysqli->query($sql);
-
-        if($result->num_rows == 0){
+            $result = $mysqli->query($sql);
+    
+        }
+        
+        if ($result->num_rows == 0){
             echo "<h1 class='text-center mt-5'>Der Warenkorb ist leer</h1>";
             echo "<img src='../images/cart.svg' class='img-fluid mx-auto d-block ' alt='' style='height: 30vh'>";
         }
@@ -50,6 +52,7 @@
                 </div>";    
         }
 
+        if (!$result->num_rows == 0) {
             $sql = "SELECT SUM(price) FROM products WHERE products_id IN (SELECT products_id FROM cart_products WHERE cart_id = '" . $cart_id . "')";
             $result = $mysqli->query($sql);
             $row = $result->fetch_assoc();
@@ -59,7 +62,7 @@
             <input type='hidden' name='cart_id' value='" . $cart_id . "'>
             <input type='hidden' name='price' value='" . $row["SUM(price)"] . "'>
             </form> ";
-
+        }
 
         ?>
 
