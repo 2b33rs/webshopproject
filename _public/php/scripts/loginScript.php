@@ -26,11 +26,11 @@
 		//redirect to profile
 		session_start();
 		$_SESSION["username"] = $username;
-		header("location: index.php");
+		header("location: ../index.php");
 
 	} else {
 		//redirect to login page
-		header("location: login.php");
+		header("location: ../login.php");
 
 
 	}
