@@ -32,5 +32,5 @@ if (isset($_POST["submit"])) {
     }
     $statement->close();
     //redirect to login
-    header("Location: login.php");
+    header("Location: ../login.php");
 ?>
