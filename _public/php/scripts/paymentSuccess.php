@@ -1,10 +1,5 @@
-<!DOCTYPE html>
+<?php
+// Warenkorb muss in Orders gespeichert werden mit dem Kaufdatum
 
-<html lang="de">
 
-<head>
-</head>
-      <body>
-            <h1>Payment Success</h1>
-            <p>Payment completed successfully</p>   
-      </body>  
+?>

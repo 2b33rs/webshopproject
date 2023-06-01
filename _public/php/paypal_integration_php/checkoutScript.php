@@ -12,6 +12,7 @@ include_once 'dbConnect.php';
     $cart_id = 0;
     if (isset($_POST["cart_id"])) {
         $cart_id = $_POST["cart_id"];
+        $_SESSION["cart_id"] = $cart_id;
     }
     $total_price = 0;
     if (isset($_POST["price"])) {
