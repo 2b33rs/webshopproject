@@ -1,6 +1,11 @@
-
 <?php include_once '../php/header.php' ?>
+<main>
+    <div class="container" style="min-height:80vh">
 
-<?php include_once '../html/index.html' ?>  
+
+
+    </div>
+</main>
+
 
 <?php include_once '../html/footer.html' ?>

@@ -1,56 +1,49 @@
-<div class="container">
+<div class="container" style="min-height:80vh">
 
        
 
     <!-- Registration -->
     <div class="card">
-        <div class="card-header">
-            <h1>Registrierung</h1>
-        </div>
-        <div class="card-body">
+            
+        <div class="card-body" style="margin-top: 5vh;">
+
+            <h1 class="fw-bold pt-3 pt-xl-5 pb-2 pb-xl-3">Registrierung</h1>
             <form id="register" action="../php/scripts/registerScript.php" method="post">
 
                 <!-- Username -->
-                <div class="row mb-3">
-                    <label for="username" class="col-sm-2 col-form-label">Benutzername*</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" name="username" id="username" autocomplete="on" tabindex="5"
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" name="username" id="username" autocomplete="on" tabindex="5"
                             required>
-                    </div>
+                    <label for="username" class="form-label">Benutzername*</label>
                 </div>
 
                 <!-- Vorname & Nachname -->
-                <div class="row mb-3">
-                    <label for="firstname" class="col-sm-2 col-form-label">Vorname*</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" name="firstname" id="firstname"  maxlength="24" 
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" name="firstname" id="firstname"  maxlength="24" 
                             autocomplete="on" tabindex="6" required>
-                    </div>
+                    <label for="firstname" class="form-label">Vorname*</label>
+                        
                 </div>
 
-                <div class="row mb-3">
-                    <label for="name" class="col-sm-2 col-form-label">Nachname*</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" id="name" name="name" maxlength="24" required autocomplete="on"
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="name" name="name" maxlength="24" required autocomplete="on"
                             tabindex="7">
-                    </div>
+                    <label for="name" class="form-label">Nachname*</label>
                 </div>
 
                 <!-- Strase -->
-                <div class="row mb-3">
-                    <label for="address" class="col-sm-2 col-form-label">Straße&nbsp;und&nbsp;Hausnummer*</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" id="address" name="address" maxlength="40" required
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="address" name="address" maxlength="40" required
                             autocomplete="on" tabindex="8">
-                    </div>
+                    <label for="address" class="form-label">Straße&nbsp;und&nbsp;Hausnummer*</label>
+                        
                 </div>
 
                 <!--PLZ -->
-                <div class="row mb-3">
-                    <label for="email" class="col-sm-2 col-form-label">E-Mail*</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" id="email" name="email" required autocomplete="on" tabindex="9">
-                    </div>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="email" name="email" required autocomplete="on" tabindex="9">
+
+                    <label for="email" class="form-label">E-Mail*</label>
                 </div>
 
 
@@ -58,7 +51,7 @@
                 <!--Passwort -->
 
                 <div class="form-group row mb-3">
-                    <label for="passwordA" class="col-sm-2 col-form-label" id="pw1">Passwort*</label>
+                    <label for="passwordA" class="form-label" id="pw1">Passwort*</label>
                     <div class="col sm-10 input-group">
                         <input onblur="pwGleichheit()" value="" class="form-control" type="password" id="passwordA"
                             name="passwordA"
@@ -74,7 +67,7 @@
 
                 <!--Passwort bestätigen -->
                 <div class="row mb-3">
-                    <label for="passwordB" class="col-sm-2 col-form-label"
+                    <label for="passwordB" class="form-label"
                         id="pw2">Passwort&nbsp;bestätigen*</label>
                     <div class="col sm-10 input-group">
                         <input onblur="pwGleichheit()" value="" class="form-control" type="password" id="passwordB"

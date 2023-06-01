@@ -1,39 +1,36 @@
-<div class="container">
+<div class="container" style="min-height:80vh">
     <main>
 
         <!-- Login -->
-        <div class="card">
-            <div class="card-header">
-                <h1>Login</h1>
-            </div>
             <div class="card-body">
+                <h1 class="fw-bold pt-3 pt-xl-5 pb-2 pb-xl-3">Login</h1>
 
                 <form class="row g-3 needs-validation" action="../php/scripts/loginScript.php" method="GET" novalidate>
-                    <div class="col-md-4">
-                        <label for="username" class="form-label">Benutzername</label>
+                    <div class="form-floating mb-3">
                         <input type="text" class="form-control" id="username" name="username" autofocus
                             autocomplete="on" tabindex="1" required>
+                        <label for="username" class="form-label">Benutzername</label>
+                        
                         <div class="invalid-feedback">
                             Benutzername wird benötigt.
                         </div>
                     </div>
-                    <div class="col-md-4">
-                        <label for="password" class="form-label">Passwort</label>
+                    <div class="form-floating mb-3">
                         <input type="password" class="form-control" id="password" name="password" autocomplete="off"
                             tabindex="2" required>
+                        <label for="password" class="form-label">Passwort</label>
+                        
                         <div class="invalid-feedback">
                             Passwort wird benötigt.
                         </div>
                     </div>
                     <div>
-                        <input type="submit" name="submit" value="Login" tabindex="3">
+                        <input class="btn btn-primary needs-validation" type="submit" name="submit" value="Login" tabindex="3">
                     </div>
                 </form>
             </div>
-        </div>
 
-
-        <div>
+        <div class="form-text">
             <br>
             <p>Kein Konto? <a href="../php/register.php">Registrieren</a></p>
         </div>
