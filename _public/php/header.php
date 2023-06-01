@@ -18,6 +18,7 @@
                 <div class="collapse navbar-collapse" id="navbarNavDropdown">
                     <ul id="nav_1" class="navbar-nav">
                         <li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="products.php">Produkte</a></li>
 
                         <?php
                         session_start();
