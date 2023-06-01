@@ -52,8 +52,8 @@ CREATE TABLE IF NOT EXISTS `webshop`.`products` (
   `subcategorie_id` INT NOT NULL,
   `name` VARCHAR(255) NOT NULL,
   `description` VARCHAR(255) NOT NULL,
-  `price`, `images` DECIMAL(10,2) NOT NULL,
-  `image` BLO, `LOAD_FILE(../_public/images/Produkt_Logos/)`B,
+  `price` DECIMAL(10,2) NOT NULL,
+  `images` BLOP,
   PRIMARY KEY (`products_id`),
   INDEX `fk_products_subcategorie1_idx` (`subcategorie_id` ASC) ,
   CONSTRAINT `fk_products_subcategorie1`
@@ -218,8 +218,8 @@ INSERT INTO `webshop`.`products` (`products_id`, `subcategorie_id`, `name`, `des
 VALUES (19, 7, 'Adobe Creative Cloud', 'Kreative Tools für Fotografen', 19.99, `LOAD_FILE(../_public/images/Produkt_Logos/AdobeCreative.png)`);
 INSERT INTO `webshop`.`products` (`products_id`, `subcategorie_id`, `name`, `description`, `price`, `images`) 
 VALUES (20, 7, 'SmugMug', 'Plattform für Fotografen zur Präsentation ihrer Werke', 13.99, `LOAD_FILE(../_public/images/Produkt_Logos/SmugMug.png)`);
-INSERT INTO `webshop`.`products` (`products_id`, `subcategorie_id`, `name`, `description`, `price`, `images`) 
-VALUES (21, 7, '500px', 'Online-Community für Fotografen', 12.99, `LOAD_FILE(../_public/images/Produkt_Logos/)`);
+INSERT INTO `webshop`.`products` (`products_id`, `subcategorie_id`, `name`, `description`, `price`) 
+VALUES (21, 7, '500px', 'Online-Community für Fotografen', 12.99);
 
 INSERT INTO `webshop`.`products` (`products_id`, `subcategorie_id`, `name`, `description`, `price`, `images`) 
 VALUES (22, 8, 'SoundCloud', 'Plattform für Musiker zum Teilen und Entdecken von Musik', 12.88, `LOAD_FILE(../_public/images/Produkt_Logos/SoundCloud.png)`);
