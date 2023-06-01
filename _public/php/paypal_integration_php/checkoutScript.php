@@ -10,12 +10,12 @@ include_once 'dbConnect.php';
     <?php
     // Fetch products from the database 
     $cart_id = 0;
-    if (isset($_SESSION["cart_id"])) {
-        $cart_id = $_SESSION["cart_id"];
+    if (isset($_POST["cart_id"])) {
+        $cart_id = $_POST["cart_id"];
     }
     $total_price = 0;
-    if (isset($_SESSION["price"])) {
-        $total_price = $_SESSION["price"];
+    if (isset($_POST["price"])) {
+        $total_price = $_POST["price"];
     }
 
     // $results = $db->query("SELECT * FROM cart_products WHERE cart_id = $cart_id");

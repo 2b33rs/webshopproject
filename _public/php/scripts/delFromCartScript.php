@@ -7,9 +7,8 @@ $mysqli = new mysqli("localhost", "root", "", "webshop");
 if ($mysqli->connect_errno) {
     die("Verbindung fehlgeschlagen: " . $mysqli->connect_error);
 }
-//$_SESSION["cart_id"]
 
-$sql = "DELETE FROM cart_products WHERE cart_id = '" . $_SESSION["cart_id"] . "' AND products_id = '" . $_POST["products_id"] . "' LIMIT 1";
+$sql = "DELETE FROM cart_products WHERE cart_id = '" . $_POST["cart_id"] . "' AND products_id = '" . $_POST["products_id"] . "' LIMIT 1";
 $result = $mysqli->query($sql);
 
 
