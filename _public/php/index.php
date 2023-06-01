@@ -2,8 +2,6 @@
 <main>
     <div class="container" style="min-height:80vh">
 
-
-
     </div>
 </main>
 
