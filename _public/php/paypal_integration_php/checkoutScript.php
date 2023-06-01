@@ -4,6 +4,13 @@ include_once 'config.php';
 
 // Include database connection file 
 include_once 'dbConnect.php';
+
+//TODO: include_once '../header.php';
+
+session_start();
+
+
+
 ?>
 
 <div class="container">
@@ -11,7 +18,6 @@ include_once 'dbConnect.php';
     // Fetch products from the database 
     $cart_id = 0;
     if (isset($_POST["cart_id"])) {
-        $cart_id = $_POST["cart_id"];
         $_SESSION["cart_id"] = $cart_id;
     }
     $total_price = 0;
@@ -19,7 +25,7 @@ include_once 'dbConnect.php';
         $total_price = $_POST["price"];
     }
 
-    // $results = $db->query("SELECT * FROM cart_products WHERE cart_id = $cart_id");
+    
 
     //$results = $db->query("SELECT * FROM products");
     

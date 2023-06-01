@@ -4,66 +4,55 @@ include_once 'config.php';
 
 // Include database connection file 
 include_once 'dbConnect.php';
+include_once '../header.php';
 
-// i need to get the product id from the cart_products table
-// Get the cart ID from the session
-$cart_id = $_SESSION['cart_id'];
-
-// Query the cart_products table to get the product ID
-$query = "SELECT products_id FROM cart_products WHERE cart_id = $cart_id";
 
 $mysqli = new mysqli("localhost", "root", "", "webshop");
 if ($mysqli->connect_errno) {
     die("Verbindung fehlgeschlagen: " . $mysqli->connect_error);
 }
 
-$statement = $mysqli->prepare($query);
-$statement->execute();
-$result = $statement->get_result();
-while ($row = $result->fetch_assoc()) {
-    $product_id = $row['products_id'];
+$sql = "SELECT cart_id FROM cart WHERE user_id = '" . $_SESSION["user_id"] . "'";
+$result = $mysqli->query($sql);
+$row = $result->fetch_assoc();
+if (!$result->num_rows == 0) {
+    $cart_id = $row["cart_id"];
+    $sql = "SELECT products_id FROM cart_products WHERE cart_id = '" . $cart_id . "'";
+
+    $result = $mysqli->query($sql);
+    $date = date("Y-m-d");
+
+    while ($row = $result->fetch_assoc()) {
+
+        $sql = "SELECT * FROM products WHERE products_id = '" . $row["products_id"] . "'";
+        $resultPro = $mysqli->query($sql);
+
+        $rowPro = $resultPro->fetch_assoc();
+
+        $sql = "INSERT INTO orders (user_id ,username ,name ,description ,price , purchase_date) VALUES (?,?,?,?,?,?)";
+        $statement = $mysqli->prepare($sql);
+        
+        $statement->bind_param("isssds", $_SESSION["user_id"], $_SESSION["username"],$rowPro["name"],$rowPro["description"],$rowPro["price"], $date);
+        $statement->execute();
+    }
+
+$sql = "DELETE FROM cart_products WHERE cart_id = '" . $cart_id . "'";
+$mysqli->query($sql);
+$sql = "DELETE FROM cart WHERE cart_id = '" . $cart_id . "'";
+$mysqli->query($sql);
 
 
-    $sql = "INSERT INTO orders_products ( orders_products_id, orders_id ,products_id ) VALUES (?,?,?)";
-    $statement = $mysqli->prepare($sql);
-    $statement->bind_param("iii", $orders_products_id, $orders_id, $products_id);
 }
-
-
-
-
 
 
 ?>
 <div class="container">
     <div class="status">
-        <?php if (!empty($payment_id)) { ?>
+     
             <h1 class="success">Your Payment has been Successful</h1>
 
-            <h4>Payment Information</h4>
-            <p><b>Reference Number:</b>
-                <?php echo $payment_id; ?>
-            </p>
-            <p><b>Transaction ID:</b>
-                <?php echo $txn_id; ?>
-            </p>
-            <p><b>Paid Amount:</b>
-                <?php echo $payment_gross; ?>
-            </p>
-            <p><b>Payment Status:</b>
-                <?php echo $payment_status; ?>
-            </p>
-
-            <h4>Product Information</h4>
-            <p><b>Name:</b>
-                <?php echo $productRow['name']; ?>
-            </p>
-            <p><b>Price:</b>
-                <?php echo $productRow['price']; ?>
-            </p>
-        <?php } else { ?>
-            <h1 class="error">Your Payment has Failed</h1>
-        <?php } ?>
+            <h1 class="success">Thank You For Your Order</h1>
+       
     </div>
     <a href="../products.php" class="btn-link">Back to Products</a>
 </div>

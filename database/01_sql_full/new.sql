@@ -74,7 +74,7 @@ CREATE TABLE IF NOT EXISTS `webshop`.`cart` (
   CONSTRAINT `fk_cart_user1`
     FOREIGN KEY (`user_id`)
     REFERENCES `webshop`.`user` (`user_id`)
-    ON DELETE NO ACTION
+    ON DELETE CASCADE
     ON UPDATE NO ACTION
 );
 
@@ -82,8 +82,12 @@ CREATE TABLE IF NOT EXISTS `webshop`.`cart` (
 -- Table `webshop`.`orders`
 DROP TABLE IF EXISTS `webshop`.`orders`;
 CREATE TABLE IF NOT EXISTS `webshop`.`orders` (
-  `orders_id` INT NOT NULL,
+  `orders_id` INT AUTO_INCREMENT NOT NULL,
   `user_id` INT NOT NULL,
+  `username` VARCHAR(45) NOT NULL,
+  `name` VARCHAR(255) NOT NULL,
+  `description` VARCHAR(255) NOT NULL,
+  `price` DECIMAL(10,2) NOT NULL,
   `purchase_date` DATE NOT NULL,
   PRIMARY KEY (`orders_id`),
   INDEX `fk_orders_user1_idx` (`user_id` ASC) ,
@@ -237,8 +241,8 @@ VALUES (27, 9, 'Brightcove', 'Video-Plattform für Unternehmen und Content-Erste
 
 
 -- Insert `webshop`.`user`
-INSERT INTO `webshop`.`user` (user_id, username, password, name,firstname,address,email) VALUES (0,"Max69",123,"Max","Mustermann","Musterstrasse 11", "maxmustermann@gmail.com");
-INSERT INTO `webshop`.`user` (user_id, username, password, name,firstname,address,email) VALUES (1,"steffen",123,"Max","Mustermann","Musterstrasse 11", "maxmustermann@gmail.com");
+INSERT INTO `webshop`.`user` (username, password, name,firstname,address,email) VALUES ("Max69",123,"Max","Mustermann","Musterstrasse 11", "maxmustermann@gmail.com");
+INSERT INTO `webshop`.`user` (username, password, name,firstname,address,email) VALUES ("steffen",123,"Max","Mustermann","Musterstrasse 11", "maxmustermann@gmail.com");
 
 
 

@@ -43,3 +43,25 @@
             </nav>
         </div>
     </header>
+
+    <?php
+    $_SESSION['last_activity'] = time();
+    
+    // // Überprüfe, ob die letzte Aktivitätszeit in der Session existiert
+    // $_SESSION['inactive'] = false;
+    
+    // //session_start();
+    
+    // if (isset($_SESSION['last_activity']) && (time() - $_SESSION['last_activity'] > 900)) {
+    //     // Benutzer ist nicht mehr aktiv
+    //     // Führe hier deine entsprechenden Aktionen aus, z. B. Abmeldung des Benutzers oder Weiterleitung auf eine andere Seite
+    //     $_SESSION['inactive'] = true;
+    // } else {
+    //     // Benutzer ist noch aktiv
+    //     // Aktualisiere den Zeitstempel
+    //     $_SESSION['last_activity'] = time();
+    //     $_SESSION['inactive'] = false;
+    
+    // }
+    
+    ?>
