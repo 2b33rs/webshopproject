@@ -173,25 +173,25 @@ VALUES (9, 3, 'Cloud-Speicher für Videos und Filme');
 
 -- Insert `webshop`.`products`
 INSERT INTO `webshop`.`products` (`products_id`, `subcategorie_id`, `name`, `description`, `price`, `images`) 
-VALUES (1, 1, 'Google Drive', 'Kostenloser Cloud-Speicher von Google', 0.00, `LOAD_FILE(../_public/images/Produkt_Logos/)`);
+VALUES (1, 1, 'Google Drive', 'Kostenloser Cloud-Speicher von Google', 0.00, `LOAD_FILE(../_public/images/Produkt_Logos/GoogleWorkspace.jpg)`);
 INSERT INTO `webshop`.`products` (`products_id`, `subcategorie_id`, `name`, `description`, `price`, `images`) 
-VALUES (2, 1, 'Dropbox', 'Kostenloser Cloud-Speicher von Dropbox', 0.00, `LOAD_FILE(../_public/images/Produkt_Logos/)`);
+VALUES (2, 1, 'Dropbox', 'Kostenloser Cloud-Speicher von Dropbox', 0.00, `LOAD_FILE(../_public/images/Produkt_Logos/Dropbox_Icon.svg.png)`);
 INSERT INTO `webshop`.`products` (`products_id`, `subcategorie_id`, `name`, `description`, `price`, `images`) 
-VALUES (3, 1, 'Microsoft OneDrive', 'Kostenloser Cloud-Speicher von Microsoft', 0.00, `LOAD_FILE(../_public/images/Produkt_Logos/)`);
+VALUES (3, 1, 'Microsoft OneDrive', 'Kostenloser Cloud-Speicher von Microsoft', 0.00, `LOAD_FILE(../_public/images/Produkt_Logos/MicrosoftOneDrive.png)`);
 
 INSERT INTO `webshop`.`products` (`products_id`, `subcategorie_id`, `name`, `description`, `price`, `images`) 
-VALUES (4, 2, 'MediaFire', 'Kostenloser Cloud-Speicher für große Dateien', 0.00, `LOAD_FILE(../_public/images/Produkt_Logos/)`);
+VALUES (4, 2, 'MediaFire', 'Kostenloser Cloud-Speicher für große Dateien', 0.00, `LOAD_FILE(../_public/images/Produkt_Logos/MediaFire.png)`);
 INSERT INTO `webshop`.`products` (`products_id`, `subcategorie_id`, `name`, `description`, `price`, `images`) 
-VALUES (5, 2, 'Mega', 'Kostenloser Cloud-Speicher für große Dateien', 0.00, `LOAD_FILE(../_public/images/Produkt_Logos/)`);
+VALUES (5, 2, 'Mega', 'Kostenloser Cloud-Speicher für große Dateien', 0.00, `LOAD_FILE(../_public/images/Produkt_Logos/Mega.png)`);
 INSERT INTO `webshop`.`products` (`products_id`, `subcategorie_id`, `name`, `description`, `price`, `images`) 
-VALUES (6, 2, 'pCloud', 'Kostenloser Cloud-Speicher für große Dateien', 0.00, `LOAD_FILE(../_public/images/Produkt_Logos/)`);
+VALUES (6, 2, 'pCloud', 'Kostenloser Cloud-Speicher für große Dateien', 0.00, `LOAD_FILE(../_public/images/Produkt_Logos/pCloud.png)`);
 
 INSERT INTO `webshop`.`products` (`products_id`, `subcategorie_id`, `name`, `description`, `price`, `images`) 
-VALUES (7, 3, 'Tresorit', 'Kostenloser Cloud-Speicher mit erweiterten Sicherheitsfunktionen', 0.00, `LOAD_FILE(../_public/images/Produkt_Logos/)`);
+VALUES (7, 3, 'Tresorit', 'Kostenloser Cloud-Speicher mit erweiterten Sicherheitsfunktionen', 0.00, `LOAD_FILE(../_public/images/Produkt_Logos/Tresorit.png)`);
 INSERT INTO `webshop`.`products` (`products_id`, `subcategorie_id`, `name`, `description`, `price`, `images`) 
-VALUES (8, 3, 'Sync.com', 'Kostenloser Cloud-Speicher mit erweiterten Sicherheitsfunktionen', 0.00, `LOAD_FILE(../_public/images/Produkt_Logos/)`);
+VALUES (8, 3, 'Sync.com', 'Kostenloser Cloud-Speicher mit erweiterten Sicherheitsfunktionen', 0.00, `LOAD_FILE(../_public/images/Produkt_Logos/Sync.png)`);
 INSERT INTO `webshop`.`products` (`products_id`, `subcategorie_id`, `name`, `description`, `price`, `images`) 
-VALUES (9, 3, 'SpiderOak', 'Kostenloser Cloud-Speicher mit erweiterten Sicherheitsfunktionen', 0.00, `LOAD_FILE(../_public/images/Produkt_Logos/)`);
+VALUES (9, 3, 'SpiderOak', 'Kostenloser Cloud-Speicher mit erweiterten Sicherheitsfunktionen', 0.00, `LOAD_FILE(../_public/images/Produkt_Logos/SpiderOak.png)`);
 
 INSERT INTO `webshop`.`products` (`products_id`, `subcategorie_id`, `name`, `description`, `price`, `images`) 
 VALUES (10, 4, 'Google One', 'Erweiterter Cloud-Speicher von Google', 3.99, `LOAD_FILE(../_public/images/Produkt_Logos/)`);
