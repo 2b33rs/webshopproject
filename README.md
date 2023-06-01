@@ -1,5 +1,32 @@
 # Webshop Project
 
+## Getting Started
+To get the project up and running, follow the steps below:
+### 1. Install XAMPP
+
+- Download and install XAMPP from the official website: https://www.apachefriends.org/index.html
+- Choose the appropriate version for your operating system.
+-   Run the installer and follow the instructions to complete the installation process.
+
+### 2. Start XAMPP
+
+-   Launch XAMPP after installation.
+-   Start the Apache Server and MySQL Server from the XAMPP Control Panel.
+-  Make sure both servers are running successfully without any errors.
+
+### 3. Configure MySQL Server
+
+- Access the MySQL Admin panel by clicking the "Admin" button next to the MySQL Server in the XAMPP Control Panel.
+-  Once the Admin panel opens in your default browser, navigate to the SQL tab.
+-   Execute the SQL script provided to set up the necessary databases.
+-  This script will create the required database structure for the project.
+
+### 4. Access the web application
+
+- Open your preferred web browser.
+- Enter the following URL in the address bar: http://localhost/webshopproject
+- The web application should now be accessible, and you can begin using it.
+
 ## Aufgabenbeschreibung
 
 Ziel der Aufgabe ist die Entwicklung eines einfachen Web-Shops in PHP ohne
