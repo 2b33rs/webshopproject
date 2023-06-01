@@ -4,7 +4,7 @@
 <?php include_once '../html/head.html' ?>
 
 <body>
-    <header class="header-main bg-dark static-top shadow-lg">
+    <header class="header-main bg-dark static-top shadow-lg mb-4">
         <div class="container ">
             <nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top">
                 <a href="index.php"><img class="logo" src="../images/logo.png" alt="Fehler" height="80vh"></a>

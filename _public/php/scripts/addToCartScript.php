@@ -29,7 +29,7 @@ if ($cart == null) {
 
 $cart_id = $cart["cart_id"];
 
-$_SESSION["cart_id"] = $cart_id;
+//$_SESSION["cart_id"] = $cart_id;
 
 $productId = "";
 if (isset($_POST["products_id"])) {

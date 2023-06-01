@@ -48,8 +48,10 @@
             $result = $mysqli->query($sql);
             $row = $result->fetch_assoc();
             echo "<h3 class='text-end'>Gesamtpreis: " . $row["SUM(price)"] . "€</h3>";
-            echo "<form method='POST' action='../php/scripts/checkoutScript.php'>
+            echo "<form method='POST' action='../php/paypal_integration_php/checkoutScript.php'>
             <input type='submit' name='checkout' value='Zur Kasse' class='btn btn-primary'>
+            <input type='hidden' name='cart_id' value='" . $_SESSION['cart_id'] . "'>
+            <input type='hidden' name='price' value='" . $row["SUM(price)"] . "'>
             </form> ";
 
 
