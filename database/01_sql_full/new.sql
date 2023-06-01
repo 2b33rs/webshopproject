@@ -52,8 +52,8 @@ CREATE TABLE IF NOT EXISTS `webshop`.`products` (
   `subcategorie_id` INT NOT NULL,
   `name` VARCHAR(255) NOT NULL,
   `description` VARCHAR(255) NOT NULL,
-  `price`, `images` DECIMAL(10,2) NOT NULL,
-  `image` BLO, `LOAD_FILE(../_public/images/Produkt_Logos/)`B,
+  `price` DECIMAL(10,2) NOT NULL,
+  `images` BLOP,
   PRIMARY KEY (`products_id`),
   INDEX `fk_products_subcategorie1_idx` (`subcategorie_id` ASC) ,
   CONSTRAINT `fk_products_subcategorie1`
@@ -196,7 +196,7 @@ VALUES (9, 3, 'SpiderOak', 'Kostenloser Cloud-Speicher mit erweiterten Sicherhei
 INSERT INTO `webshop`.`products` (`products_id`, `subcategorie_id`, `name`, `description`, `price`, `images`) 
 VALUES (10, 4, 'Google One', 'Erweiterter Cloud-Speicher von Google', 3.99, `LOAD_FILE(../_public/images/Produkt_Logos/GoogleOne.png)`);
 INSERT INTO `webshop`.`products` (`products_id`, `subcategorie_id`, `name`, `description`, `price`, `images`) 
-VALUES (11, 4, 'Dropbox Plus', 'Erweiterte Funktionen für Dropbox', 9.99, `LOAD_FILE(../_public/images/Produkt_Logos/Dropbox_Icon.svg.png)`);
+VALUES (11, 4, 'Dropbox Plus', 'Erweiterte Funktionen für Dropbox', 9.99, `LOAD_FILE(../_public/images/Produkt_Logos/Dropbox_Icon.png)`);
 INSERT INTO `webshop`.`products` (`products_id`, `subcategorie_id`, `name`, `description`, `price`, `images`) 
 VALUES (12, 4, 'Microsoft 365', 'Umfassendes Produktivitätspaket', 123.12, `LOAD_FILE(../_public/images/Produkt_Logos/Microsoft365.png)`);
 
