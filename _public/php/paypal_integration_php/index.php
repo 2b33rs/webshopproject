@@ -9,7 +9,7 @@ include_once 'dbConnect.php';
 <div class="container">
     <?php 
         // Fetch products from the database 
-        $results = $db->query("SELECT * FROM products WHERE status = 1"); 
+        $results = $db->query("SELECT * FROM products"); 
         while($row = $results->fetch_assoc()){ 
     ?>
         <div class="pro-box">
