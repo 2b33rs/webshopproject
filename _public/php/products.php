@@ -8,6 +8,7 @@
 <main>
     <div class="container" style="min-height:80vh">
 
+    //TODO: BILDER EINFÜGEN und Unbterkategoriern einklappbar machen
 
     <?php 
         $mysqli = new mysqli("localhost", "root", "", "webshop");
