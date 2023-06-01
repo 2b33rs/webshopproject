@@ -98,7 +98,7 @@ CREATE TABLE IF NOT EXISTS `webshop`.`orders` (
 -- Table `webshop`.`cart_products`
 DROP TABLE IF EXISTS `webshop`.`cart_products`;
 CREATE TABLE IF NOT EXISTS `webshop`.`cart_products` (
-  `cart_products_id` INT NOT NULL,
+  `cart_products_id` INT AUTO_INCREMENT NOT NULL,
   `cart_id` INT NOT NULL,
   `products_id` INT NOT NULL,
   PRIMARY KEY (`cart_products_id`),
