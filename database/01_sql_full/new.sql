@@ -194,25 +194,25 @@ INSERT INTO `webshop`.`products` (`products_id`, `subcategorie_id`, `name`, `des
 VALUES (9, 3, 'SpiderOak', 'Kostenloser Cloud-Speicher mit erweiterten Sicherheitsfunktionen', 0.00, `LOAD_FILE(../_public/images/Produkt_Logos/)`);
 
 INSERT INTO `webshop`.`products` (`products_id`, `subcategorie_id`, `name`, `description`, `price`, `images`) 
-VALUES (10, 4, 'Google One', 'Erweiterter Cloud-Speicher von Google', 3.99, `LOAD_FILE(../_public/images/Produkt_Logos/)`);
+VALUES (10, 4, 'Google One', 'Erweiterter Cloud-Speicher von Google', 3.99, `LOAD_FILE(../_public/images/Produkt_Logos/GoogleOne.png)`);
 INSERT INTO `webshop`.`products` (`products_id`, `subcategorie_id`, `name`, `description`, `price`, `images`) 
-VALUES (11, 4, 'Dropbox Plus', 'Erweiterte Funktionen für Dropbox', 9.99, `LOAD_FILE(../_public/images/Produkt_Logos/)`);
+VALUES (11, 4, 'Dropbox Plus', 'Erweiterte Funktionen für Dropbox', 9.99, `LOAD_FILE(../_public/images/Produkt_Logos/Dropbox_Icon.svg.png)`);
 INSERT INTO `webshop`.`products` (`products_id`, `subcategorie_id`, `name`, `description`, `price`, `images`) 
-VALUES (12, 4, 'Microsoft 365', 'Umfassendes Produktivitätspaket', 123.12, `LOAD_FILE(../_public/images/Produkt_Logos/)`);
+VALUES (12, 4, 'Microsoft 365', 'Umfassendes Produktivitätspaket', 123.12, `LOAD_FILE(../_public/images/Produkt_Logos/Microsoft365.png)`);
 
 INSERT INTO `webshop`.`products` (`products_id`, `subcategorie_id`, `name`, `description`, `price`, `images`) 
-VALUES (13, 5, 'iCloud', 'Cloud-Speicher von Apple', 28.99, `LOAD_FILE(../_public/images/Produkt_Logos/)`);
+VALUES (13, 5, 'iCloud', 'Cloud-Speicher von Apple', 28.99, `LOAD_FILE(../_public/images/Produkt_Logos/iCloud.png)`);
 INSERT INTO `webshop`.`products` (`products_id`, `subcategorie_id`, `name`, `description`, `price`, `images`) 
-VALUES (14, 5, 'Box', 'Sicherer Cloud-Speicher', 123.12, `LOAD_FILE(../_public/images/Produkt_Logos/)`);
+VALUES (14, 5, 'Box', 'Sicherer Cloud-Speicher', 123.12, `LOAD_FILE(../_public/images/Produkt_Logos/box.png)`);
 INSERT INTO `webshop`.`products` (`products_id`, `subcategorie_id`, `name`, `description`, `price`, `images`) 
-VALUES (15, 5, 'Amazon Drive', 'Cloud-Speicher von Amazon', 59.99, `LOAD_FILE(../_public/images/Produkt_Logos/)`);
+VALUES (15, 5, 'Amazon Drive', 'Cloud-Speicher von Amazon', 59.99, `LOAD_FILE(../_public/images/Produkt_Logos/AmazonDrive)`);
 
 INSERT INTO `webshop`.`products` (`products_id`, `subcategorie_id`, `name`, `description`, `price`, `images`) 
-VALUES (16, 6, 'Google Workspace', 'Kollaborations- und Produktivitätstools', 1312.12, `LOAD_FILE(../_public/images/Produkt_Logos/)`);
+VALUES (16, 6, 'Google Workspace', 'Kollaborations- und Produktivitätstools', 1312.12, `LOAD_FILE(../_public/images/Produkt_Logos/GoogleWorkspace.jpg)`);
 INSERT INTO `webshop`.`products` (`products_id`, `subcategorie_id`, `name`, `description`, `price`, `images`) 
-VALUES (17, 6, 'Dropbox Business', 'Cloud-Speicher und Kollaboration für Unternehmen', 499.99, `LOAD_FILE(../_public/images/Produkt_Logos/)`);
+VALUES (17, 6, 'Dropbox Business', 'Cloud-Speicher und Kollaboration für Unternehmen', 499.99, `LOAD_FILE(../_public/images/Produkt_Logos/Dropbox_Icon.svg.png)`);
 INSERT INTO `webshop`.`products` (`products_id`, `subcategorie_id`, `name`, `description`, `price`, `images`) 
-VALUES (18, 6, 'Microsoft 365 Business', 'Umfassende Lösung für Unternehmen', 39.99, `LOAD_FILE(../_public/images/Produkt_Logos/)`);
+VALUES (18, 6, 'Microsoft 365 Business', 'Umfassende Lösung für Unternehmen', 39.99, `LOAD_FILE(../_public/images/Produkt_Logos/Microsoft365.png)`);
 
 INSERT INTO `webshop`.`products` (`products_id`, `subcategorie_id`, `name`, `description`, `price`, `images`) 
 VALUES (19, 7, 'Adobe Creative Cloud', 'Kreative Tools für Fotografen', 19.99, `LOAD_FILE(../_public/images/Produkt_Logos/)`);
