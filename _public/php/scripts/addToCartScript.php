@@ -1,13 +1,13 @@
 <?php
-
-//check if the user is still active
 session_start(); 
-if ((time() - $_SESSION['last_activity'] > 5)) {
-    session_start();
-    session_destroy();
-    header("location: ../login.php");
-    exit();
-}
+// //check if the user is still active
+
+// if ((time() - $_SESSION['last_activity'] > 5)) {
+//     session_start();
+//     session_destroy();
+//     header("location: ../login.php");
+//     exit();
+// }
 //get the cart of the user
 $mysqli = new mysqli("localhost", "root", "", "webshop");
 if ($mysqli->connect_errno) {
