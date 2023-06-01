@@ -218,8 +218,8 @@ INSERT INTO `webshop`.`products` (`products_id`, `subcategorie_id`, `name`, `des
 VALUES (19, 7, 'Adobe Creative Cloud', 'Kreative Tools für Fotografen', 19.99, `LOAD_FILE(../_public/images/Produkt_Logos/AdobeCreative.png)`);
 INSERT INTO `webshop`.`products` (`products_id`, `subcategorie_id`, `name`, `description`, `price`, `images`) 
 VALUES (20, 7, 'SmugMug', 'Plattform für Fotografen zur Präsentation ihrer Werke', 13.99, `LOAD_FILE(../_public/images/Produkt_Logos/SmugMug.png)`);
-INSERT INTO `webshop`.`products` (`products_id`, `subcategorie_id`, `name`, `description`, `price`, `images`) 
-VALUES (21, 7, '500px', 'Online-Community für Fotografen', 12.99, `LOAD_FILE(../_public/images/Produkt_Logos/)`);
+INSERT INTO `webshop`.`products` (`products_id`, `subcategorie_id`, `name`, `description`, `price`) 
+VALUES (21, 7, '500px', 'Online-Community für Fotografen', 12.99);
 
 INSERT INTO `webshop`.`products` (`products_id`, `subcategorie_id`, `name`, `description`, `price`, `images`) 
 VALUES (22, 8, 'SoundCloud', 'Plattform für Musiker zum Teilen und Entdecken von Musik', 12.88, `LOAD_FILE(../_public/images/Produkt_Logos/SoundCloud.png)`);
