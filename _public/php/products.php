@@ -8,8 +8,10 @@
 <main>
     <div class="container" style="min-height:80vh">
 
-    //TODO: BILDER EINFÜGEN und Unbterkategoriern einklappbar machen
+    <!-- //TODO: BILDER EINFÜGEN und Unbterkategoriern einklappbar machen -->
 
+
+    <div class="mt-5"></div>
     <?php 
         $mysqli = new mysqli("localhost", "root", "", "webshop");
         if ($mysqli->connect_errno) {
@@ -22,7 +24,7 @@
 
         while($row = $result->fetch_assoc()) {
             $categorie = $row['categroie_id'];
-            echo "<details class='card'>
+            echo "<details class='m-3 shadow rounded'>
             <summary class='card-body fs-4'>
               ".$row['name'];
 
