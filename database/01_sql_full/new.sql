@@ -215,25 +215,25 @@ INSERT INTO `webshop`.`products` (`products_id`, `subcategorie_id`, `name`, `des
 VALUES (18, 6, 'Microsoft 365 Business', 'Umfassende Lösung für Unternehmen', 39.99, `LOAD_FILE(../_public/images/Produkt_Logos/)`);
 
 INSERT INTO `webshop`.`products` (`products_id`, `subcategorie_id`, `name`, `description`, `price`, `images`) 
-VALUES (19, 7, 'Adobe Creative Cloud', 'Kreative Tools für Fotografen', 19.99, `LOAD_FILE(../_public/images/Produkt_Logos/)`);
+VALUES (19, 7, 'Adobe Creative Cloud', 'Kreative Tools für Fotografen', 19.99, `LOAD_FILE(../_public/images/Produkt_Logos/AdobeCreative.png)`);
 INSERT INTO `webshop`.`products` (`products_id`, `subcategorie_id`, `name`, `description`, `price`, `images`) 
-VALUES (20, 7, 'SmugMug', 'Plattform für Fotografen zur Präsentation ihrer Werke', 13.99, `LOAD_FILE(../_public/images/Produkt_Logos/)`);
+VALUES (20, 7, 'SmugMug', 'Plattform für Fotografen zur Präsentation ihrer Werke', 13.99, `LOAD_FILE(../_public/images/Produkt_Logos/SmugMug.png)`);
 INSERT INTO `webshop`.`products` (`products_id`, `subcategorie_id`, `name`, `description`, `price`, `images`) 
 VALUES (21, 7, '500px', 'Online-Community für Fotografen', 12.99, `LOAD_FILE(../_public/images/Produkt_Logos/)`);
 
 INSERT INTO `webshop`.`products` (`products_id`, `subcategorie_id`, `name`, `description`, `price`, `images`) 
-VALUES (22, 8, 'SoundCloud', 'Plattform für Musiker zum Teilen und Entdecken von Musik', 12.88, `LOAD_FILE(../_public/images/Produkt_Logos/)`);
+VALUES (22, 8, 'SoundCloud', 'Plattform für Musiker zum Teilen und Entdecken von Musik', 12.88, `LOAD_FILE(../_public/images/Produkt_Logos/SoundCloud.png)`);
 INSERT INTO `webshop`.`products` (`products_id`, `subcategorie_id`, `name`, `description`, `price`, `images`) 
-VALUES (23, 8, 'Bandcamp', 'Unabhängige Musikplattform für Künstler', 1337.88, `LOAD_FILE(../_public/images/Produkt_Logos/)`);
+VALUES (23, 8, 'Bandcamp', 'Unabhängige Musikplattform für Künstler', 1337.88, `LOAD_FILE(../_public/images/Produkt_Logos/BandCamp.png)`);
 INSERT INTO `webshop`.`products` (`products_id`, `subcategorie_id`, `name`, `description`, `price`, `images`) 
-VALUES (24, 8, 'Spotify for Artists', 'Tools für Musiker zur Verwaltung und Promotion ihrer Musik', 1263.4, `LOAD_FILE(../_public/images/Produkt_Logos/)`5);
+VALUES (24, 8, 'Spotify for Artists', 'Tools für Musiker zur Verwaltung und Promotion ihrer Musik', 1263.4, `LOAD_FILE(../_public/images/Produkt_Logos/Spotify.png)`);
 
 INSERT INTO `webshop`.`products` (`products_id`, `subcategorie_id`, `name`, `description`, `price`, `images`) 
-VALUES (25, 9, 'Vimeo', 'Plattform für Video-Hosting und -Sharing', 1337.88, `LOAD_FILE(../_public/images/Produkt_Logos/)`);
+VALUES (25, 9, 'Vimeo', 'Plattform für Video-Hosting und -Sharing', 1337.88, `LOAD_FILE(../_public/images/Produkt_Logos/Vimeo.png)`);
 INSERT INTO `webshop`.`products` (`products_id`, `subcategorie_id`, `name`, `description`, `price`, `images`) 
-VALUES (26, 9, 'Wistia', 'Video-Hosting-Plattform für Unternehmen', 123.45, `LOAD_FILE(../_public/images/Produkt_Logos/)`);
+VALUES (26, 9, 'Wistia', 'Video-Hosting-Plattform für Unternehmen', 123.45, `LOAD_FILE(../_public/images/Produkt_Logos/Wistia.png)`);
 INSERT INTO `webshop`.`products` (`products_id`, `subcategorie_id`, `name`, `description`, `price`, `images`) 
-VALUES (27, 9, 'Brightcove', 'Video-Plattform für Unternehmen und Content-Ersteller', 12.39, `LOAD_FILE(../_public/images/Produkt_Logos/)`);
+VALUES (27, 9, 'Brightcove', 'Video-Plattform für Unternehmen und Content-Ersteller', 12.39, `LOAD_FILE(../_public/images/Produkt_Logos/BrideCove.png)`);
 
 
 
