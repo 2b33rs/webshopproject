@@ -7,7 +7,7 @@
 define('PAYPAL_ID', 'sb-ruvqn26134406@business.example.com'); 
 define('PAYPAL_SANDBOX', TRUE); //TRUE or FALSE 
  
-define('PAYPAL_RETURN_URL', './success.php'); 
+define('PAYPAL_RETURN_URL', 'http://localhost/webshopproject/_public/php/scripts/paymentSuccess.php'); 
 define('PAYPAL_CANCEL_URL', './cancel.php'); 
 define('PAYPAL_NOTIFY_URL', './ipn.php'); 
 define('PAYPAL_CURRENCY', 'EUR'); 

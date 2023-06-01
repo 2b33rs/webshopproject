@@ -52,5 +52,5 @@ if(!empty($_GET['item_number']) && !empty($_GET['tx']) && !empty($_GET['amt']) &
             <h1 class="error">Your Payment has Failed</h1>
         <?php } ?>
     </div>
-    <a href="index.php" class="btn-link">Back to Products</a>
+    <a href="../scripts/paymentSuccess.php" class="btn-link">Back to Products</a>
 </div>
