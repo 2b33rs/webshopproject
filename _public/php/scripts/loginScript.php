@@ -9,6 +9,7 @@
 		$password = $_GET["password"];
 	}
 
+
 	echo $username;
 
 	$mysqli = new mysqli("localhost", "root", "", "webshop");
@@ -26,6 +27,7 @@
 		//redirect to profile
 		session_start();
 		$_SESSION["username"] = $username;
+		$_SESSION["user_id"] = $result->fetch_assoc()["user_id"];
 		header("location: ../index.php");
 
 	} else {

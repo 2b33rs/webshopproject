@@ -12,6 +12,16 @@
 
     <div class="mt-5"></div>
     <?php
+
+    
+    global $loggedIn;
+    if (isset($_SESSION["username"])) {
+      $loggedIn = true;
+    } else {
+      $loggedIn = false;
+    }
+
+
     $mysqli = new mysqli("localhost", "root", "", "webshop");
     if ($mysqli->connect_errno) {
       die("Verbindung fehlgeschlagen: " . $mysqli->connect_error);
@@ -78,10 +88,21 @@
                   
                   
                   <p class='card-text '>" . $row['description'] . "</p>
-                    <p class='card-text'>" . $row['price'] . "€</p>
-                  <a href='#' class='btn btn-primary'>Zum Warenkorb hinzufügen</a>
+                    <p class='card-text'>" . $row['price'] . "€</p>";
+        if ($GLOBALS['loggedIn']) {
+          echo "<form method='POST' action='../php/scripts/addToCartScript.php'>
+                  <input type='submit' name='add-to-cart' value='Zum Warenkorb hinzufügen' class='btn btn-primary'>
+                  <input type='hidden' name='products_id' value='" . $row['products_id'] . "'>
+                </form> </div>
+                </div>";
+        } else
+        //TODO: Link zu Login Seite MIT ID des Produkts oder wieder zurück zur Seite mit dem Produkt  
+        echo
+           "<a href='../php/login.php' class='btn btn-primary'>Zum Warenkorb hinzufügen (Login)</a>
+
                 </div>
               </div>";
+
       }
     }
     ?>
