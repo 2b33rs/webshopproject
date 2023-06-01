@@ -53,6 +53,7 @@ CREATE TABLE IF NOT EXISTS `webshop`.`products` (
   `name` VARCHAR(255) NOT NULL,
   `description` VARCHAR(255) NOT NULL,
   `price` DECIMAL(10,2) NOT NULL,
+  `image` BLOB,
   PRIMARY KEY (`products_id`),
   INDEX `fk_products_subcategorie1_idx` (`subcategorie_id` ASC) ,
   CONSTRAINT `fk_products_subcategorie1`
