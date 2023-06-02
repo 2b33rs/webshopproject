@@ -5,7 +5,7 @@ if (isset($_GET['searchterm'])) {
     $searchterm = $_GET['searchterm'];
 }
 
-echo "$searchterm";
+//echo "$searchterm";
 
 
 
@@ -16,7 +16,7 @@ if ($mysqli->connect_errno) {
 
 $likeSearchterm = "%" . $searchterm . "%";
 
-$sql = "SELECT * FROM product WHERE name LIKE ?";
+$sql = "SELECT * FROM products WHERE name LIKE ?";
 $statement = $mysqli->prepare($sql);
 $statement->bind_param("s", $likeSearchterm);
 
