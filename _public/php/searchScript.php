@@ -18,9 +18,9 @@ if ($mysqli->connect_errno) {
 
 $likeSearchterm = "%" . $searchterm . "%";
 
-$sql = "SELECT * FROM products WHERE name LIKE ?";
+$sql = "SELECT * FROM products WHERE name LIKE ? OR description LIKE ?";
 $statement = $mysqli->prepare($sql);
-$statement->bind_param("s", $likeSearchterm);
+$statement->bind_param("ss", $likeSearchterm, $likeSearchterm);
 
 $statement->execute();
 $result = $statement->get_result();
