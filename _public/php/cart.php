@@ -1,10 +1,10 @@
 
 <?php
+session_start();
 if($_SESSION['inactive'] = true){
     session_destroy();
     header("Location: login.php");
 }
-
 ?>
 
 
