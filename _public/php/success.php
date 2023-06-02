@@ -1,10 +1,12 @@
 <?php
 // Include configuration file 
-include_once 'config.php';
+include_once './scripts/configPaypalScript.php';
 
 // Include database connection file 
-include_once 'dbConnect.php';
-include_once '../header.php';
+include_once './scripts/dbConnectScript.php';
+include_once './header.php';
+
+
 
 
 $mysqli = new mysqli("localhost", "root", "", "webshop");
@@ -54,5 +56,11 @@ $mysqli->query($sql);
             <h1 class="success">Thank You For Your Order</h1>
        
     </div>
-    <a href="../products.php" class="btn-link">Back to Products</a>
+    <a href="./products.php" class="btn-link">Back to Products</a>
 </div>
+
+
+
+<?php 
+//TODO:Footer unten ins Bild!
+include_once '../html/footer.html' ?>

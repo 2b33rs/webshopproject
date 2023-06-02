@@ -7,9 +7,9 @@
 define('PAYPAL_ID', 'tobi123@personal.com'); 
 define('PAYPAL_SANDBOX', TRUE); //TRUE or FALSE 
  
-define('PAYPAL_RETURN_URL', 'http://localhost/webshopproject/_public/php/paypal_integration_php/success.php'); 
-define('PAYPAL_CANCEL_URL', 'http://localhost/webshopproject/_public/php/paypal_integration_php/cancel.php'); 
-define('PAYPAL_NOTIFY_URL', 'http://localhost/webshopproject/_public/php/paypal_integration_php/ipn.php'); 
+define('PAYPAL_RETURN_URL', 'http://localhost/webshopproject/_public/php/success.php'); 
+define('PAYPAL_CANCEL_URL', 'http://localhost/webshopproject/_public/php/cancel.php'); 
+define('PAYPAL_NOTIFY_URL', 'http://localhost/webshopproject/_public/php/ipn.php'); 
 define('PAYPAL_CURRENCY', 'EUR'); 
  
 // Database configuration 

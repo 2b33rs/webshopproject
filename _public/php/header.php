@@ -1,13 +1,13 @@
 <!doctype html>
 <html lang="de">
 
-<?php include_once '../html/head.html' ?>
+<?php include_once '../html/head.html'?>
 
 <body>
     <header class="header-main bg-dark sticky-top shadow-lg mb-5">
         <div class="container ">
             <nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top">
-                <a href="index.php"><img class="logo" src="../images/logo.png" alt="Fehler" height="80vh"></a>
+                <a href="./index.php"><img class="logo" src="../images/logo.png" alt="Fehler" height="80vh"></a>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"

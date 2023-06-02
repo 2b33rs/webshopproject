@@ -1,9 +1,9 @@
 <?php
 // Include configuration file 
-include_once 'config.php';
+include_once 'configPaypalScript.php';
 
 // Include database connection file 
-include_once 'dbConnect.php';
+include_once 'dbConnectScript.php';
 
 //TODO: include_once '../header.php';
 

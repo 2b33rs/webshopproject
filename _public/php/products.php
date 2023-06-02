@@ -90,7 +90,7 @@
                   <p class='card-text '>" . $row['description'] . "</p>
                     <p class='card-text'>" . $row['price'] . "€</p>";
         if ($GLOBALS['loggedIn']) {
-          echo "<form method='POST' action='../php/scripts/addToCartScript.php'>
+          echo "<form method='POST' action='./scripts/addToCartScript.php'>
                   <input type='submit' name='add-to-cart' value='Zum Warenkorb hinzufügen' class='btn btn-primary'>
                   <input type='hidden' name='products_id' value='" . $row['products_id'] . "'>
                 </form> </div>
@@ -98,7 +98,7 @@
         } else
         //TODO: Link zu Login Seite MIT ID des Produkts oder wieder zurück zur Seite mit dem Produkt  
         echo
-           "<a href='../php/login.php' class='btn btn-primary'>Zum Warenkorb hinzufügen (Login)</a>
+           "<a href='./login.php' class='btn btn-primary'>Zum Warenkorb hinzufügen (Login)</a>
 
                 </div>
               </div>";

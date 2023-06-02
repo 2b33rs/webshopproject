@@ -17,7 +17,7 @@ echo "Hier ist der Text, der für 5 Sekunden angezeigt wird.";
 // Verzögerung für 5 Sekunden (5000 Millisekunden) 
 usleep(500000);
 // Verstecke den Text 
-header("Location: ../../php/cart.php");
+header("Location: ../cart.php");
 
 
 ?>
