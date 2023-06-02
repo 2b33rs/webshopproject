@@ -5,9 +5,8 @@
 </header>
 
 <main>
-  <div class="container" style="min-height:80vh">
+  <div class="container" style="min-height:100svh">
 
-    <!-- //TODO: BILDER EINFÜGEN und Unbterkategoriern einklappbar machen -->
 
 
     <div class="mt-5"></div>
