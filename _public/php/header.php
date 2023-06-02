@@ -1,7 +1,9 @@
+
 <!doctype html>
 <html lang="de">
 
 <?php include_once '../html/head.html'?>
+<?php include_once 'scripts/autoLogoutScript.php'?>
 
 <body>
     <header class="header-main bg-dark sticky-top shadow-lg mb-5">
@@ -45,11 +47,10 @@
     </header>
 
     <?php
-    
 
     //TODO: Statische Variable, ob jemals schonmal Zeit (inaktiv) zulange war
     //wenn nein dann darf Zeit resettet werden
-    $_SESSION['last_activity'] = time();
+    //$_SESSION['last_activity'] = time();
     
     // // Überprüfe, ob die letzte Aktivitätszeit in der Session existiert
     // $_SESSION['inactive'] = false;

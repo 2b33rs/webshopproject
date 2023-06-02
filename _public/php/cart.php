@@ -1,3 +1,13 @@
+
+<?php
+if($_SESSION['inactive'] = true){
+    session_destroy();
+    header("Location: login.php");
+}
+
+?>
+
+
 <?php include_once 'header.php';
 
 ?>
