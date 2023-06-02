@@ -18,16 +18,18 @@ if (isset($_GET['searchterm'])) {
 }
 
 
+
+
 $mysqli = new mysqli("localhost", "root", "", "webshop");
 	if ($mysqli->connect_errno) {
 		die("Verbindung fehlgeschlagen: " . $mysqli->connect_error);
 	}
 
+    $likeSearchterm = "%" . $searchterm . "%";
 
-
-	$sql = "SELECT * FROM product WHERE name LIKE %?%";
+	$sql = "SELECT * FROM product WHERE name LIKE ?";
 	$statement = $mysqli->prepare($sql);
-	$statement->bind_param("s", $searchterm);
+	$statement->bind_param("s", $likeSearchterm);
 
 	$statement->execute();
 	$result = $statement->get_result();
