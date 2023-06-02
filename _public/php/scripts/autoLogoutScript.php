@@ -1,5 +1,5 @@
 <?php
-session_start();
+
  
 // Überprüfen, ob der Benutzer eingeloggt ist
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {

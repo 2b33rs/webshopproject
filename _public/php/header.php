@@ -3,7 +3,7 @@
 <html lang="de">
 
 <?php include_once '../html/head.html'?>
-<?php include_once 'scripts/autoLogoutScript.php'?>
+
 
 <body>
     <header class="header-main bg-dark sticky-top shadow-lg mb-5">
@@ -45,6 +45,10 @@
             </nav>
         </div>
     </header>
+
+
+    <?php include_once 'scripts/autoLogoutScript.php'?>
+
 
     <?php
 
