@@ -1,8 +1,4 @@
 <?php include_once '../php/header.php' ?>
-<header>
-  <link rel="stylesheet" href="../CSS/products.css">
-  <script src="../JavaScript/products.js"></script>
-</header>
 
 <?php
 
