@@ -60,7 +60,7 @@ $mysqli = new mysqli("localhost", "root", "", "webshop");
       }
 
 
-
+?>
 
     <?php include_once '../html/footer.html' ?>
 
