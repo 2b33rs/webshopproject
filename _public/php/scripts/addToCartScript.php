@@ -1,26 +1,6 @@
-<!--Von Jonas hinzugefügt Test wegen der Zeit-->
-<?php 
-session_start(); 
-if(time()-$_SESSION["timestamp"]>5 || $_SESSION["inactive"] == 2){
-    session_destroy();
-    header("Location: ../login.php");
-    exit();
-}
-?>
-
-
-
+<?php include_once './checkActivity.php' ?>
 
 <?php
-
-// //check if the user is still active
-
-// if ((time() - $_SESSION['last_activity'] > 5)) {
-//     session_start();
-//     session_destroy();
-//     header("location: ../login.php");
-//     exit();
-// }
 //get the cart of the user
 $mysqli = new mysqli("localhost", "root", "", "webshop");
 if ($mysqli->connect_errno) {

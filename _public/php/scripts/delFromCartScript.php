@@ -1,14 +1,5 @@
 <?php
-
-//get the cart of the user
-session_start();
-
-//Wenn zu lange weg dann erst einloggen:
-if(time()-$_SESSION["timestamp"]>5 || $_SESSION["inactive"] == 2){
-    session_destroy();
-    header("Location: ../login.php");
-    exit();
-}
+include_once './checkActivity.php';
 
 $mysqli = new mysqli("localhost", "root", "", "webshop");
 if ($mysqli->connect_errno) {

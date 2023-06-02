@@ -5,15 +5,8 @@ include_once 'configPaypalScript.php';
 // Include database connection file 
 include_once 'dbConnectScript.php';
 
-//TODO: include_once '../header.php';
-
-session_start();
-if(time()-$_SESSION["timestamp"]>5 || $_SESSION["inactive"] == 2){
-    session_destroy();
-    header("Location: ../login.php");
-    exit();
-}
-
+//Include Zeitprüfen
+include_once './checkActivity.php';
 
 ?>
 
