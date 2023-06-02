@@ -1,8 +1,7 @@
-
 <?php
 session_start();
 
-if(time()-$_SESSION["timestamp"]>5 || $_SESSION["inactive"] == 2){
+if (time() - $_SESSION["timestamp"] > 10 || $_SESSION["inactive"] == 2) {
     session_destroy();
     header("Location: login.php");
 }
@@ -17,24 +16,24 @@ if(time()-$_SESSION["timestamp"]>5 || $_SESSION["inactive"] == 2){
     <div class="container" style="min-height:100svh">
 
         <?php
-     
+
         $mysqli = new mysqli("localhost", "root", "", "webshop");
         if ($mysqli->connect_errno) {
             die("Verbindung fehlgeschlagen: " . $mysqli->connect_error);
         }
-        
+
         $sql = "SELECT * FROM cart WHERE user_id = '" . $_SESSION["user_id"] . "'";
         $result = $mysqli->query($sql);
         $row = $result->fetch_assoc();
         if (!$result->num_rows == 0) {
             $cart_id = $row["cart_id"];
             $sql = "SELECT products_id FROM cart_products WHERE cart_id = '" . $cart_id . "'";
-        
+
             $result = $mysqli->query($sql);
-    
+
         }
-        
-        if ($result->num_rows == 0){
+
+        if ($result->num_rows == 0) {
             echo "<h1 class='text-center mt-5'>Der Warenkorb ist leer</h1>";
             echo "<img src='../images/cart.svg' class='img-fluid mx-auto d-block ' alt='' style='height: 30vh'>";
         }
@@ -56,13 +55,13 @@ if(time()-$_SESSION["timestamp"]>5 || $_SESSION["inactive"] == 2){
                 <p class='card-text'>" . $rowPro['price'] . "€</p>
                 </div>";
 
-                echo "<form method='POST' action='../php/scripts/delFromCartScript.php'>
+            echo "<form method='POST' action='../php/scripts/delFromCartScript.php'>
                 <input type='submit' name='del-from-cart' value='Vom Warenkorb entfernen' class='btn btn-outline-danger btn-sm delete-btn'>
                 <input type='hidden' name='products_id' value='" . $row['products_id'] . "'>
                 <input type='hidden' name='cart_id' value='" . $cart_id . "'>
               </form> 
               </div>
-                </div>";    
+                </div>";
         }
 
         if (!$result->num_rows == 0) {
@@ -79,7 +78,7 @@ if(time()-$_SESSION["timestamp"]>5 || $_SESSION["inactive"] == 2){
 
         ?>
 
-            
+
 
 
     </div>
