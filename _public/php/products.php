@@ -34,11 +34,11 @@
       $categorie = $row['categroie_id'];
       echo "<details class='m-3 shadow rounded'>
             <summary class='card-body fs-4'>
-              " . $row['name'];
+              " . $row['name'] . "</summary>";
 
       getSubCategorie($categorie);
 
-      echo "</summary>
+      echo "
           </details>";
     }
 
