@@ -1,4 +1,4 @@
-<?php include_once '../header.php' ?>
+<?php include_once './header.php' ?>
 
 <?php
 
@@ -53,4 +53,4 @@ while ($row = $result->fetch_assoc()) {
 
 ?>
 
-<?php include_once '../../html/footer.html' ?>
+<?php include_once '../html/footer.html' ?>
