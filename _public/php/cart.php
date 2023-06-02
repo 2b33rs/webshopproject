@@ -1,7 +1,8 @@
 
 <?php
 session_start();
-if($_SESSION['inactive'] = true){
+
+if(time()-$_SESSION["timestamp"]>5 || $_SESSION["inactive"] == 2){
     session_destroy();
     header("Location: login.php");
 }

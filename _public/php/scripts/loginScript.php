@@ -28,11 +28,16 @@
 		session_start();
 		$_SESSION["username"] = $username;
 		$_SESSION["user_id"] = $result->fetch_assoc()["user_id"];
-		header("location: ../index.php");
+		//header("location: ../index.php");
+		
+		//Test von Jonas:
+		header("location: ../setInactive.php");
 
 	} else {
 		//redirect to login page
 		header("location: ../login.php");
+
+		
 
 
 	}

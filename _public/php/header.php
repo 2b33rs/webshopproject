@@ -52,6 +52,9 @@
 
     <?php
 
+
+
+
     //TODO: Statische Variable, ob jemals schonmal Zeit (inaktiv) zulange war
     //wenn nein dann darf Zeit resettet werden
     //$_SESSION['last_activity'] = time();
