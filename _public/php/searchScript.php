@@ -7,6 +7,14 @@ if (isset($_GET['searchterm'])) {
     $searchterm = $_GET['searchterm'];
 }
 
+
+global $loggedIn;
+    if (isset($_SESSION["username"])) {
+      $loggedIn = true;
+    } else {
+      $loggedIn = false;
+    }
+
 //echo "$searchterm";
 
 
