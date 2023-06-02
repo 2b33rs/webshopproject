@@ -7,7 +7,8 @@
 <main>
   <div class="container" style="min-height:100svh">
 
-
+    <h1 class="h1 text-center mt-5">Unsere Produkte.</h1>
+    <p class="lead text-center">Immer genau das richtige für Dich.</p>
 
     <div class="mt-5"></div>
     <?php
