@@ -1,3 +1,4 @@
+<script src="../../JavaScript/test.js"></script>
 	<?php
 
 	$username = "";
@@ -29,7 +30,7 @@
 		$_SESSION["username"] = $username;
 		$_SESSION["user_id"] = $result->fetch_assoc()["user_id"];
 		//header("location: ../index.php");
-		
+		echo '<script>resetTimer();</script>';
 		//Test von Jonas:
 		header("location: ../setInactive.php");
 
