@@ -11,7 +11,6 @@ if (isset($_SESSION['timestamp']) && (time() - $_SESSION['timestamp'] > 600)) {
 
 $_SESSION['timestamp'] = time();
 
-//include_once '../php/scripts/setActivity.php';
 include_once '../html/head.html';
 ?>
 

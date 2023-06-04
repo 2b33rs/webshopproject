@@ -30,8 +30,6 @@ if (!isset($_SESSION['username'])) {
 
     
 
-    //$results = $db->query("SELECT * FROM products");
-    
         ?>
         <div class="pro-box">
             

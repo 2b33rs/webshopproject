@@ -62,5 +62,4 @@ $mysqli->query($sql);
 
 
 <?php 
-//TODO:Footer unten ins Bild!
 include_once '../html/footer.html' ?>
