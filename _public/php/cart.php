@@ -1,15 +1,7 @@
-<?php
-session_start();
-
-if (time() - $_SESSION["timestamp"] > 10 || $_SESSION["inactive"] === 2) {
-    session_destroy();
+<?php include_once 'header.php';
+if (!isset($_SESSION['username'])) {
     header("Location: login.php");
 }
-?>
-
-
-<?php include_once 'header.php';
-
 ?>
 <main>
 
@@ -69,7 +61,7 @@ if (time() - $_SESSION["timestamp"] > 10 || $_SESSION["inactive"] === 2) {
             $result = $mysqli->query($sql);
             $row = $result->fetch_assoc();
             echo "<h3 class='text-end'>Gesamtpreis: " . $row["SUM(price)"] . "€</h3>";
-            echo "<form method='POST' action='./scripts/checkoutScript.php'>
+            echo "<form method='POST' action='./checkout.php'>
             <input type='submit' name='checkout' value='Zur Kasse' class='btn btn-primary'>
             <input type='hidden' name='cart_id' value='" . $cart_id . "'>
             <input type='hidden' name='price' value='" . $row["SUM(price)"] . "'>

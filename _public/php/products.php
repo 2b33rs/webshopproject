@@ -1,4 +1,3 @@
-<?php include_once './scripts/setActivity.php'?>
 <?php include_once '../php/header.php' ?>
 
 <header>
@@ -98,7 +97,6 @@
                 </form> </div>
                 </div>";
         } else
-        //TODO: Link zu Login Seite MIT ID des Produkts oder wieder zurück zur Seite mit dem Produkt  
         echo
            "<a href='./login.php' class='btn btn-primary'>Zum Warenkorb hinzufügen (Login)</a>
 
