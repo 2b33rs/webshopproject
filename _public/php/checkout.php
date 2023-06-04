@@ -1,12 +1,18 @@
 <?php
+include_once './header.php';
+
 // Include configuration file 
-include_once 'configPaypalScript.php';
+include_once './scripts/configPaypalScript.php';
 
 // Include database connection file 
-include_once 'dbConnectScript.php';
+include_once './scripts/dbConnectScript.php';
 
-//Include Zeitprüfen
-//include_once './checkActivity.php';
+
+if (!isset($_SESSION['username'])) {
+    header("Location: login.php");
+}
+
+
 
 ?>
 

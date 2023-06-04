@@ -1,7 +1,16 @@
 <?php
 session_start();
-include_once './setActivity.php';
-checkLogoutStatus();
+if (isset($_SESSION['timestamp']) && (time() - $_SESSION['timestamp'] > 6)) {
+    session_unset();
+    session_destroy();
+}
+$_SESSION['timestamp'] = time();
+
+if (!isset($_SESSION['username'])) {
+    header("Location: ../login.php");
+    exit;
+}
+
 
 
 //get the cart of the user

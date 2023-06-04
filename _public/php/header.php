@@ -1,10 +1,17 @@
-
 <!doctype html>
 <html lang="de">
 
-<?php 
+<?php
 session_start();
-include_once '../php/scripts/setActivity.php';
+
+if (isset($_SESSION['timestamp']) && (time() - $_SESSION['timestamp'] > 6)) {
+    session_unset();
+    session_destroy();
+}
+
+$_SESSION['timestamp'] = time();
+
+//include_once '../php/scripts/setActivity.php';
 include_once '../html/head.html';
 ?>
 
@@ -27,7 +34,7 @@ include_once '../html/head.html';
                         <li class="nav-item"><a class="nav-link" href="products.php">Produkte</a></li>
 
                         <?php
-                        
+
                         if (isset($_SESSION['username'])) {
                             echo '<li class="nav-item"><a class="nav-link" href="cart.php">Warenkorb von ' . $_SESSION["username"] . '</a></li>';
                         }
