@@ -1,5 +1,4 @@
 
-<?php include_once './scripts/setActivity.php'?>
 <?php include_once './header.php' ?>
 
 <div class="container">

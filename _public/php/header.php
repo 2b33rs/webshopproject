@@ -2,7 +2,11 @@
 <!doctype html>
 <html lang="de">
 
-<?php include_once '../html/head.html'?>
+<?php 
+session_start();
+include_once '../php/scripts/setActivity.php';
+include_once '../html/head.html';
+?>
 
 
 <body>
@@ -23,7 +27,7 @@
                         <li class="nav-item"><a class="nav-link" href="products.php">Produkte</a></li>
 
                         <?php
-                        session_start();
+                        
                         if (isset($_SESSION['username'])) {
                             echo '<li class="nav-item"><a class="nav-link" href="cart.php">Warenkorb von ' . $_SESSION["username"] . '</a></li>';
                         }
@@ -37,7 +41,7 @@
                         if (!isset($_SESSION['username'])) {
                             echo '<li class="nav-item"><a class="nav-link" href="login.php"><i class="bi bi-person-fill"></i>Login</a></li>';
                         } else {
-                            echo '<li class="nav-item"><a class="nav-link" href="scripts/logoutScript.php"><i class="bi bi-box-arrow-right"></i></i>Logout</a></li>';
+                            echo '<li class="nav-item"><a class="nav-link" href="scripts/logout.php"><i class="bi bi-box-arrow-right"></i></i>Logout</a></li>';
                         }
                         ?>
                     </ul>
@@ -45,35 +49,3 @@
             </nav>
         </div>
     </header>
-
-
-    <?php include_once 'scripts/autoLogoutScript.php'?>
-
-
-    <?php
-
-
-
-
-    //TODO: Statische Variable, ob jemals schonmal Zeit (inaktiv) zulange war
-    //wenn nein dann darf Zeit resettet werden
-    //$_SESSION['last_activity'] = time();
-    
-    // // Überprüfe, ob die letzte Aktivitätszeit in der Session existiert
-    // $_SESSION['inactive'] = false;
-    
-    // //session_start();
-    
-    // if (isset($_SESSION['last_activity']) && (time() - $_SESSION['last_activity'] > 900)) {
-    //     // Benutzer ist nicht mehr aktiv
-    //     // Führe hier deine entsprechenden Aktionen aus, z. B. Abmeldung des Benutzers oder Weiterleitung auf eine andere Seite
-    //     $_SESSION['inactive'] = true;
-    // } else {
-    //     // Benutzer ist noch aktiv
-    //     // Aktualisiere den Zeitstempel
-    //     $_SESSION['last_activity'] = time();
-    //     $_SESSION['inactive'] = false;
-    
-    // }
-    
-    ?>

@@ -1,5 +1,5 @@
 <?php
-include_once './checkActivity.php';
+//include_once './checkActivity.php';
 
 $mysqli = new mysqli("localhost", "root", "", "webshop");
 if ($mysqli->connect_errno) {

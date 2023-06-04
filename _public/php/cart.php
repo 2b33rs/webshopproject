@@ -1,15 +1,12 @@
-<?php
-session_start();
-
-if (time() - $_SESSION["timestamp"] > 10 || $_SESSION["inactive"] === 2) {
-    session_destroy();
-    header("Location: login.php");
-}
-?>
-
-
 <?php include_once 'header.php';
+if (isset($_COOKIE['logout_time'])) {
+    checkLogoutStatus("./login.php");
+    setLogoutCookie();
 
+} else {
+    setLogoutCookie();
+
+}
 ?>
 <main>
 

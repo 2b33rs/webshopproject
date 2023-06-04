@@ -1,6 +1,9 @@
-<?php include_once './checkActivity.php' ?>
-
 <?php
+session_start();
+include_once './setActivity.php';
+checkLogoutStatus();
+
+
 //get the cart of the user
 $mysqli = new mysqli("localhost", "root", "", "webshop");
 if ($mysqli->connect_errno) {

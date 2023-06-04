@@ -6,7 +6,7 @@ include_once 'configPaypalScript.php';
 include_once 'dbConnectScript.php';
 
 //Include Zeitprüfen
-include_once './checkActivity.php';
+//include_once './checkActivity.php';
 
 ?>
 
