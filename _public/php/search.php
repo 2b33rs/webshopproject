@@ -7,10 +7,13 @@
       <h1 class="fw-bold pt-3 pt-xl-5 pb-2 pb-xl-3">Suche</h1>
 
       <form class="row g-3" action="./search.php" method="GET">
-        <div class="form-floating mb-3">
-          <input type="text" id="searchterm" name="searchterm" autofocus autocomplete="on" tabindex="1"
+        <div class="col-auto">
+          <input class="form-control-lg" type="text" id="searchterm" name="searchterm" autofocus autocomplete="on" tabindex="1"
             placeholder="Suche...">
-          <button class="btn btn-primary" type="submit" name="submit" value="Suche" tabindex="3">Suchen</button>
+          
+        </div>
+        <div class="col-auto">
+        <button class="btn-lg btn-primary" type="submit" name="submit" value="Suche" tabindex="3">Suchen</button>
         </div>
       </form>
     </div>
