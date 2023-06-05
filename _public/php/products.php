@@ -6,7 +6,7 @@
 </header>
 
 <main>
-  <div class="container" style="min-height:100svh">
+  <div class="container" style="min-height: 67svh;">
 
     <h1 class="h1 text-center mt-5">Unsere Produkte.</h1>
     <p class="lead text-center">Immer genau das richtige für Dich.</p>

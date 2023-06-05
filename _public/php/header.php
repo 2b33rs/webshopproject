@@ -16,7 +16,7 @@ include_once '../html/head.html';
 
 
 <body>
-    <header class="header-main bg-dark sticky-top shadow-lg mb-5">
+    <header class="header-main bg-dark sticky-top shadow-lg mb-5" style="min-height: 7svh;">
         <div class="container ">
             <nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top">
                 <a href="./index.php"><img class="logo" src="../images/logo.png" alt="Fehler" height="80vh"></a>
