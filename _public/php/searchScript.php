@@ -1,5 +1,5 @@
 <?php include_once './header.php' ?>
-
+<?php include_once '../html/search.html' ?>
 <?php
 
 $searchterm = "";

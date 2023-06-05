@@ -40,7 +40,7 @@ include_once '../html/head.html';
                         ?>
                     </ul>
                     <ul id="nav_2" class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link" href="search.php"><i class="bi bi-search"></i>
+                        <li class="nav-item"><a class="nav-link" href="searchScript.php"><i class="bi bi-search"></i>
                                 Suche</a> </li>
 
                         <?php
