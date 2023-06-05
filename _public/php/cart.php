@@ -75,4 +75,3 @@ if (!isset($_SESSION['username'])) {
 
     </div>
 </main>
-<?php include_once '../html/footer.html' ?>

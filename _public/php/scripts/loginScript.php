@@ -1,4 +1,4 @@
-<script src="../../JavaScript/test.js"></script>
+
 	<?php
 
 	$username = "";

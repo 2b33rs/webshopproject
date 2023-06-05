@@ -1,12 +1,7 @@
 <?php
-// Include configuration file 
 include_once './scripts/configPaypalScript.php';
-
-// Include database connection file 
 include_once './scripts/dbConnectScript.php';
 include_once './header.php';
-
-
 
 
 $mysqli = new mysqli("localhost", "root", "", "webshop");
@@ -48,6 +43,7 @@ $mysqli->query($sql);
 
 
 ?>
+<main>
 <div class="container">
     <div class="status">
      
@@ -58,8 +54,7 @@ $mysqli->query($sql);
     </div>
     <a href="./products.php" class="btn-link">Back to Products</a>
 </div>
+</main>
 
 
-
-<?php 
-include_once '../html/footer.html' ?>
+<?php include_once '../html/footer.html' ?>

@@ -1,6 +1,7 @@
 <?php include_once './header.php' ?>
-<div class="container" style="min-height: 67svh;">
-  <main>
+<main>
+  <div class="container" style="min-height: 67svh;">
+
 
     <!-- Suche -->
     <div class="card-body">
@@ -8,12 +9,12 @@
 
       <form class="row g-3" action="./search.php" method="GET">
         <div class="col-auto">
-          <input class="form-control-lg" type="text" id="searchterm" name="searchterm" autofocus autocomplete="on" tabindex="1"
-            placeholder="Suche...">
-          
+          <input class="form-control-lg" type="text" id="searchterm" name="searchterm" autofocus autocomplete="on"
+            tabindex="1" placeholder="Suche...">
+
         </div>
         <div class="col-auto">
-        <button class="btn-lg btn-primary" type="submit" name="submit" value="Suche" tabindex="3">Suchen</button>
+          <button class="btn-lg btn-primary" type="submit" name="submit" value="Suche" tabindex="3">Suchen</button>
         </div>
       </form>
     </div>
@@ -32,8 +33,6 @@
       } else {
         $loggedIn = false;
       }
-
-
       $mysqli = new mysqli("localhost", "root", "", "webshop");
       if ($mysqli->connect_errno) {
         die("Verbindung fehlgeschlagen: " . $mysqli->connect_error);
@@ -53,8 +52,6 @@
                   <div class='card-body'>
                   <img src='" . $row['images'] . "' class='card-img-top img-fluid' style='max-height: 20vh; object-fit:contain;'>
                     <h5 class='card-title'>" . $row['name'] . "</h5>
-                    
-                    
                     <p class='card-text '>" . $row['description'] . "</p>
                       <p class='card-text'>" . $row['price'] . "€</p>";
         if ($GLOBALS['loggedIn']) {
@@ -66,10 +63,8 @@
         } else
           echo
             "<a href='./login.php' class='btn btn-primary'>Zum Warenkorb hinzufügen (Login)</a>
-  
                   </div>
                 </div>";
-
       }
     } else {
       echo "<div class=' shadow p-3 mb-5 bg-white rounded' >
@@ -77,14 +72,8 @@
       <h5 class='card-title'><i class='bi bi-emoji-frown'></i> Bitte gebe einen Suchbegriff ein.</h5>
       </div>";
     }
-
-
-
-
     ?>
 
-  </main>
-</div>
-
-
+  </div>
+</main>
 <?php include_once '../html/footer.html' ?>

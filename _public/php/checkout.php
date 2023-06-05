@@ -12,11 +12,9 @@ if (!isset($_SESSION['username'])) {
     header("Location: login.php");
 }
 
-
-
 ?>
-
-<div class="container">
+<main>
+<div class="container" style="min-height: 67svh;">
     <?php
     // Fetch products from the database 
     $cart_id = 0;
@@ -67,3 +65,5 @@ if (!isset($_SESSION['username'])) {
         </div>
  
 </div>
+</main>
+<?php include_once '../html/footer.html' ?>
