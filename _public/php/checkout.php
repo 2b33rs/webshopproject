@@ -34,8 +34,9 @@ if (!isset($_SESSION['username'])) {
         }
 
         ?>
-
+<div class="mb-4">
         <h2>Checkout</h2>
+        </div>
         <div class="row h-100">
             <div class="col-md-6 d-flex align-items-stretch">
             <div class="row">    
