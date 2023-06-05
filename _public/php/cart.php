@@ -5,7 +5,7 @@ if (!isset($_SESSION['username'])) {
 ?>
 <main>
 
-    <div class="container" style="min-height:100svh">
+    <div class="container" style="min-height: 67svh;">
 
         <?php
 
@@ -75,3 +75,5 @@ if (!isset($_SESSION['username'])) {
 
     </div>
 </main>
+
+<?php include_once '../html/footer.html' ?>

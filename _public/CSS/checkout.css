@@ -1,0 +1,22 @@
+
+.summary table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.summary table td {
+    padding: 5px;
+    text-align: left;
+    border:none;
+}
+.summary table td:first-child {
+    width: 50%;
+}
+.summary table td:last-child {
+    text-align: right;
+}
+.summary table tr:nth-last-child(3) td {
+    padding-bottom: 20px;
+}
+.summary table tr:last-child td {
+    padding-top: 5%;
+}
