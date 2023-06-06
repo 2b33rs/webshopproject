@@ -8,8 +8,6 @@ $password = "";
 if (isset($_POST["password"])) {
 	$password = $_POST["password"];
 }
-
-
 echo $username;
 
 $mysqli = new mysqli("localhost", "root", "", "webshop");
@@ -36,9 +34,5 @@ if ($result->num_rows == 1) {
 } else {
 	//redirect to login page
 	header("location: ../login.php");
-
-
-
-
 }
 ?>
