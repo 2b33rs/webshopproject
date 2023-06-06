@@ -1,12 +1,12 @@
 <?php
 
 $username = "";
-if (isset($_GET["username"])) {
-	$username = $_GET["username"];
+if (isset($_POST["username"])) {
+	$username = $_POST["username"];
 }
 $password = "";
-if (isset($_GET["password"])) {
-	$password = $_GET["password"];
+if (isset($_POST["password"])) {
+	$password = $_POST["password"];
 }
 
 
