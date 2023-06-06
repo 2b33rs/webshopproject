@@ -40,7 +40,7 @@ if (!isset($_SESSION['username'])) {
         <div class="row h-100">
             <div class="col-md-6 d-flex align-items-stretch">
                 <div class="row w-100">
-                    <div class="card shadow w-100 bg-white rounded">
+                    <div class="card shadow w-100 p-2 bg-white rounded">
                         <div class="card-body">
                             <h3 class="card-title">Rechnungsadresse</h3>
                             <p><br></p>
@@ -69,8 +69,11 @@ if (!isset($_SESSION['username'])) {
 
                             if ($result->num_rows > 0) {
                                 $row = $result->fetch_assoc();
+                                $address = $row["address"];
+                                $address_with_line_break = str_replace(",", "<br>", $address);
+                                
                                 echo "<p class='card-text'>" . $row["firstname"] . " " . $row["name"] . "<br>";
-                                echo $row["address"] . "</p>";
+                                echo $address_with_line_break . "</p>";
                             } else {
                                 echo "<p class='card-text'>Keine Rechnungsadresse gefunden.</p>";
                             }
@@ -78,9 +81,9 @@ if (!isset($_SESSION['username'])) {
                         </div>
                     </div>
 
-                    <div class="card shadow w-100 bg-white rounded">
+                    <div class="card shadow w-100 p-2 bg-white rounded">
                         <div class="card-body">
-                            <h3 class="card-title">Bezahlmethode</h3>
+                            <h3 class="card-title pb-2">Bezahlmethode</h3>
                             <form action="<?php echo PAYPAL_URL; ?>" method="post">
                                 <!-- Identify your business so that you can collect the payments. -->
                                 <input type="hidden" name="business" value="<?php echo PAYPAL_ID; ?>">
@@ -109,7 +112,7 @@ if (!isset($_SESSION['username'])) {
             <div class="col-md-6 d-flex align-items-stretch">
                 <div class="card shadow w-100 p-3 bg-white rounded summary">
                     <div class="card-body">
-                        <h2 class="card-title">Warenkorb</h2>
+                        <h3 class="card-title">Warenkorb</h3>
                         <table class="table">
                             <?php
                             // Berechnung der Steuern
