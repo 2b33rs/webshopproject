@@ -9,28 +9,28 @@ if (isset($_POST["submit"])) {
     $address = $_POST["address"];
 }
 
-    $mysqli = new mysqli("localhost", "root", "", "webshop");
-    if ($mysqli->connect_errno) {
-        die("Verbindung fehlgeschlagen: " . $mysqli->connect_error);
-    }
+$mysqli = new mysqli("localhost", "root", "", "webshop");
+if ($mysqli->connect_errno) {
+    die("Verbindung fehlgeschlagen: " . $mysqli->connect_error);
+}
 
-    $sql = "INSERT INTO user (username, password, name, firstname, email, address) VALUES (?, ?, ?, ?, ?, ?)";
-    $statement = $mysqli->prepare($sql);
-    $statement->bind_param("ssssss",$username,$password,$name,$firstname,$email,$address);
-    //echo $statement->get_result();
+$sql = "INSERT INTO user (username, password, name, firstname, email, address) VALUES (?, ?, ?, ?, ?, ?)";
+$statement = $mysqli->prepare($sql);
+$statement->bind_param("ssssss", $username, $password, $name, $firstname, $email, $address);
+//echo $statement->get_result();
 
-    $statement->execute();
-    
-    $result = $statement->get_result();
+$statement->execute();
 
-    if ($result->num_rows > 0) {
-        echo "User already exists";
-    } else {
-        echo "User created";
-        echo "<br>";
-        echo $result;
-    }
-    $statement->close();
-    //redirect to login
-    header("Location: ../login.php");
+$result = $statement->get_result();
+
+if ($result->num_rows > 0) {
+    echo "User already exists";
+} else {
+    echo "User created";
+    echo "<br>";
+    echo $result;
+}
+$statement->close();
+//redirect to login
+header("Location: ../login.php");
 ?>

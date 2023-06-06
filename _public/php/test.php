@@ -16,7 +16,7 @@
     <script src="https://www.paypal.com/sdk/js?client-id=test&currency=USD"></script>
 
     <script src="../JavaScript/paypalButtonScript.js">
-        
+
     </script>
 </body>
 

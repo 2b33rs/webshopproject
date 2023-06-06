@@ -34,77 +34,77 @@ if (!isset($_SESSION['username'])) {
         }
 
         ?>
-<div class="mb-4">
-        <h2>Checkout</h2>
+        <div class="mb-4">
+            <h2>Checkout</h2>
         </div>
         <div class="row h-100">
             <div class="col-md-6 d-flex align-items-stretch">
-            <div class="row">    
-            <div class="card shadow w-100 bg-white rounded">
-                    <div class="card-body">
-                        <h3 class="card-title">Rechnungsadresse</h3>
-                        <p><br></p>
+                <div class="row">
+                    <div class="card shadow w-100 bg-white rounded">
+                        <div class="card-body">
+                            <h3 class="card-title">Rechnungsadresse</h3>
+                            <p><br></p>
 
-                        <?php
-                        // Datenbankverbindung herstellen
-                        $servername = "localhost";
-                        $username = "root";
-                        $password = "";
-                        $dbname = "webshop";
+                            <?php
+                            // Datenbankverbindung herstellen
+                            $servername = "localhost";
+                            $username = "root";
+                            $password = "";
+                            $dbname = "webshop";
 
-                        // Verbindung herstellen
-                        $conn = new mysqli($servername, $username, $password, $dbname);
+                            // Verbindung herstellen
+                            $conn = new mysqli($servername, $username, $password, $dbname);
 
-                        // Prüfen, ob die Verbindung erfolgreich war
-                        if ($conn->connect_error) {
-                            die("Verbindung fehlgeschlagen: " . $conn->connect_error);
-                        }
+                            // Prüfen, ob die Verbindung erfolgreich war
+                            if ($conn->connect_error) {
+                                die("Verbindung fehlgeschlagen: " . $conn->connect_error);
+                            }
 
-                        // Benutzername aus der Session-Datenbanktabelle abrufen
-                        $session_username = $_SESSION['username'];
+                            // Benutzername aus der Session-Datenbanktabelle abrufen
+                            $session_username = $_SESSION['username'];
 
-                        // Query ausführen, um die Rechnungsadresse basierend auf dem Benutzernamen abzurufen
-                        $sql = "SELECT * FROM user WHERE username = '" . $_SESSION["username"] . "'";
-                        $result = $conn->query($sql);
+                            // Query ausführen, um die Rechnungsadresse basierend auf dem Benutzernamen abzurufen
+                            $sql = "SELECT * FROM user WHERE username = '" . $_SESSION["username"] . "'";
+                            $result = $conn->query($sql);
 
-                        if ($result->num_rows > 0) {
-                            $row = $result->fetch_assoc();
-                            echo "<p class='card-text'>" . $row["firstname"] . " " . $row["name"] . "<br>";
-                            echo $row["address"] . "</p>";
-                        } else {
-                            echo "<p class='card-text'>Keine Rechnungsadresse gefunden.</p>";
-                        }
-                        ?>
-                    </div>
+                            if ($result->num_rows > 0) {
+                                $row = $result->fetch_assoc();
+                                echo "<p class='card-text'>" . $row["firstname"] . " " . $row["name"] . "<br>";
+                                echo $row["address"] . "</p>";
+                            } else {
+                                echo "<p class='card-text'>Keine Rechnungsadresse gefunden.</p>";
+                            }
+                            ?>
+                        </div>
                     </div>
 
                     <div class="card shadow w-100 bg-white rounded">
-                    <div class="card-body">
-                        <h3 class="card-title">Bezahlmethode</h3>
-                        <form action="<?php echo PAYPAL_URL; ?>" method="post">
-                            <!-- Identify your business so that you can collect the payments. -->
-                            <input type="hidden" name="business" value="<?php echo PAYPAL_ID; ?>">
+                        <div class="card-body">
+                            <h3 class="card-title">Bezahlmethode</h3>
+                            <form action="<?php echo PAYPAL_URL; ?>" method="post">
+                                <!-- Identify your business so that you can collect the payments. -->
+                                <input type="hidden" name="business" value="<?php echo PAYPAL_ID; ?>">
 
-                            <!-- Specify a Buy Now button. -->
-                            <input type="hidden" name="cmd" value="_xclick">
+                                <!-- Specify a Buy Now button. -->
+                                <input type="hidden" name="cmd" value="_xclick">
 
-                            <!-- Specify details about the item that buyers will purchase. -->
-                            <input type="hidden" name="item_name" value="<?php echo "Warenkorb"; ?>">
-                            <input type="hidden" name="item_number" value="<?php echo $cart_id; ?>">
-                            <input type="hidden" name="amount" value="<?php echo $total_price; ?>">
-                            <input type="hidden" name="currency_code" value="<?php echo PAYPAL_CURRENCY; ?>">
+                                <!-- Specify details about the item that buyers will purchase. -->
+                                <input type="hidden" name="item_name" value="<?php echo "Warenkorb"; ?>">
+                                <input type="hidden" name="item_number" value="<?php echo $cart_id; ?>">
+                                <input type="hidden" name="amount" value="<?php echo $total_price; ?>">
+                                <input type="hidden" name="currency_code" value="<?php echo PAYPAL_CURRENCY; ?>">
 
-                            <!-- Specify URLs -->
-                            <input type="hidden" name="return" value="<?php echo PAYPAL_RETURN_URL; ?>">
-                            <input type="hidden" name="cancel_return" value="<?php echo PAYPAL_CANCEL_URL; ?>">
+                                <!-- Specify URLs -->
+                                <input type="hidden" name="return" value="<?php echo PAYPAL_RETURN_URL; ?>">
+                                <input type="hidden" name="cancel_return" value="<?php echo PAYPAL_CANCEL_URL; ?>">
 
-                            <!-- Display the payment button. -->
-                            <input type="image" name="submit" src="../images/checkout-logo-large-de.png">
-                        </form>
+                                <!-- Display the payment button. -->
+                                <input type="image" name="submit" src="../images/checkout-logo-large-de.png">
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
-                    </div>
 
             <div class="col-md-6 d-flex align-items-stretch">
                 <div class="card shadow w-100 p-3 bg-white rounded summary">

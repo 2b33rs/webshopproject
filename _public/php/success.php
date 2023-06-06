@@ -28,15 +28,15 @@ if (!$result->num_rows == 0) {
 
         $sql = "INSERT INTO orders (user_id ,username ,name ,description ,price , purchase_date) VALUES (?,?,?,?,?,?)";
         $statement = $mysqli->prepare($sql);
-        
-        $statement->bind_param("isssds", $_SESSION["user_id"], $_SESSION["username"],$rowPro["name"],$rowPro["description"],$rowPro["price"], $date);
+
+        $statement->bind_param("isssds", $_SESSION["user_id"], $_SESSION["username"], $rowPro["name"], $rowPro["description"], $rowPro["price"], $date);
         $statement->execute();
     }
 
-$sql = "DELETE FROM cart_products WHERE cart_id = '" . $cart_id . "'";
-$mysqli->query($sql);
-$sql = "DELETE FROM cart WHERE cart_id = '" . $cart_id . "'";
-$mysqli->query($sql);
+    $sql = "DELETE FROM cart_products WHERE cart_id = '" . $cart_id . "'";
+    $mysqli->query($sql);
+    $sql = "DELETE FROM cart WHERE cart_id = '" . $cart_id . "'";
+    $mysqli->query($sql);
 
 
 }
@@ -44,16 +44,16 @@ $mysqli->query($sql);
 
 ?>
 <main>
-<div class="container">
-    <div class="status">
-     
+    <div class="container">
+        <div class="status">
+
             <h1 class="success">Your Payment has been Successful</h1>
 
             <h1 class="success">Thank You For Your Order</h1>
-       
+
+        </div>
+        <a href="./products.php" class="btn-link">Back to Products</a>
     </div>
-    <a href="./products.php" class="btn-link">Back to Products</a>
-</div>
 </main>
 
 

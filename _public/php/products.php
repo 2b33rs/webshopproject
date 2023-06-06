@@ -14,7 +14,7 @@
     <div class="mt-5"></div>
     <?php
 
-    
+
     global $loggedIn;
     if (isset($_SESSION["username"])) {
       $loggedIn = true;
@@ -97,8 +97,8 @@
                 </form> </div>
                 </div>";
         } else
-        echo
-           "<a href='./login.php' class='btn btn-primary'>Zum Warenkorb hinzufügen (Login)</a>
+          echo
+            "<a href='./login.php' class='btn btn-primary'>Zum Warenkorb hinzufügen (Login)</a>
 
                 </div>
               </div>";
