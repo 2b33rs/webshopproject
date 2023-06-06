@@ -1,6 +1,6 @@
 <?php include_once './header.php' ?>
 <main>
-  <div class="container" style="min-height: 67svh;">
+  <div class="container">
 
 
     <!-- Suche -->

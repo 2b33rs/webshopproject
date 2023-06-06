@@ -1,5 +1,3 @@
-
-
 .footer-main{
     padding-top: 90px !important;
 }
@@ -54,12 +52,7 @@
 .add-content p a:hover{
     color: #ffb32d;
 }
-.footer-main{
-    padding-top: 90px;
-}
-.address-main > div.col-lg-4 {
-    border-bottom: dotted 1px #999;
-}
+
 .address-box {
     padding: 10px 0;
     margin-bottom: 30px;

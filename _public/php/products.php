@@ -1,12 +1,11 @@
 <?php include_once '../php/header.php' ?>
 
 <header>
-  <link rel="stylesheet" href="../CSS/products.css">
   <script src="../JavaScript/products.js"></script>
 </header>
 
 <main>
-  <div class="container" style="min-height: 67svh;">
+  <div class="container">
 
     <h1 class="h1 text-center mt-5">Unsere Produkte.</h1>
     <p class="lead text-center">Immer genau das richtige für Dich.</p>

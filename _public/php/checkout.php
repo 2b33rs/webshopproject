@@ -16,11 +16,11 @@ if (!isset($_SESSION['username'])) {
 
 
 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
 <link rel="stylesheet" href="../css/checkout.css">
 
 <main>
-    <div class="container h-100" style="min-height: 58svh;">
+    <div class="container h-100">
 
         <?php
         // Fetch products from the database 
@@ -39,7 +39,7 @@ if (!isset($_SESSION['username'])) {
         </div>
         <div class="row h-100">
             <div class="col-md-6 d-flex align-items-stretch">
-                <div class="row">
+                <div class="row w-100">
                     <div class="card shadow w-100 bg-white rounded">
                         <div class="card-body">
                             <h3 class="card-title">Rechnungsadresse</h3>
@@ -129,7 +129,7 @@ if (!isset($_SESSION['username'])) {
                                     <td>0.00€</td>
                                 </tr>
                                 <tr>
-                                    <td>Steuern:</td>
+                                    <td>inkl. 19% MwSt:</td>
                                     <td>
                                         <?php echo number_format($steuern, 2); ?>€
                                     </td>

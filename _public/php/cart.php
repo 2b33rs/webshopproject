@@ -5,7 +5,7 @@ if (!isset($_SESSION['username'])) {
 ?>
 <main>
 
-    <div class="container" style="min-height: 67svh;">
+    <div class="container">
 
         <?php
 
