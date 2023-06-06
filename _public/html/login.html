@@ -1,5 +1,8 @@
+<head>
+    <link rel="stylesheet" href="../css/login.css">
+</head>
 <main>
-        <script>
+    <script>
         document.addEventListener('DOMContentLoaded', function () {
             var loginForm = document.querySelector('.needs-validation');
             loginForm.addEventListener('submit', function (event) {
@@ -27,42 +30,49 @@
 
     <div class="container">
         <!-- Login -->
-        <div class="card-body">
-            <h1 class="fw-bold pt-3 pt-xl-5 pb-2 pb-xl-3">Login</h1>
+        <div>
+            <div class="card-body">
+                <h1 class="fw-bold pt-xl-5 pb-xl-3">Login</h1>
 
-            <form class="row g-3 needs-validation" action="../php/scripts/loginScript.php" method="POST" novalidate>
-                <div class="form-floating col-4 mb-3">
-                    <input type="text" class="form-control" id="username" name="username" autofocus autocomplete="on"
-                        tabindex="1" required>
-                    <label for="username" class="form-label">Benutzername</label>
+                <form class="row g-3 needs-validation" action="../php/scripts/loginScript.php" method="POST" novalidate>
+                    <div>
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" id="username" name="username" autofocus
+                                autocomplete="on" tabindex="1" required>
+                            <label for="username" class="form-label">Benutzername</label>
 
-                    <div class="invalid-feedback">
-                        Benutzername wird benötigt.
+                            <div class="invalid-feedback">
+                                Benutzername wird benötigt.
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="col-6"></div>
-                <div class="form-floating col-4 mb-3">
-                    <input type="password" class="form-control" id="password" name="password" autocomplete="off"
-                        tabindex="2" required>
-                    <label for="password" class="form-label">Passwort</label>
+                    <div>
+                        <div class="form-floating mb-3">
+                            <input type="password" class="form-control" id="password" name="password" autocomplete="off"
+                                tabindex="2" required>
+                            <label for="password" class="form-label">Passwort</label>
 
-                    <div class="invalid-feedback">
-                        Passwort wird benötigt.
+                            <div class="invalid-feedback">
+                                Passwort wird benötigt.
+                            </div>
+                        </div>
                     </div>
+                    <div class="invalid-feedback" id="login-feedback">
+                        Benutzername und Passwort müssen ausgefüllt werden.
+                    </div>
+                    <div>
+                        <input class="btn btn-primary needs-validation" type="submit" name="submit" value="Login"
+                            tabindex="3">
+                    </div>
+                </form>
+
+                <div class="form-text">
+                    <br>
+                    <p>Kein Konto? <a href="../php/register.php" tabindex="4">Registrieren</a></p>
                 </div>
-                <div class="invalid-feedback" id="login-feedback">
-                    Benutzername und Passwort müssen ausgefüllt werden.
-                </div>
-                <div>
-                    <input class="btn btn-primary needs-validation" type="submit" name="submit" value="Login"
-                        tabindex="3">
-                </div>
-            </form>
+            </div>
         </div>
 
-        <div class="form-text">
-            <br>
-            <p>Kein Konto? <a href="../php/register.php" tabindex="4">Registrieren</a></p>
-        </div>
+
     </div>
 </main>

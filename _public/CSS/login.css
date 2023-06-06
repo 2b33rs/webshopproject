@@ -1,0 +1,16 @@
+@media (min-width: 768px) {
+    .form-floating {
+      max-width: 50%;
+      margin-left: 0;
+      margin-right: auto;
+    }
+  }
+  
+  @media (max-width: 767px) {
+    .form-floating {
+      width: 100%;
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+  
