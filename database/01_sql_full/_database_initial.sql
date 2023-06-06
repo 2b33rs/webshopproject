@@ -241,8 +241,8 @@ VALUES (27, 9, 'Brightcove', 'Video-Plattform für Unternehmen und Content-Erste
 
 
 -- Insert `webshop`.`user`
-INSERT INTO `webshop`.`user` (username, password, name,firstname,address,email) VALUES ("Max69",123,"Max","Mustermann","Musterstrasse 11", "maxmustermann@gmail.com");
-INSERT INTO `webshop`.`user` (username, password, name,firstname,address,email) VALUES ("steffen",123,"Max","Mustermann","Musterstrasse 11", "maxmustermann@gmail.com");
-
+INSERT INTO `webshop`.`user` (username, password, name,firstname,address,email) VALUES ("Max69",123,"Max","Mustermann","Musterstrasse 11, 12345 Musterstadt", "maxmustermann@gmail.com");
+INSERT INTO `webshop`.`user` (username, password, name,firstname,address,email) VALUES ("steffen",123,"Steffen","Schlager","Musterstrasse 11, 01234 Musterhausen", "steffen@e-business.com");
+INSERT INTO `webshop`.`user` (username, password, name,firstname,address,email) VALUES ("Phil",123,"Philipp","Rechenbach","Teststraße 24, 0815 Testingarea", "muster@business.de");
 
 
