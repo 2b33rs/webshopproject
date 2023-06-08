@@ -9,4 +9,4 @@ Dann wird immer wenn der Header geladen wird ein timestamp gespeichert:
 
     -> Problem: Wenn der Benutzer auf eine Seite drückt die kein Login erfordert wird der Timestamp zurückgesetzt
     -> Dafür gibt es die inactiv Variable. Diese wird immer auf 2 gesetzt sobald eine nicht login seite aufgerufen wird
-        -> Dadurch kann man mit einem if schauen ob die Zeit schoneinmal abgeloffen ist
+        -> Dadurch kann man mit einem if schauen ob die Zeit schoneinmal abgelaufen ist
