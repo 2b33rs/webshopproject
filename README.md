@@ -65,3 +65,6 @@ Die Abgabe der Projekts erfolgt über den Moodle-Kurs. Dabei muss enthalten sein
 - Ein kleiner Projektplan, der zumindest die Aufteilung der Aufgaben an die einzelnen Team-Mitglieder enthält.
 - Ein kompletter Abzug der Datenbank inklusive der Create-Anweisungen für das Erstellen der Tabellen und Testdaten. Dieser kann z.B. über die Oberfläche phpMyAdmin erstellt werden.
 - Ein Archiv (zip, tar oder rar) aller relevanten php- und html-Dateien.
+
+
+Test
