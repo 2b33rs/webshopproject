@@ -39,6 +39,7 @@ include_once '../html/head.html';
                             echo '<li class="nav-item"><a class="nav-link" href="cart.php">Warenkorb von ' . $_SESSION["username"] . '</a></li>';
                         }
                         ?>
+                        
                     </ul>
                     <ul id="nav_2" class="navbar-nav ms-auto">
                         <li class="nav-item"><a class="nav-link" href="search.php"><i class="bi bi-search"></i>
