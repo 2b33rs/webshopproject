@@ -1,0 +1,52 @@
+<main>
+    <h3>Anforderungen</h3>
+    <h4>Nichtfunktionale Anforderungen</h4>
+    <ul>
+        <li>Das Layout basiert auf dem Framework Bootstrap.</li>
+        <li>Die Datenhaltung erfolgt mittels einer MySQL-Datenbank.</li>
+        <li>Es muss ein Datenmodell als ER-Diagramm erstellt werden.</li>
+        <li>Die Sicherheit der Anwendung muss berücksichtigt werden (z.B. Vorkehrungen gegen SQL-Injections).</li>
+        <li>Das Projekt muss eine sinnvolle Ordnerstruktur aufweisen (z.B. separate Order für php-Dateien und
+            Ressourcen wie Bilder).</li>
+        <li>Ein Rollenkonzept für die Benutzer ist nicht erforderlich.</li>
+        <li>Arbeiten Sie wann immer möglich mit relativen URLs.</li>
+    </ul>
+
+    <h4>Funktionale Anforderungen</h4>
+    <ul>
+        <li>Kunden, die noch kein Konto beim Web-Shop haben, können sich über ein Formular registrieren. Zu erfassen
+            sind dabei gewünschter Benutzername, Passwort, Vorname, Name, Anschrift und E-Mail-Adresse.</li>
+        <li>Der Web-Shop verfügt über Produktkategorien, die nochmals in Unterkategorien eingeteilt sein können.
+            Wählt man eine Kategorie bzw. Unterkategorie aus, werden die darin enthaltenen Artikel angezeigt.</li>
+        <li>Produkte sind beschrieben durch eine Bezeichnung, eine Beschreibung, ein Bild und einen Preis in Euro.
+            Ein Produkt ist dabei immer mindestens einer Kategorie oder Unterkategorie zugeordnet.</li>
+        <li>Der Web-Shop verfügt über einen Warenkorb. Dieser steht aber nur angemeldeten Benutzern zur Verfügung.
+        </li>
+        <li>Es gibt eine Übersichtsseite, auf der der Kunde den Warenkorb ansehen kann und bei Bedarf Artikel wieder
+            entfernen kann. Möchte der Kunde einen Artikel mehrfach kaufen, dann soll der Einfachheit halber das
+            entsprechende Produkt auch einfach mehrfach im Warenkorb auftauchen.</li>
+        <li>Kategorien, Unterkategorien und Produkte müssen in der Datenbank abgelegt sein und für das Generieren
+            der Web-Seiten für den Kunden aus dieser ausgelesen werden.</li>
+        <li>Einkäufe müssen in der Datenbank persistiert werden. D.h., wird ein Warenkorb erfolgreich über Paypal
+            (s.u.) bezahlt, dann sollen die gekauften Artikel mit Kaufdatum in der Datenbank abgespeichert werden
+            (natürlich mit Zuordnung zum Kunden).</li>
+        <li>Es gibt es Suchfunktion, bei der Produktbeschreibung und Produktbezeichnung nach dem eingegebenen
+            Suchbegriff durchsucht werden und die Treffer danach angezeigt werden.</li>
+        <li>Das Bezahlen der Produkte im Warenkorb soll über Paypal erfolgen. Unter folgendem Link finden Sie ein
+            Anleitung, wie sich Paypal anbinden lässt: <a
+                href="https://www.codexworld.com/paypal-standard-payment-gateway-integration-php/">https://www.codexworld.com/paypal-standard-payment-gateway-integration-php/</a>.
+            Hinweis: Man übergibt bei dieser Paypal-Schnittstelle lediglich ein Produkt und die dazugehörige
+            Produktnummer. Da wir aber einen Warenkorb mit beliebig vielen Produkten bezahlen wollen, übergeben Sie
+            als Produktname einfach Warenkorb und als Produktnummer eine eindeutige ID des Warenkorbs.</li>
+        <li>Automatische Abmeldung, wenn der Kunde für 10 Minuten inaktiv war (d.h., für 10 Minuten keinen
+            HTTP-Request geschickt hat). Dabei soll lediglich die Session beendet werden. Es ist nicht erforderlich,
+            dass der Kunde nach dem Ablauf der 10 Minuten automatisch zur Login-Seite umgeleitet wird. Dies
+            geschieht erst dann, wenn er irgendwann nach den 10 Minuten versucht, eine Seite aufzurufen, die ein
+            Login erfordert.</li>
+        <li>Ist der Kunde angemeldet, dann gibt es auf jeder Seite auch einen Logout-Button. Ist der Kunde nicht
+            angemeldet, dann soll statt des Logout-Buttons ein Link zur Login-Seite angezeigt werden.</li>
+        <li>Das Ansehen der Produkte oder die Produktsuche ist ohne Login möglich.</li>
+        <li>Das Hinzufügen von Produkten zum Warenkorb, das Ansehen und Bezahlen des Warenkorbs sind nur angemeldete
+            Benutzer verfügbar.</li>
+    </ul>
+</main>
