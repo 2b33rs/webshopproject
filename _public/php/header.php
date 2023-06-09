@@ -47,9 +47,9 @@ include_once '../html/head.html';
 
                         <?php
                         if (!isset($_SESSION['username'])) {
-                            echo '<li class="nav-item"><a class="nav-link" href="login.php"><i class="bi bi-person-fill"></i>Login</a></li>';
+                            echo '<li class="nav-item"><a class="nav-link" href="login.php"><i class="bi bi-person-fill"></i> Login</a></li>';
                         } else {
-                            echo '<li class="nav-item"><a class="nav-link" href="scripts/logout.php"><i class="bi bi-box-arrow-right"></i></i>Logout</a></li>';
+                            echo '<li class="nav-item"><a class="nav-link" href="scripts/logout.php"><i class="bi bi-box-arrow-right"></i></i> Logout</a></li>';
                         }
                         ?>
                     </ul>
