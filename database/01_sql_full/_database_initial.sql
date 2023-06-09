@@ -6,7 +6,7 @@ CREATE SCHEMA IF NOT EXISTS `webshop` DEFAULT CHARACTER SET utf8;
 DROP TABLE IF EXISTS `webshop`.`user`;
 CREATE TABLE IF NOT EXISTS `webshop`.`user` (
   `user_id` INT AUTO_INCREMENT NOT NULL,
-  `username` VARCHAR(45) NOT NULL,
+  `username` VARCHAR(45) NOT NULL UNIQUE,
   `password` VARCHAR(45) NOT NULL,
   `name` VARCHAR(45) NOT NULL,
   `firstname` VARCHAR(45) NOT NULL,
