@@ -40,3 +40,27 @@ function pwGleichheit() {
         }
     });
 }
+
+
+function showPWA() {
+    var input = document.getElementById("passwordA");
+    var type = input.getAttribute("type");
+
+    if (type === "text") {
+        input.setAttribute("type", "password");
+    } else if (type === "password") {
+        input.setAttribute("type", "text");
+    }
+}
+
+function showPWB() {
+    var input = document.getElementById("passwordB");
+    var type = input.getAttribute("type");
+
+    if (type === "text") {
+        input.setAttribute("type", "password");
+    } else if (type === "password") {
+        input.setAttribute("type", "text");
+    }
+}
+
