@@ -1,5 +1,7 @@
 'use strict';
 
+
+/*
 function loginTrue() {
     'use strict';
 
@@ -16,6 +18,32 @@ function loginTrue() {
         });
     });
 }
+*/
+/*
+document.addEventListener('DOMContentLoaded', function () {
+    var loginForm = document.querySelector('.needs-validation');
+    loginForm.addEventListener('submit', function (event) {
+        if (!loginForm.checkValidity()) {
+            event.preventDefault();
+            event.stopPropagation();
+            loginForm.classList.add('was-validated');
+        } else {
+            var usernameInput = document.getElementById('username');
+            var passwordInput = document.getElementById('password');
+
+            if (usernameInput.value.trim() === '' || passwordInput.value.trim() === '') {
+                event.preventDefault();
+                event.stopPropagation();
+
+                // Anzeige der Fehlermeldung
+                var feedback = document.getElementById('login-feedback');
+                feedback.innerText = 'Benutzername und Passwort müssen ausgefüllt werden.';
+                feedback.style.display = 'block';
+            }
+        }
+    });
+});
+*/
 
 function resetLogin() {
     document.getElementById("registerBtn").disabled = true;

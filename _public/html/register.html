@@ -1,7 +1,18 @@
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var loginForm = document.querySelector('.needs-validation');
+        loginForm.addEventListener('submit', function (event) {
+            if (!loginForm.checkValidity()) {
+                event.preventDefault();
+                event.stopPropagation();
+                loginForm.classList.add('was-validated');
+            } 
+        });
+    });
+</script>
+
 <main>
     <div class="container">
-
-
 
         <!-- Registration -->
         <div class="card">
@@ -9,44 +20,49 @@
             <div class="card-body">
 
                 <h1 class="fw-bold pt-1 pb-xl-3">Registrierung</h1>
-                <form id="register" action="../php/scripts/registerScript.php" method="post">
+                <form class="needs-validation" id="register" action="../php/scripts/registerScript.php" method="post"
+                    novalidate>
 
                     <!-- Username -->
                     <div class="form-floating mb-3">
-                        <input type="text" class="form-control" name="username" id="username" autocomplete="on"
-                            tabindex="5" required>
+                        <input type="text" class="form-control" name="username" id="username" autocomplete="off"
+                            tabindex="1" minlength="3" required>
                         <label for="username" class="form-label">Benutzername*</label>
+                        <div class="invalid-feedback">Benutzername fehlt.</div>
                     </div>
 
-                    <!-- Vorname & Nachname -->
+                    <!-- Vorname -->
                     <div class="form-floating mb-3">
-                        <input type="text" class="form-control" name="firstname" id="firstname" maxlength="24"
-                            autocomplete="on" tabindex="6" required>
+                        <input type="text" class="form-control" name="firstname" id="firstname" autocomplete="on"
+                            tabindex="2" minlength="2" maxlength="24" required>
                         <label for="firstname" class="form-label">Vorname*</label>
-
+                        <div class="invalid-feedback">Vorname fehlt.</div>
                     </div>
 
+                    <!-- Nachname -->
                     <div class="form-floating mb-3">
-                        <input type="text" class="form-control" id="name" name="name" maxlength="24" required
-                            autocomplete="on" tabindex="7">
+                        <input type="text" class="form-control" name="name" id="name" autocomplete="on" tabindex="3"
+                            minlength="2" maxlength="24" required>
                         <label for="name" class="form-label">Nachname*</label>
+                        <div class="invalid-feedback">Nachname fehlt.</div>
                     </div>
 
                     <!-- Strase -->
                     <div class="form-floating mb-3">
-                        <input type="text" class="form-control" id="address" name="address" maxlength="40" required
-                            autocomplete="on" tabindex="8">
-                        <label for="address" class="form-label">Straße&nbsp;und&nbsp;Hausnummer*</label>
-
+                        <input type="text" class="form-control" name="address" id="address" autocomplete="on"
+                            tabindex="4" minlength="10" maxlength="255"
+                            pattern="^(?=.*\d)(.*\,.*)(?=.*[a-z])(?=.*[A-Z]).{10,}$" required>
+                        <label for="address"
+                            class="form-label">Straße&nbsp;Hausnummer&nbsp;,&nbsp;PLZ&nbsp;Wohnort*</label>
+                        <div class="invalid-feedback">Geben sie Ihre Vollständige Adresse an.</div>
                     </div>
 
-                    <!--PLZ -->
+                    <!--E-Mail -->
                     <div class="form-floating mb-3">
-                        <input type="email" class="form-control" id="email" name="email"
-                            pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" required autocomplete="on"
-                            tabindex="9">
-
+                        <input type="email" class="form-control" name="email" id="email" autocomplete="on"
+                            tabindex="5" pattern=".+@.+\..{2,}" required>
                         <label for="email" class="form-label">E-Mail*</label>
+                        <div class="invalid-feedback">Geben Sie eine gültige E-Mail adresse ein.</div>
                     </div>
 
 
@@ -59,12 +75,15 @@
                             <input onblur="pwGleichheit()" value="" class="form-control" type="password" id="passwordA"
                                 name="passwordA"
                                 title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
-                                autocomplete="off" tabindex="15">
+                                 autocomplete="off" tabindex="6"
+                                required>
+                                <!-- TODO add to input: pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$" -->
                             <div class="input-group-append">
                                 <span class="input-group-text">
                                     <i class="bi bi-eye"></i>
                                 </span>
                             </div>
+                            <div class="invalid-feedback">Geben Sie eine gültiges Passwort ein.</div>
                         </div>
                     </div>
 
@@ -73,33 +92,40 @@
                         <label for="passwordB" class="form-label" id="pw2">Passwort&nbsp;bestätigen*</label>
                         <div class="col sm-10 input-group">
                             <input onblur="pwGleichheit()" value="" class="form-control" type="password" id="passwordB"
-                                name="passwordB"
-                                title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
-                                autocomplete="off" tabindex="16">
-
+                                name="passwordB" autocomplete="off" tabindex="7" required>
                             <div class="input-group-append">
                                 <span class="input-group-text" role="button">
                                     <i class="bi bi-eye"></i>
                                 </span>
                             </div>
+                            <div class="invalid-feedback"> Stimmt nicht mit Passwort überein</div>
                         </div>
+                        
                     </div>
 
-                    <div class="row mb-3">
-                        <div class="col-sm-10 offset-sm-2">
-                            <div class="form-check">
-                                <input onclick="loginTrue()" class="form-check-input" type="checkbox" id="gridCheck1"
-                                    tabindex="17">
-                                <label id="agb" class="form-check-label" for="gridCheck1">
-                                    Ja,&nbsp;ich&nbsp;stimme&nbsp;den&nbsp;<a href="../php/agb.php"
-                                        tabindex="18">AGBs</a>&nbsp;und&nbsp;den&nbsp;<a href="../php/datenschutz.php"
-                                        tabindex="19">Datenschutzbestimmungen</a>&nbsp;zu.*
-                                </label>
+
+                    <!--Terms of Condition -->
+
+
+                    <div class="col-12 mb-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="invalidCheck" tabindex="8"
+                                required>
+                            <label class="form-check-label" for="invalidCheck" id="agb">
+                                Ja,&nbsp;ich&nbsp;stimme&nbsp;den&nbsp;<a href="../php/agb.php"
+                                    tabindex="18">AGBs</a>&nbsp;und&nbsp;den&nbsp;<a href="../php/datenschutz.php"
+                                    tabindex="19">Datenschutzbestimmungen</a>&nbsp;zu.*
+                            </label>
+                            <div class="invalid-feedback">
+                                Sie müssen den AGBs und den Datenschutzbestimmungen zustimmen.
                             </div>
                         </div>
                     </div>
-                    <input id="registerBtn" type="submit" name="submit" value="Register" disabled tabindex="20">
-                    <input type="reset" onclick="resetLogin()" name="btng" value="Reset" tabindex="21">
+
+                    <input class="btn btn-primary" id="registerBtn" type="submit" name="submit" value="Register"
+                        tabindex="9">
+                    <input class="btn btn-secondary" type="reset" onclick="resetLogin()" name="btng" value="Reset"
+                        tabindex="10">
                 </form>
             </div>
         </div>

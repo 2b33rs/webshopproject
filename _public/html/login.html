@@ -19,9 +19,9 @@
                         event.stopPropagation();
 
                         // Anzeige der Fehlermeldung
-                        var feedback = document.getElementById('login-feedback');
-                        feedback.innerText = 'Benutzername und Passwort müssen ausgefüllt werden.';
-                        feedback.style.display = 'block';
+                        //var feedback = document.getElementById('login-feedback');
+                        //feedback.innerText = 'Benutzername und Passwort müssen ausgefüllt werden.';
+                        //feedback.style.display = 'block';
                     }
                 }
             });
@@ -57,11 +57,9 @@
                             </div>
                         </div>
                     </div>
-                    <div class="invalid-feedback" id="login-feedback">
-                        Benutzername und Passwort müssen ausgefüllt werden.
-                    </div>
+                    
                     <div>
-                        <input class="btn btn-primary needs-validation" type="submit" name="submit" value="Login"
+                        <input class="btn btn-primary" type="submit" name="submit" value="Login"
                             tabindex="3">
                     </div>
                 </form>
