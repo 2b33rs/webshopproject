@@ -54,10 +54,10 @@ include_once '../html/head.html';
                             echo '<li class="nav-item"><a class="nav-link" href="scripts/logout.php"><i class="bi bi-box-arrow-right"></i>Logout</a></li>';
                             echo '  <li class="nav-item">
                                         <div class="dropdown">
-                                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                                <i class="bi bi-gear"></i>
+                                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                <i class="bi bi-person-gear"></i>
                                             </a>
-                                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">                                                
+                                            <ul class="dropdown-menu">                                                
                                                 <li><a class="dropdown-item" href="userInformation.php">Persönliche Informationen</a></li>
                                                 <li><a class="dropdown-item" href="./scripts/logout.php">Logout</a></li>
                                                 <li><hr class="dropdown-divider"></li>
