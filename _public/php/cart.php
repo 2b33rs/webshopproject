@@ -27,7 +27,7 @@ if (!isset($_SESSION['username'])) {
 
         if ($result->num_rows == 0) {
             echo "<h1 class='text-center mt-5'>Der Warenkorb ist leer</h1>";
-            echo "<img src='../images/cart.svg' class='img-fluid mx-auto d-block ' alt='' style='height: 30vh'>";
+            echo "<img src='images/cart.svg' class='img-fluid mx-auto d-block ' alt='' style='height: 30vh'>";
         }
 
 
@@ -48,7 +48,7 @@ if (!isset($_SESSION['username'])) {
                         <p class='card-text'>" . $rowPro['price'] . "&euro;</p>
                     </div>";
 
-            echo "  <form method='POST' action='../php/scripts/delFromCartScript.php'>
+            echo "  <form method='POST' action='php/scripts/delFromCartScript.php'>
                         <input type='submit' name='del-from-cart' value='Vom Warenkorb entfernen' class='btn btn-outline-danger btn-sm delete-btn'>
                         <input type='hidden' name='products_id' value='" . $row['products_id'] . "'>
                         <input type='hidden' name='cart_id' value='" . $cart_id . "'>
@@ -83,7 +83,7 @@ if (!isset($_SESSION['username'])) {
                                 <h2>Gesamtpreis: ' . $sum . ' &euro;</h2>
                             </div>
                             <div class="col-6 d-flex justify-content-end">
-                                <form method="POST" action="./checkout.php">
+                                <form method="POST" action="php/checkout.php">
                                     <button type="submit" name="checkout" class="btn btn-primary btn-lg">Zur Kasse</button>
                                     <input type="hidden" name="cart_id" value="' . $cart_id . '">
                                     <input type="hidden" name="price" value="' . $sum . '">

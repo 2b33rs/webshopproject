@@ -69,7 +69,7 @@ $mysqli->close();
 
         // Make an AJAX request to the PHP script
         var xhr = new XMLHttpRequest();
-        xhr.open('POST', './scripts/check_username.php', true);
+        xhr.open('POST', 'php/scripts/check_username.php', true);
         xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
         xhr.onreadystatechange = function () {
             if (xhr.readyState === XMLHttpRequest.DONE) {
@@ -98,7 +98,7 @@ $mysqli->close();
         <div class="card">
             <div class="card-body">
                 <h1 class="fw-bold pt-1 pb-xl-3">Persönliche Informationen</h1>
-                <form class="needs-validation" id="register" action="./scripts/userEditScript.php" method="post"
+                <form class="needs-validation" id="register" action="php/scripts/userEditScript.php" method="post"
                     novalidate>
 
                     <!-- Username -->

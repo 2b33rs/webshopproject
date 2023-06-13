@@ -1,9 +1,9 @@
 <?php
 // Include configuration file 
-include_once './scripts/configPaypalScript.php';
+include_once 'scripts/configPaypalScript.php';
 
 // Include database connection file 
-include_once './scripts/dbConnectScript.php';
+include_once 'scripts/dbConnectScript.php';
 
 /* 
  * Read POST data 

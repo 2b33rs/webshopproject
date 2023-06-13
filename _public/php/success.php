@@ -1,7 +1,7 @@
 <?php
-include_once './scripts/configPaypalScript.php';
-include_once './scripts/dbConnectScript.php';
-include_once './header.php';
+include_once 'scripts/configPaypalScript.php';
+include_once 'scripts/dbConnectScript.php';
+include_once 'header.php';
 
 
 $mysqli = new mysqli("localhost", "root", "", "webshop");
@@ -50,7 +50,7 @@ if (!$result->num_rows == 0) {
                 <h1 class="card-title">Your Payment has been Successful</h1><br>
                 <h3 class="card-text">Vielen Dank für Ihre Bestellung</h3>
                 <div class="mt-xl-5">
-                <a href="./products.php" class="btn btn-primary float-start" role="button">zu den Produkten</a>
+                <a href="php/products.php" class="btn btn-primary float-start" role="button">zu den Produkten</a>
                 </div>
             </div>
         </div>

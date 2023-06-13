@@ -1,7 +1,7 @@
-<?php include_once '../php/header.php' ?>
+<?php include_once 'header.php' ?>
 
 <header>
-  <script src="../JavaScript/products.js"></script>
+  <script src="JavaScript/products.js"></script>
 </header>
 
 <main>
@@ -88,7 +88,7 @@
                     <p class='card-text '>" . $row['description'] . "</p>
                     <p class='card-text'>" . $row['price'] . "€</p>";
         if ($GLOBALS['loggedIn']) {
-          echo "    <form method='POST' action='./scripts/addToCartScript.php'>
+          echo "    <form method='POST' action='php/scripts/addToCartScript.php'>
                       <input type='submit' name='add-to-cart' value='Zum Warenkorb hinzufügen' class='btn btn-primary'>
                       <input type='hidden' name='products_id' value='" . $row['products_id'] . "'>
                     </form>
@@ -100,7 +100,7 @@
               </div>";
         } else
           echo
-            "       <a href='./login.php' class='btn btn-primary'>Zum Warenkorb hinzufügen (Login)</a>
+            "       <a href='php/login.php' class='btn btn-primary'>Zum Warenkorb hinzufügen (Login)</a>
                   </div>
                   <div class='col-md-4'>
                     <img src='" . $row['images'] . "' class='img-fluid' style='max-height: 20vh; object-fit:contain;'>

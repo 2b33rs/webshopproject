@@ -1,11 +1,11 @@
 <?php
-include_once './header.php';
+include_once 'header.php';
 
 // Include configuration file 
-include_once './scripts/configPaypalScript.php';
+include_once 'scripts/configPaypalScript.php';
 
 // Include database connection file 
-include_once './scripts/dbConnectScript.php';
+include_once 'scripts/dbConnectScript.php';
 
 
 if (!isset($_SESSION['username'])) {
@@ -17,7 +17,7 @@ if (!isset($_SESSION['username'])) {
 
 
 
-<link rel="stylesheet" href="../css/checkout.css">
+<link rel="stylesheet" href="css/checkout.css">
 
 <main>
     <div class="container h-100">
@@ -102,7 +102,7 @@ if (!isset($_SESSION['username'])) {
                                 <input type="hidden" name="cancel_return" value="<?php echo PAYPAL_CANCEL_URL; ?>">
 
                                 <!-- Display the payment button. -->
-                                <input type="image" name="submit" src="../images/checkout-logo-large-de.png">
+                                <input type="image" name="submit" src="images/checkout-logo-large-de.png">
                             </form>
                         </div>
                     </div>

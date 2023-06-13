@@ -1,4 +1,4 @@
-<?php include_once './header.php' ?>
+<?php include_once 'header.php' ?>
 <main>
   <div class="container">
 
@@ -7,7 +7,7 @@
     <div class="card-body">
       <h1 class="fw-bold pt-3 pt-xl-5 pb-2 pb-xl-3">Suche</h1>
 
-      <form class="row g-3" action="./search.php" method="GET">
+      <form class="row g-3" action="php/search.php" method="GET">
         <div class="col-auto">
           <input class="form-control-lg" type="text" id="searchterm" name="searchterm" autofocus autocomplete="on"
             tabindex="1" placeholder="Suche...">
@@ -55,7 +55,7 @@
                     <p class='card-text '>" . $row['description'] . "</p>
                     <p class='card-text'>" . $row['price'] . "€</p>";
         if ($GLOBALS['loggedIn']) {
-          echo "    <form method='POST' action='./scripts/addToCartScript.php'>
+          echo "    <form method='POST' action='php/scripts/addToCartScript.php'>
                       <input type='submit' name='add-to-cart' value='Zum Warenkorb hinzufügen' class='btn btn-primary'>
                       <input type='hidden' name='products_id' value='" . $row['products_id'] . "'>
                     </form>
@@ -67,7 +67,7 @@
               </div>";
         } else
           echo
-            "<a href='./login.php' class='btn btn-primary'>Zum Warenkorb hinzufügen (Login)</a>
+            "<a href='php/login.php' class='btn btn-primary'>Zum Warenkorb hinzufügen (Login)</a>
                   </div>
                 </div>";
       }

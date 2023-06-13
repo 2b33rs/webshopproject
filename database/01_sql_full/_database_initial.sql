@@ -144,7 +144,7 @@ VALUES (
     'Google Drive',
     'Kostenloser Cloud-Speicher von Google',
     0.00,
-    '../images/Produkt_Logos/GoogleWorkspace.jpg'
+    'images/Produkt_Logos/GoogleWorkspace.jpg'
   );
 INSERT INTO `webshop`.`products` (
     `products_id`,
@@ -160,7 +160,7 @@ VALUES (
     'Dropbox',
     'Kostenloser Cloud-Speicher von Dropbox',
     0.00,
-    '../images/Produkt_Logos/Dropbox.png'
+    'images/Produkt_Logos/Dropbox.png'
   );
 INSERT INTO `webshop`.`products` (
     `products_id`,
@@ -176,7 +176,7 @@ VALUES (
     'Microsoft OneDrive',
     'Kostenloser Cloud-Speicher von Microsoft',
     0.00,
-    '../images/Produkt_Logos/MicrosoftOneDrive.png'
+    'images/Produkt_Logos/MicrosoftOneDrive.png'
   );
 INSERT INTO `webshop`.`products` (
     `products_id`,
@@ -192,7 +192,7 @@ VALUES (
     'MediaFire',
     'Kostenloser Cloud-Speicher für große Dateien',
     0.00,
-    '../images/Produkt_Logos/MediaFire.png'
+    'images/Produkt_Logos/MediaFire.png'
   );
 INSERT INTO `webshop`.`products` (
     `products_id`,
@@ -208,7 +208,7 @@ VALUES (
     'Mega',
     'Kostenloser Cloud-Speicher für große Dateien',
     0.00,
-    '../images/Produkt_Logos/Mega.png'
+    'images/Produkt_Logos/Mega.png'
   );
 INSERT INTO `webshop`.`products` (
     `products_id`,
@@ -224,7 +224,7 @@ VALUES (
     'pCloud',
     'Kostenloser Cloud-Speicher für große Dateien',
     0.00,
-    '../images/Produkt_Logos/pCloud.png'
+    'images/Produkt_Logos/pCloud.png'
   );
 INSERT INTO `webshop`.`products` (
     `products_id`,
@@ -240,7 +240,7 @@ VALUES (
     'Tresorit',
     'Kostenloser Cloud-Speicher mit erweiterten Sicherheitsfunktionen',
     0.00,
-    '../images/Produkt_Logos/Tresorit.png'
+    'images/Produkt_Logos/Tresorit.png'
   );
 INSERT INTO `webshop`.`products` (
     `products_id`,
@@ -256,7 +256,7 @@ VALUES (
     'Sync.com',
     'Kostenloser Cloud-Speicher mit erweiterten Sicherheitsfunktionen',
     0.00,
-    '../images/Produkt_Logos/Sync.png'
+    'images/Produkt_Logos/Sync.png'
   );
 INSERT INTO `webshop`.`products` (
     `products_id`,
@@ -272,7 +272,7 @@ VALUES (
     'SpiderOak',
     'Kostenloser Cloud-Speicher mit erweiterten Sicherheitsfunktionen',
     0.00,
-    '../images/Produkt_Logos/SpiderOak.png'
+    'images/Produkt_Logos/SpiderOak.png'
   );
 INSERT INTO `webshop`.`products` (
     `products_id`,
@@ -288,7 +288,7 @@ VALUES (
     'Google One',
     'Erweiterter Cloud-Speicher von Google',
     3.99,
-    '../images/Produkt_Logos/GoogleOne.png'
+    'images/Produkt_Logos/GoogleOne.png'
   );
 INSERT INTO `webshop`.`products` (
     `products_id`,
@@ -304,7 +304,7 @@ VALUES (
     'Dropbox Plus',
     'Erweiterte Funktionen für Dropbox',
     9.99,
-    '../images/Produkt_Logos/Dropbox.png'
+    'images/Produkt_Logos/Dropbox.png'
   );
 INSERT INTO `webshop`.`products` (
     `products_id`,
@@ -320,7 +320,7 @@ VALUES (
     'Microsoft 365',
     'Umfassendes Produktivitätspaket',
     123.12,
-    '../images/Produkt_Logos/Microsoft365.png'
+    'images/Produkt_Logos/Microsoft365.png'
   );
 INSERT INTO `webshop`.`products` (
     `products_id`,
@@ -336,7 +336,7 @@ VALUES (
     'iCloud',
     'Cloud-Speicher von Apple',
     28.99,
-    '../images/Produkt_Logos/iCloud.png'
+    'images/Produkt_Logos/iCloud.png'
   );
 INSERT INTO `webshop`.`products` (
     `products_id`,
@@ -352,7 +352,7 @@ VALUES (
     'Box',
     'Sicherer Cloud-Speicher',
     123.12,
-    '../images/Produkt_Logos/box.png'
+    'images/Produkt_Logos/box.png'
   );
 INSERT INTO `webshop`.`products` (
     `products_id`,
@@ -368,7 +368,7 @@ VALUES (
     'Amazon Drive',
     'Cloud-Speicher von Amazon',
     59.99,
-    '../images/Produkt_Logos/AmazonDrive.png'
+    'images/Produkt_Logos/AmazonDrive.png'
   );
 INSERT INTO `webshop`.`products` (
     `products_id`,
@@ -384,7 +384,7 @@ VALUES (
     'Google Workspace',
     'Kollaborations- und Produktivitätstools',
     1312.12,
-    '../images/Produkt_Logos/GoogleWorkspace.jpg'
+    'images/Produkt_Logos/GoogleWorkspace.jpg'
   );
 INSERT INTO `webshop`.`products` (
     `products_id`,
@@ -400,7 +400,7 @@ VALUES (
     'Dropbox Business',
     'Cloud-Speicher und Kollaboration für Unternehmen',
     499.99,
-    '../images/Produkt_Logos/Dropbox.png'
+    'images/Produkt_Logos/Dropbox.png'
   );
 INSERT INTO `webshop`.`products` (
     `products_id`,
@@ -416,7 +416,7 @@ VALUES (
     'Microsoft 365 Business',
     'Umfassende Lösung für Unternehmen',
     39.99,
-    '../images/Produkt_Logos/Microsoft365.png'
+    'images/Produkt_Logos/Microsoft365.png'
   );
 INSERT INTO `webshop`.`products` (
     `products_id`,
@@ -432,7 +432,7 @@ VALUES (
     'Adobe Creative Cloud',
     'Kreative Tools für Fotografen',
     19.99,
-    '../images/Produkt_Logos/AdobeCreative.png'
+    'images/Produkt_Logos/AdobeCreative.png'
   );
 INSERT INTO `webshop`.`products` (
     `products_id`,
@@ -448,7 +448,7 @@ VALUES (
     'SmugMug',
     'Plattform für Fotografen zur Präsentation ihrer Werke',
     13.99,
-    '../images/Produkt_Logos/SmugMug.png'
+    'images/Produkt_Logos/SmugMug.png'
   );
 INSERT INTO `webshop`.`products` (
     `products_id`,
@@ -478,7 +478,7 @@ VALUES (
     'SoundCloud',
     'Plattform für Musiker zum Teilen und Entdecken von Musik',
     12.88,
-    '../images/Produkt_Logos/SoundCloud.png'
+    'images/Produkt_Logos/SoundCloud.png'
   );
 INSERT INTO `webshop`.`products` (
     `products_id`,
@@ -494,7 +494,7 @@ VALUES (
     'Bandcamp',
     'Unabhängige Musikplattform für Künstler',
     1337.88,
-    '../images/Produkt_Logos/BandCamp.png'
+    'images/Produkt_Logos/BandCamp.png'
   );
 INSERT INTO `webshop`.`products` (
     `products_id`,
@@ -510,7 +510,7 @@ VALUES (
     'Spotify for Artists',
     'Tools für Musiker zur Verwaltung und Promotion ihrer Musik',
     1263.4,
-    '../images/Produkt_Logos/Spotify.png'
+    'images/Produkt_Logos/Spotify.png'
   );
 INSERT INTO `webshop`.`products` (
     `products_id`,
@@ -526,7 +526,7 @@ VALUES (
     'Vimeo',
     'Plattform für Video-Hosting und -Sharing',
     1337.88,
-    '../images/Produkt_Logos/Vimeo.png'
+    'images/Produkt_Logos/Vimeo.png'
   );
 INSERT INTO `webshop`.`products` (
     `products_id`,
@@ -542,7 +542,7 @@ VALUES (
     'Wistia',
     'Video-Hosting-Plattform für Unternehmen',
     123.45,
-    '../images/Produkt_Logos/Wistia.png'
+    'images/Produkt_Logos/Wistia.png'
   );
 INSERT INTO `webshop`.`products` (
     `products_id`,
@@ -558,7 +558,7 @@ VALUES (
     'Brightcove',
     'Video-Plattform für Unternehmen und Content-Ersteller',
     12.39,
-    '../images/Produkt_Logos/BrideCove.png'
+    'images/Produkt_Logos/BrideCove.png'
   );
 -- Insert `webshop`.`user`
 INSERT INTO `webshop`.`user` (username, password, name, firstname, address, email)
