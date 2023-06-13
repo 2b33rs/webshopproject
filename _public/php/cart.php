@@ -40,23 +40,25 @@ if (!isset($_SESSION['username'])) {
             $rowPro = $resultPro->fetch_assoc();
 
 
-            echo "<div class='card shadow p-3 mb-3 bg-white rounded' >
-                <div class='card-body d-flex justify-content-between align-items-end'><div>
-                <h5 class='card-title'>" . $rowPro['name'] . "</h5>
-                <p class='card-text '>" . $rowPro['description'] . "</p>
-                <p class='card-text'>" . $rowPro['price'] . "€</p>
-                </div>";
+            echo "  <div class='card shadow p-3 my-3 bg-white rounded' >
+                        <div class='card-body d-flex justify-content-between align-items-end'>
+                        <div>
+                        <h5 class='card-title'>" . $rowPro['name'] . "</h5>
+                        <p class='card-text '>" . $rowPro['description'] . "</p>
+                        <p class='card-text'>" . $rowPro['price'] . "&euro;</p>
+                    </div>";
 
-            echo "<form method='POST' action='../php/scripts/delFromCartScript.php'>
-                <input type='submit' name='del-from-cart' value='Vom Warenkorb entfernen' class='btn btn-outline-danger btn-sm delete-btn'>
-                <input type='hidden' name='products_id' value='" . $row['products_id'] . "'>
-                <input type='hidden' name='cart_id' value='" . $cart_id . "'>
-              </form> 
-              </div>
-                </div>";
+            echo "  <form method='POST' action='../php/scripts/delFromCartScript.php'>
+                        <input type='submit' name='del-from-cart' value='Vom Warenkorb entfernen' class='btn btn-outline-danger btn-sm delete-btn'>
+                        <input type='hidden' name='products_id' value='" . $row['products_id'] . "'>
+                        <input type='hidden' name='cart_id' value='" . $cart_id . "'>
+                    </form> 
+                </div>
+            </div>";
         }
 
         if (!$result->num_rows == 0) {
+            /*
             $sql = "SELECT SUM(price) FROM products WHERE products_id IN (SELECT products_id FROM cart_products WHERE cart_id = '" . $cart_id . "')";
             $result = $mysqli->query($sql);
             $row = $result->fetch_assoc();
@@ -66,6 +68,31 @@ if (!isset($_SESSION['username'])) {
             <input type='hidden' name='cart_id' value='" . $cart_id . "'>
             <input type='hidden' name='price' value='" . $row["SUM(price)"] . "'>
             </form> ";
+            */
+            $sql = "SELECT SUM(products.price) FROM webshop.cart_products JOIN webshop.products
+                    ON cart_products.products_id = products.products_id WHERE cart_products.cart_id = ?";
+            $statement = $mysqli->prepare($sql);
+            $statement->bind_param("i", $cart_id);
+            $statement->execute();
+            $statement->bind_result($sum);
+            $statement->fetch();
+            $statement->close();
+            echo '  <div class="container my-3 pt-3">
+                        <div class="row">
+                            <div class="col-6">
+                                <h2>Gesamtpreis: ' . $sum . ' &euro;</h2>
+                            </div>
+                            <div class="col-6 d-flex justify-content-end">
+                                <form method="POST" action="./checkout.php">
+                                    <button type="submit" name="checkout" class="btn btn-primary btn-lg">Zur Kasse</button>
+                                    <input type="hidden" name="cart_id" value="' . $cart_id . '">
+                                    <input type="hidden" name="price" value="' . $sum . '">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+            ';
+
         }
 
         ?>
