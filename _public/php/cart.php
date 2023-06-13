@@ -10,7 +10,7 @@ if (!isset($_SESSION['username'])) {
         <?php
 
         $mysqli = new mysqli("localhost", "root", "", "webshop");
-        if ($mysqli->connect_errno) {
+        if ($mysqli->connect_error) {
             die("Verbindung fehlgeschlagen: " . $mysqli->connect_error);
         }
 
