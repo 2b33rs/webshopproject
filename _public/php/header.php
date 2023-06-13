@@ -37,9 +37,10 @@ include_once '../html/head.html';
 
                         if (isset($_SESSION['username'])) {
                             echo '<li class="nav-item"><a class="nav-link" href="cart.php">Warenkorb von ' . $_SESSION["username"] . '</a></li>';
+
                         }
                         ?>
-                        
+
                     </ul>
                     <ul id="nav_2" class="navbar-nav ms-auto">
                         <li class="nav-item"><a class="nav-link" href="search.php"><i class="bi bi-search"></i>
@@ -48,8 +49,27 @@ include_once '../html/head.html';
                         <?php
                         if (!isset($_SESSION['username'])) {
                             echo '<li class="nav-item"><a class="nav-link" href="login.php"><i class="bi bi-person-fill"></i> Login</a></li>';
+
                         } else {
-                            echo '<li class="nav-item"><a class="nav-link" href="scripts/logout.php"><i class="bi bi-box-arrow-right"></i></i> Logout</a></li>';
+                            echo '<li class="nav-item"><a class="nav-link" href="scripts/logout.php"><i class="bi bi-box-arrow-right"></i>Logout</a></li>';
+                            echo '  <li class="nav-item">
+                                        <div class="dropdown">
+                                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                <i class="bi bi-gear"></i>
+                                            </a>
+                                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">                                                
+                                                <li><a class="dropdown-item" href="userInformation.php">Persönliche Informationen</a></li>
+                                                <li><a class="dropdown-item" href="./scripts/logout.php">Logout</a></li>
+                                                <li><hr class="dropdown-divider"></li>
+                                                <li><a class="dropdown-item text-danger" href="./scripts/deleteUser">Konto löschen</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>';
+                            //echo '<li class="nav-item"><a class="nav-link" href="login.php"><i class="bi bi-person-fill-gear">Settings</i>';
+                        
+                            //<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                            //        Dropdown button
+                            //    </button>
                         }
                         ?>
                     </ul>

@@ -23,7 +23,7 @@
 
 
     $mysqli = new mysqli("localhost", "root", "", "webshop");
-    if ($mysqli->connect_errno) {
+    if ($mysqli->connect_error) {
       die("Verbindung fehlgeschlagen: " . $mysqli->connect_error);
     }
     $sql = "SELECT * FROM categorie";
