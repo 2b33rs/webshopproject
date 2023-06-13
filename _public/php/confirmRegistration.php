@@ -18,7 +18,9 @@
                 }else{
                     echo "<p>Hallo " . $_SESSION['username'] . ",</p>
                     <p>Vielen Dank für deine Registrierung. Die Registrierung war erfolgreich.</p>
-                    <a href='../php/login.php' class='btn btn-primary'>Zurück zum Login</a>"
+                    <a href='./php/login.php' class='btn btn-primary'>Zurück zum Login</a>"
+                    //TODO: Link zum Login funktioniert nicht richtig
+                        //SOLUTION: adding base link in header.php
 
                 ;} ?>
             </div>
