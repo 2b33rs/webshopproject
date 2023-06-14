@@ -51,25 +51,7 @@ include_once '../html/head.html';
                             echo '<li class="nav-item"><a class="nav-link" href="php/login.php"><i class="bi bi-person-fill"></i> Login</a></li>';
 
                         } else {
-                            echo '<li class="nav-item"><a class="nav-link" href="php/scripts/logout.php"><i class="bi bi-box-arrow-right"></i>&nbsp;Logout</a></li>
-                                  <li class="nav-item">
-                                        <div class="dropdown">
-                                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                                <i class="bi bi-person-gear"></i>
-                                            </a>
-                                            <ul class="dropdown-menu">                                                
-                                                <li><a class="dropdown-item" href="php/userInformation.php">Persönliche Informationen</a></li>
-                                                <li><a class="dropdown-item" href="php/scripts/logout.php">Logout</a></li>
-                                                <li><hr class="dropdown-divider"></li>
-                                                <li><a class="dropdown-item text-danger" href="php/scripts/deleteUser">Konto löschen</a></li>
-                                            </ul>
-                                        </div>
-                                    </li>';
-                            //echo '<li class="nav-item"><a class="nav-link" href="php/login.php"><i class="bi bi-person-fill-gear">Settings</i>';
-                        
-                            //<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                            //        Dropdown button
-                            //    </button>
+                            include_once '../html/codeSnipets/headerLogout.html';
                         }
                         ?>
                     </ul>
