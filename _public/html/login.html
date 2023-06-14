@@ -2,6 +2,7 @@
     <link rel="stylesheet" href="css/login.css">
 </head>
 <main>
+    <script src="JavaScript/pothoney.js"></script>
     <script src="JavaScript/validation.js"></script>
 
     <div class="container">
@@ -33,10 +34,14 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <div>
-                        <input class="btn btn-primary" type="submit" name="submit" value="Login"
-                            tabindex="3">
+                        <input class="btn btn-primary" type="submit" name="submit" value="Login" tabindex="3">
+                    </div>
+                    <!-- Honeypot-Feld -->
+                    <div class="pothoney">
+                        <label for="pothoney">Unbedingt ausfüllen:</label>
+                        <input type="text" id="pothoney" name="pothoney" required>
                     </div>
                 </form>
 

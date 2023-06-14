@@ -1,10 +1,5 @@
 'use strict';
 
-function resetLogin() {
-    document.getElementById("registerBtn").disabled = true;
-    document.getElementById("pw1").innerHTML = 'Passwort*';
-    document.getElementById("pw2").innerHTML = 'Passwort bestätigen*';
-}
 
 function pwGleichheit() {
     let pA = document.getElementById('passwordA');

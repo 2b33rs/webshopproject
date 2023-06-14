@@ -1,19 +1,25 @@
-
+<script src="JavaScript/validation.js"></script>
 <main>
-    <div class="container">
-        <h1>Benutzer löschen</h1>
-        <h5>Wollen Sie den Benutzer wirklich löschen?</h5>
-        <form id="deleteForm" action="deleteUser.php" method="POST">
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="deleteCheckbox">
-                <label class="form-check-label" for="deleteCheckbox">
-                    Bestätigen Sie das der Benutzer gelöscht werden soll.
-                </label>
-            </div>
-            <button class="btn btn-danger mt-3" id="deleteButton">Löschen</button>
-            <a class="btn btn-secondary mt-3" href="index.php">Abbrechen</a>
-        </form>
-    </div>
+  <div class="container">
+    <h1>Benutzer löschen</h1>
+    <h5>Wollen Sie den Benutzer wirklich löschen?</h5>
+    <form class="needs-validation" id="deleteForm" action="php/deleteUser.php" method="POST">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="deleteCheckbox" required>
+        <label class="form-check-label" for="deleteCheckbox">
+          Bestätigen Sie das der Benutzer gelöscht werden soll.
+        </label>
+      </div>
+      <!-- Honeypot-Feld -->
+      <div class="pothoney">
+        <label for="pothoney">Unbedingt ausfüllen:</label>
+        <input type="text" id="pothoney" name="pothoney" required>
+      </div>
+
+      <button class="btn btn-danger mt-3" id="deleteButton">Löschen</button>
+      <a class="btn btn-secondary mt-3" href="php/index.php">Abbrechen</a>
+    </form>
+  </div>
 </main>
 
 
