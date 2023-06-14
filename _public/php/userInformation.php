@@ -24,6 +24,7 @@ $stmt->close();
 $mysqli->close();
 
 ?>
+<!--<script src="JavaScript/validation.js"></script>-->
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         var loginForm = document.querySelector('.needs-validation');

@@ -6,6 +6,4 @@ if (!isset($_SESSION['username'])) {
 } ?>
 
 <?php include_once '../html/deleteUser.html' ?>
-
-
 <?php include_once '../html/footer.html' ?>
