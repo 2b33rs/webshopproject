@@ -49,7 +49,10 @@ if (!isset($_SESSION['username'])) {
                     </div>";
 
             echo "  <form method='POST' action='php/scripts/delFromCartScript.php'>
-                        <input type='submit' name='del-from-cart' value='Vom Warenkorb entfernen' class='btn btn-outline-danger btn-sm delete-btn'>
+                        <lable for='del-from-cart'></lable>
+                        <button type='submit' name='del-from-cart' class='btn btn-outline-danger btn-sm delete-btn'>
+                        Aus Warenkorb entfernen
+                        </button>
                         <input type='hidden' name='products_id' value='" . $row['products_id'] . "'>
                         <input type='hidden' name='cart_id' value='" . $cart_id . "'>
                     </form> 

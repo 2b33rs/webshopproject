@@ -51,7 +51,7 @@ include_once '../html/head.html';
                             echo '<li class="nav-item"><a class="nav-link" href="php/login.php"><i class="bi bi-person-fill"></i> Login</a></li>';
 
                         } else {
-                            echo '<li class="nav-item"><a class="nav-link" href="php/scripts/logout.php"><i class="bi bi-box-arrow-right"></i>Logout</a></li>
+                            echo '<li class="nav-item"><a class="nav-link" href="php/scripts/logout.php"><i class="bi bi-box-arrow-right"></i>&nbsp;Logout</a></li>
                                   <li class="nav-item">
                                         <div class="dropdown">
                                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
