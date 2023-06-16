@@ -1,15 +1,14 @@
 <?php include_once 'header.php' ?>
 
-<header>
+<head>
   <script src="JavaScript/products.js"></script>
-</header>
+</head>
 
 <main>
   <div class="container">
 
     <h1 class="h1 text-center mt-5">Unsere Produkte.</h1>
     <p class="lead text-center">Immer genau das richtige für Dich.</p>
-
     <div class="mt-5"></div>
     <?php
 
@@ -92,6 +91,7 @@
       $statement->close();
       $mysqli->close();
 
+      /*
       //iterate over $result
       while ($row = $result->fetch_assoc()) {
         echo "<div class='card shadow p-3 my-4 bg-white rounded' >
@@ -100,6 +100,7 @@
                     <h5 class='card-title'>" . $row['name'] . "</h5>
                     <p class='card-text '>" . $row['description'] . "</p>
                     <p class='card-text'>" . $row['price'] . "€</p>";
+
         if ($GLOBALS['loggedIn']) {
           echo "    <form method='POST' action='php/scripts/addToCartScript.php'>
                       <input type='submit' name='add-to-cart' value='Zum Warenkorb hinzufügen' class='btn btn-primary'>
@@ -122,8 +123,35 @@
               </div>";
 
       }
+    }*/
+    //iterate over $result with ajax!
+    while ($row = $result->fetch_assoc()) {
+      echo "<div class='card shadow p-3 my-4 bg-white rounded' >
+              <div class='row'>
+                <div class='card-body col-md-8'>
+                  <h5 class='card-title'>" . $row['name'] . "</h5>
+                  <p class='card-text '>" . $row['description'] . "</p>
+                  <p class='card-text'>" . $row['price'] . "€</p>";
+
+      if ($GLOBALS['loggedIn']) {
+        echo '    <button onclick="addToCart(' . $row['products_id'] . '); showNotification(Hinzugefügt)" class="btn btn-primary">Zum Warenkorb hinzufügen</button>';
+      } else {
+        echo "       <a href='php/login.php' class='btn btn-primary'>Zum Warenkorb hinzufügen (Login)</a>";
+      }
+
+      echo "</div>
+                <div class='col-md-4'>
+                  <img src='" . $row['images'] . "' class='img-fluid' style='max-height: 20vh; object-fit:contain;'>
+                </div>
+              </div>
+            </div>";
+
     }
-    ?>
+  }
+  ?>
+
+
+
   </div>
 </main>
 

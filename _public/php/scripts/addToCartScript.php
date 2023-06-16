@@ -1,6 +1,9 @@
+<head>
+  <script src="JavaScript/products.js"></script>
+</head>
 <?php
 session_start();
-if (isset($_SESSION['timestamp']) && (time() - $_SESSION['timestamp'] > 10)) {
+if (isset($_SESSION['timestamp']) && (time() - $_SESSION['timestamp'] > 60)) {
     session_unset();
     session_destroy();
 }
@@ -67,11 +70,13 @@ $statement->close();
 $mysqli->close();
 
 //TODO: show a message that the product was added to the cart
-echo "Hier ist der Text, der für 5 Sekunden angezeigt wird.";
-// Verzögerung für 5 Sekunden (5000 Millisekunden) 
-usleep(500000);
-// Verstecke den Text 
-//header("Location: ../products.php");
 
+
+//echo "Hier ist der Text, der für 5 Sekunden angezeigt wird.";
+// Verzögerung für 5 Sekunden (5000 Millisekunden) 
+//usleep(500000);
+// Verstecke den Text 
+//header("Location: ../cart.php");
+exit;
 
 ?>
