@@ -24,8 +24,15 @@
     $searchterm = "";
     if (isset($_GET['searchterm'])) {
       $searchterm = $_GET['searchterm'];
+
+      //Preparing for SQL-Injection
+      $searchterm = trim($searchterm); // Leerzeichen werden entfernt
+      $blacklist = array("DROP", "DELETE", "UPDATE"); // Unerwünschte Wörter
+      $input = str_ireplace($blacklist, "", $input); // Unerwünschte Wörter werden entfernt
+      $searchterm = htmlspecialchars($searchterm); // HTML-Code wird in Zeichen umgewandelt
+
     }
-//TODO: wofür ist das globale loggedIn?
+    //TODO: wofür ist das globale loggedIn?
     if (!($searchterm == "")) {
       global $loggedIn;
       if (isset($_SESSION["username"])) {
@@ -34,10 +41,10 @@
         $loggedIn = false;
       }
       $mysqli = new mysqli("localhost", "root", "", "webshop");
-      if ($mysqli->connect_errno) {
+      if ($mysqli->connect_error) {
         die("Verbindung fehlgeschlagen: " . $mysqli->connect_error);
       }
-
+      $searchterm = mysqli_real_escape_string($mysqli, $searchterm);
       $likeSearchterm = "%" . $searchterm . "%";
       $sql = "SELECT * FROM products WHERE name LIKE ? OR description LIKE ?";
       $statement = $mysqli->prepare($sql);
@@ -69,6 +76,7 @@
           echo
             "<a href='php/login.php' class='btn btn-primary'>Zum Warenkorb hinzufügen (Login)</a>
                   </div>
+                </div>
                 </div>";
       }
     } else {
