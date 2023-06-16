@@ -21,15 +21,16 @@
 
     <?php
 
-    $searchterm = "";
+    $input = "";
     if (isset($_GET['searchterm'])) {
-      $searchterm = $_GET['searchterm'];
+      $input = $_GET['searchterm'];
 
       //Preparing for SQL-Injection
-      $searchterm = trim($searchterm); // Leerzeichen werden entfernt
-      $blacklist = array("DROP", "DELETE", "UPDATE"); // Unerwünschte Wörter
+      $input = trim($input); // Leerzeichen werden entfernt
+      $blacklist = array("DROP", "DELETE", "UPDATE", "*" , "<", ">", "&", "`", "$", "!", "|", "OR 1=1", "--", ";","%"); // Unerwünschte Wörter
       $input = str_ireplace($blacklist, "", $input); // Unerwünschte Wörter werden entfernt
-      $searchterm = htmlspecialchars($searchterm); // HTML-Code wird in Zeichen umgewandelt
+      $input = htmlspecialchars($input); // HTML-Code wird in Zeichen umgewandelt
+      $searchterm = $input;
 
     }
     //TODO: wofür ist das globale loggedIn?
@@ -53,6 +54,13 @@
       $result = $statement->get_result();
       $statement->close();
       $mysqli->close();
+
+      //Wenn keine Ergebnisse gefunden wurden soll angezeigtwerden das es keine gab:
+      
+      if($result->num_rows == 0){
+        echo "<div class=' shadow p-3 mb-5 bg-white rounded' >
+      <h5 class='card-title'><i class='bi bi-emoji-frown'></i> Es konten keine Ergebnisse für <i>'$searchterm'</i> gefunden werden.</h5>
+      </div>";}
 
       while ($row = $result->fetch_assoc()) {
         echo "<div class='card shadow p-3 my-4 bg-white rounded' >
