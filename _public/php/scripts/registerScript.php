@@ -25,7 +25,7 @@ $statement->bind_param("s", $usernametry);
 $statement->execute();
 $result = $statement->get_result();
 $statement->close();
-$mysqli->close();
+//$mysqli->close();
 
 if ($result->num_rows > 0) {
     // Der Benutzername existiert bereits
@@ -38,7 +38,7 @@ if ($result->num_rows > 0) {
     $statement->execute();
     $result = $statement->get_result();
     $statement->close();
-    $mysqli->close();
+    //$mysqli->close();
     $usernamesarray = [];
     while ($row = $result->fetch_assoc()) {
         $usernamesarray[] = $row["username"];

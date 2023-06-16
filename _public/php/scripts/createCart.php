@@ -13,7 +13,7 @@ $statement->bind_param("i", $_SESSION["user_id"]);
 $statement->execute();
 $result = $statement->get_result();
 $statement->close();
-$mysqli->close();
+//$mysqli->close();
 
 $row = $result->fetch_assoc();
 if (!$result->num_rows == 0) {
@@ -24,7 +24,7 @@ if (!$result->num_rows == 0) {
     $statement->execute();
     $result = $statement->get_result();
     $statement->close();
-    $mysqli->close();
+    //$mysqli->close();
     
 }
 
@@ -43,7 +43,7 @@ while ($row = $result->fetch_assoc()) {
     $statementPro->execute();
     $resultPro = $statementPro->get_result();
     $statementPro->close();
-    $mysqli->close();
+    //$mysqli->close();
     $rowPro = $resultPro->fetch_assoc();
 
 
@@ -87,7 +87,7 @@ if (!$result->num_rows == 0) {
     $statement->bind_result($sum);
     $statement->fetch();
     $statement->close();
-    $mysqli->close();
+    //$mysqli->close();
     echo '  <div class="container my-3 pt-3">
                         <div class="row">
                             <div class="col-6">

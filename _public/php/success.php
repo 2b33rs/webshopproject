@@ -15,7 +15,7 @@ $statement->bind_param("i", $_SESSION["user_id"]);
 $statement->execute();
 $result = $statement->get_result();
 $statement->close();
-$mysqli->close();
+//$mysqli->close();
 $row = $result->fetch_assoc();
 if (!$result->num_rows == 0) {
     $cart_id = $row["cart_id"];
@@ -25,7 +25,7 @@ if (!$result->num_rows == 0) {
     $statement->execute();
     $result = $statement->get_result();
     $statement->close();
-    $mysqli->close();
+    //$mysqli->close();
     $date = date("Y-m-d");
 
     while ($row = $result->fetch_assoc()) {
@@ -37,13 +37,13 @@ if (!$result->num_rows == 0) {
         $resultPro = $statement->get_result();
         $rowPro = $resultPro->fetch_assoc();
         $statement->close();
-        $mysqli->close();
+        //$mysqli->close();
         $sql = "INSERT INTO orders (user_id ,username ,name ,description ,price , purchase_date) VALUES (?,?,?,?,?,?)";
         $statement = $mysqli->prepare($sql);
         $statement->bind_param("isssds", $_SESSION["user_id"], $_SESSION["username"], $rowPro["name"], $rowPro["description"], $rowPro["price"], $date);
         $statement->execute();
         $statement->close();
-        $mysqli->close();
+        //$mysqli->close();
     }
 
     $sql = "DELETE FROM cart_products WHERE cart_id = ?"; //'" . $cart_id . "'
@@ -51,15 +51,16 @@ if (!$result->num_rows == 0) {
     $statement->bind_param("i", $cart_id);
     $statement->execute();
     $statement->close();
-    $mysqli->close();
+    //$mysqli->close();
     $sql = "DELETE FROM cart WHERE cart_id = ?"; //'" . $cart_id . "'
     $statement = $mysqli->prepare($sql);
     $statement->bind_param("i", $cart_id);
     $statement->execute();
     $statement->close();
-    $mysqli->close();
+    //$mysqli->close();
     
 }
+$mysqli->close();
 
 ?>
 <?php include_once '../html/success.html' ?>

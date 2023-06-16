@@ -26,7 +26,7 @@ $statement->bind_param("i", $user_id);
 $statement->execute();
 $result = $statement->get_result();
 $statement->close();
-$mysqli->close();
+//$mysqli->close();
 $cart = $result->fetch_assoc();
 
 //when the user has no cart yet, create one
@@ -43,7 +43,7 @@ if ($result->num_rows == 0) {
     $statement->execute();
     $result = $statement->get_result();
     $statement->close();
-    $mysqli->close();
+    //$mysqli->close();
     $cart = $result->fetch_assoc();
 }
 
@@ -71,7 +71,7 @@ echo "Hier ist der Text, der für 5 Sekunden angezeigt wird.";
 // Verzögerung für 5 Sekunden (5000 Millisekunden) 
 usleep(500000);
 // Verstecke den Text 
-header("Location: ../products.php");
+//header("Location: ../products.php");
 
 
 ?>
