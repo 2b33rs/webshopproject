@@ -27,7 +27,11 @@
       die("Verbindung fehlgeschlagen: " . $mysqli->connect_error);
     }
     $sql = "SELECT * FROM categorie";
-    $result = $mysqli->query($sql);
+    $statement = $mysqli->prepare($sql);
+    $statement->execute();
+    $result = $statement->get_result();
+    $statement->close();
+    $mysqli->close();
 
     //iterate over $result
     
@@ -47,12 +51,17 @@
     function getSubCategorie($categorie)
     {
       $mysqli = new mysqli("localhost", "root", "", "webshop");
-      if ($mysqli->connect_errno) {
+      if ($mysqli->connect_error) {
         die("Verbindung fehlgeschlagen: " . $mysqli->connect_error);
       }
 
-      $sql = "SELECT * FROM subcategorie WHERE categroie_id = $categorie";
-      $result = $mysqli->query($sql);
+      $sql = "SELECT * FROM subcategorie WHERE categroie_id = ?";
+      $statement = $mysqli->prepare($sql);
+      $statement->bind_param("i", $categorie);
+      $statement->execute();
+      $result = $statement->get_result();
+      $statement->close();
+      $mysqli->close();
 
       //iterate over $result
     
@@ -75,11 +84,15 @@
         die("Verbindung fehlgeschlagen: " . $mysqli->connect_error);
       }
 
-      $sql = "SELECT * FROM products WHERE subcategorie_id = $subCategorie";
-      $result = $mysqli->query($sql);
+      $sql = "SELECT * FROM products WHERE subcategorie_id = ?";
+      $statement = $mysqli->prepare($sql);
+      $statement->bind_param("i", $subCategorie);
+      $statement->execute();
+      $result = $statement->get_result();
+      $statement->close();
+      $mysqli->close();
 
       //iterate over $result
-    
       while ($row = $result->fetch_assoc()) {
         echo "<div class='card shadow p-3 my-4 bg-white rounded' >
                 <div class='row'>
@@ -111,8 +124,6 @@
       }
     }
     ?>
-
-
   </div>
 </main>
 

@@ -15,6 +15,8 @@ if (isset($_POST['username'])) {
     $stmt->bind_param("s", $username);
     $stmt->execute();
     $result = $stmt->get_result();
+    $stmt->close();
+    $mysqli->close();
     $row = $result->fetch_assoc();
 
     // Überprüfen, ob der Benutzername bereits vorhanden ist
@@ -31,6 +33,4 @@ if (isset($_POST['username'])) {
     echo json_encode($response);
 }
 
-$stmt->close();
-$mysqli->close();
 ?>

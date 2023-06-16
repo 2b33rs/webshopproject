@@ -25,7 +25,7 @@
     if (isset($_GET['searchterm'])) {
       $searchterm = $_GET['searchterm'];
     }
-
+//TODO: wofür ist das globale loggedIn?
     if (!($searchterm == "")) {
       global $loggedIn;
       if (isset($_SESSION["username"])) {
@@ -39,13 +39,13 @@
       }
 
       $likeSearchterm = "%" . $searchterm . "%";
-
       $sql = "SELECT * FROM products WHERE name LIKE ? OR description LIKE ?";
       $statement = $mysqli->prepare($sql);
       $statement->bind_param("ss", $likeSearchterm, $likeSearchterm);
-
       $statement->execute();
       $result = $statement->get_result();
+      $statement->close();
+      $mysqli->close();
 
       while ($row = $result->fetch_assoc()) {
         echo "<div class='card shadow p-3 my-4 bg-white rounded' >

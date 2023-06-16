@@ -64,9 +64,14 @@ if (!isset($_SESSION['username'])) {
                             $session_username = $_SESSION['username'];
 
                             // Query ausführen, um die Rechnungsadresse basierend auf dem Benutzernamen abzurufen
-                            $sql = "SELECT * FROM user WHERE username = '" . $_SESSION["username"] . "'";
-                            $result = $conn->query($sql);
-
+                            $sql = "SELECT * FROM user WHERE username = ?";
+                            $statement = $conn->prepare($sql);
+                            $statement->bind_param("s", $session_username);
+                            $statement->execute();
+                            $result = $statement->get_result();
+                            $statement->close();
+                            $conn->close();
+                            
                             if ($result->num_rows > 0) {
                                 $row = $result->fetch_assoc();
                                 $address = $row["address"];
