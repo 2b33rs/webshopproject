@@ -4,16 +4,18 @@
 <?php
 session_start();
 
-if (isset($_SESSION['timestamp']) && (time() - $_SESSION['timestamp'] > 600)) {
+if (isset($_SESSION['timestamp']) && (time() - $_SESSION['timestamp'] > 10)) {
     session_unset();
     session_destroy();
+}else{ 
+    $_SESSION['timestamp'] = time();
 }
 
-$_SESSION['timestamp'] = time();
+//$_SESSION['timestamp'] = time();
 
-include_once '../html/head.html';
+//include_once '../html/head.html';
 ?>
-
+<?php include_once '../html/head.html';?>
 
 <body>
     <header class="header-main bg-dark sticky-top shadow-lg mb-5" style="min-height: 7svh;">
