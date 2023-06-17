@@ -1,6 +1,6 @@
 <?php
 session_start();
-if (isset($_SESSION['timestamp']) && (time() - $_SESSION['timestamp'] > 60)) {
+if (isset($_SESSION['timestamp']) && (time() - $_SESSION['timestamp'] > 600)) {
     session_unset();
     session_destroy();
 }
@@ -11,7 +11,7 @@ if (!isset($_SESSION['username'])) {
     exit;
 } else {
     $mysqli = new mysqli("localhost", "root", "", "webshop");
-    if ($mysqli->connect_errno) {
+    if ($mysqli->connect_error) {
         die("Verbindung fehlgeschlagen: " . $mysqli->connect_error);
     }
 
