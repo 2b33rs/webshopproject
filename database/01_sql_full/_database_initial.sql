@@ -57,8 +57,10 @@ CREATE TABLE IF NOT EXISTS `webshop`.`cart` (
 DROP TABLE IF EXISTS `webshop`.`orders`;
 CREATE TABLE IF NOT EXISTS `webshop`.`orders` (
   `orders_id` INT AUTO_INCREMENT NOT NULL,
+  `invoice_id` BIGINT NOT NULL,
   `user_id` INT NOT NULL,
   `username` VARCHAR(45) NOT NULL,
+  `products_id` INT NOT NULL,
   `name` VARCHAR(255) NOT NULL,
   `description` VARCHAR(255) NOT NULL,
   `price` DECIMAL(10, 2) NOT NULL,

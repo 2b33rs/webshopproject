@@ -26,7 +26,9 @@ if (!$result->num_rows == 0) {
     $result = $statement->get_result();
     $statement->close();
     //$mysqli->close();
-    $date = date("Y-m-d");
+    $date = date("Y-m-d H:i:s");
+    //$invoiceDate = date("mdYHis");
+    $invoice_id = $_SESSION["user_id"] . date("YmdHis");
 
     while ($row = $result->fetch_assoc()) {
 
@@ -38,9 +40,9 @@ if (!$result->num_rows == 0) {
         $rowPro = $resultPro->fetch_assoc();
         $statement->close();
         //$mysqli->close();
-        $sql = "INSERT INTO orders (user_id ,username ,name ,description ,price , purchase_date) VALUES (?,?,?,?,?,?)";
+        $sql = "INSERT INTO orders (invoice_id, user_id, username, products_id, name, description, price, purchase_date) VALUES (?,?,?,?,?,?,?,?)";
         $statement = $mysqli->prepare($sql);
-        $statement->bind_param("isssds", $_SESSION["user_id"], $_SESSION["username"], $rowPro["name"], $rowPro["description"], $rowPro["price"], $date);
+        $statement->bind_param("iisissds", $invoice_id, $_SESSION["user_id"], $_SESSION["username"], $row["products_id"], $rowPro["name"], $rowPro["description"], $rowPro["price"], $date);
         $statement->execute();
         $statement->close();
         //$mysqli->close();
