@@ -83,3 +83,14 @@ footer{
 .add-content p a:hover{
     color: #ffb32d;
 }
+
+.header-main{
+    min-height: 7svh;
+
+}
+.footer-reg-link{
+    text-decoration: none;
+}
+.footer-copyright-style{
+    background-color: rgba(0, 0, 0, 0.2);
+}
