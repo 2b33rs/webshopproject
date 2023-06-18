@@ -4,7 +4,7 @@
 <?php
 session_start();
 
-if (isset($_SESSION['timestamp']) && (time() - $_SESSION['timestamp'] > 600)) {
+if (isset($_SESSION['timestamp']) && (time() - $_SESSION['timestamp'] > 60)) {
     session_unset();
     session_destroy();
 }else{ 
@@ -38,7 +38,7 @@ if (isset($_SESSION['timestamp']) && (time() - $_SESSION['timestamp'] > 600)) {
                         <?php
 
                         if (isset($_SESSION['username'])) {
-                            echo '<li class="nav-item"><a class="nav-link" href="php/cart.php">Warenkorb von ' . $_SESSION["username"] . '</a></li>';
+                            echo '<li class="nav-item"><a class="nav-link" href="php/redirections/redirectCard.php">Warenkorb von ' . $_SESSION["username"] . '</a></li>';
 
                         }
                         ?>
