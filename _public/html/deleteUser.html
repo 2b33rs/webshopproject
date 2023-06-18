@@ -1,9 +1,12 @@
-<script src="JavaScript/validation.js"></script>
+
+<!--<script src="JavaScript/validation.js"></script>-->
 <main>
+  
+
   <div class="container">
     <h1>Benutzer löschen</h1>
     <h5>Wollen Sie den Benutzer wirklich löschen?</h5>
-    <form class="needs-validation" id="deleteForm" action="php/deleteUser.php" method="POST">
+    <form class="needs-validation" action="php/scripts/delUserDBscript.php" method="POST" novalidate>
       <div class="form-check">
         <input class="form-check-input" type="checkbox" id="deleteCheckbox" required>
         <label class="form-check-label" for="deleteCheckbox">
@@ -16,32 +19,8 @@
         <input type="text" id="pothoney" name="pothoney" required>
       </div>
 
-      <button class="btn btn-danger mt-3" id="deleteButton">Löschen</button>
+      <input type="submit" name="submit" class="btn btn-danger mt-3" id="deleteButton" value="Löschen">
       <a class="btn btn-secondary mt-3" href="php/index.php">Abbrechen</a>
     </form>
   </div>
 </main>
-
-
-
-<!-- Modal -->
-<!--
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          ...
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
--->
