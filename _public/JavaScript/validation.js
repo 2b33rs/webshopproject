@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var honeypotField = document.getElementById('pothoney');
     loginForm.addEventListener('submit', function (event) {
         honeypotField.removeAttribute('required');
+        //honeypotField.setAttribute('disabled', 'disabled');
         if (!loginForm.checkValidity()) {
             event.preventDefault();
             event.stopPropagation();
@@ -18,3 +19,5 @@ document.addEventListener('DOMContentLoaded', function () {
         
     });
 });
+
+
