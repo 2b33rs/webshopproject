@@ -25,28 +25,15 @@ function getCartItemCount()
             die("Verbindung fehlgeschlagen: " . $mysqli->connect_error);
         }
 
-        $sql = "SELECT cart_id FROM cart WHERE user_id = ?";
+        $sql = "SELECT count(*) FROM cart WHERE user_id = ?";
         $statement = $mysqli->prepare($sql);
         $statement->bind_param("i", $_SESSION["user_id"]);
         $statement->execute();
         $result = $statement->get_result();
+        $row = $result->fetch_assoc();
         $statement->close();
-
-        if ($row = $result->fetch_assoc()) {
-            $cart_id = $row["cart_id"];
-            $sql = "SELECT count(*) from cart_products where cart_id = ?";
-            $statement = $mysqli->prepare($sql);
-            $statement->bind_param("i", $cart_id);
-            $statement->execute();
-            $result = $statement->get_result();
-            $statement->close();
-            $mysqli->close();
-            $row = $result->fetch_assoc();
-            return $row["count(*)"];
-
-        } else {
-            return 0;
-        }
+        return $row["count(*)"];
+        
 
     }
 
