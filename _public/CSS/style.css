@@ -94,3 +94,9 @@ footer{
 .footer-copyright-style{
     background-color: rgba(0, 0, 0, 0.2);
 }
+
+/* Produkt-Bilder Positionierung: */
+.produkt-images{
+    max-height: 20vh;
+    object-fit:contain;
+}
