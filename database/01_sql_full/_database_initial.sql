@@ -70,7 +70,12 @@ CREATE TABLE IF NOT EXISTS `webshop`.`orders` (
   `description` VARCHAR(255) NOT NULL,
   `price` DECIMAL(10, 2) NOT NULL,
   `purchase_date` DATE NOT NULL,
-  PRIMARY KEY (`orders_id`)
+  PRIMARY KEY (`orders_id`),
+  CONSTRAINT `fk_orders_user1`
+    FOREIGN KEY (`user_id`)
+    REFERENCES `webshop`.`user` (`user_id`)
+    ON DELETE SET NULL
+    ON UPDATE NO ACTION
 );
 -- Table `webshop`.`cart_products`
 DROP TABLE IF EXISTS `webshop`.`cart_products`;
