@@ -7,15 +7,60 @@ session_start();
 if (isset($_SESSION['timestamp']) && (time() - $_SESSION['timestamp'] > 600)) {
     session_unset();
     session_destroy();
-}else{ 
+} else {
     $_SESSION['timestamp'] = time();
+
 }
 
+
+//Get the number of items in the cart
+//include_once 'scripts/countItemInCart.php';     --> Funktioniert nicht, ergebnis bleibt dann 1
+function getCartItemCount()
+{
+    if (!isset($_SESSION["user_id"])) {
+        return 0;
+    } else {
+        $mysqli = new mysqli("localhost", "root", "", "webshop");
+        if ($mysqli->connect_error) {
+            die("Verbindung fehlgeschlagen: " . $mysqli->connect_error);
+        }
+
+        $sql = "SELECT cart_id FROM cart WHERE user_id = ?";
+        $statement = $mysqli->prepare($sql);
+        $statement->bind_param("i", $_SESSION["user_id"]);
+        $statement->execute();
+        $result = $statement->get_result();
+        $statement->close();
+
+        if ($row = $result->fetch_assoc()) {
+            $cart_id = $row["cart_id"];
+            $sql = "SELECT count(*) from cart_products where cart_id = ?";
+            $statement = $mysqli->prepare($sql);
+            $statement->bind_param("i", $cart_id);
+            $statement->execute();
+            $result = $statement->get_result();
+            $statement->close();
+            $mysqli->close();
+            $row = $result->fetch_assoc();
+            return $row["count(*)"];
+
+        } else {
+            return 0;
+        }
+
+    }
+
+}
+
+
+
+
+$ItemsInCart = getCartItemCount();
 //$_SESSION['timestamp'] = time();
 
 //include_once '../html/head.html';
 ?>
-<?php include_once '../html/head.html';?>
+<?php include_once '../html/head.html'; ?>
 
 <body>
     <header class="header-main bg-dark sticky-top shadow-lg mb-5">
@@ -38,7 +83,8 @@ if (isset($_SESSION['timestamp']) && (time() - $_SESSION['timestamp'] > 600)) {
                         <?php
 
                         if (isset($_SESSION['username'])) {
-                            echo '<li class="nav-item"><a class="nav-link" href="php/redirections/redirectCard.php">Warenkorb von ' . $_SESSION["username"] . '</a></li>';
+                            echo '<li class="nav-item"><a class="nav-link position-relative" href="php/redirections/redirectCard.php">Warenkorb von ' . $_SESSION["username"] . ' 
+                            <span class="position-absolute top-0 start-99 badge rounded-pill bg-primary" id="itemsInCartCounter">' . $ItemsInCart . '</span></a></li>';
 
                         }
                         ?>
