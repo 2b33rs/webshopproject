@@ -56,7 +56,7 @@ DROP TABLE IF EXISTS `webshop`.`orders`;
 CREATE TABLE IF NOT EXISTS `webshop`.`orders` (
   `orders_id` INT NOT NULL AUTO_INCREMENT,
   `invoice_id` BIGINT NOT NULL,
-  `user_id` INT NOT NULL,
+  `user_id` INT,
   `username` VARCHAR(45) NOT NULL,
   `products_id` INT NOT NULL,
   `name` VARCHAR(255) NOT NULL,
@@ -75,10 +75,10 @@ CREATE TABLE IF NOT EXISTS `webshop`.`orders` (
 DROP TABLE IF EXISTS `webshop`.`cart` ;
 
 CREATE TABLE IF NOT EXISTS `webshop`.`cart` (
-  `cart_id` INT NOT NULL AUTO_INCREMENT,
   `products_id` INT NOT NULL,
-  `user_id` INT NOT NULL,
-  PRIMARY KEY (`cart_id`),
+  `cart_id` INT NOT NULL AUTO_INCREMENT,
+  `user_id` INT,
+  PRIMARY KEY (`cart_id`, `products_id`, `user_id`),
   CONSTRAINT `fk_cart_products_products1`
     FOREIGN KEY (`products_id`)
     REFERENCES `webshop`.`products` (`products_id`)
