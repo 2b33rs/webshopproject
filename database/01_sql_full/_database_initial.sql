@@ -8,7 +8,8 @@ DROP TABLE IF EXISTS `webshop`.`user`;
 CREATE TABLE IF NOT EXISTS `webshop`.`user` (
   `user_id` INT NOT NULL AUTO_INCREMENT,
   `username` VARCHAR(45) NOT NULL,
-  `password` VARCHAR(45) NOT NULL,
+  `password` VARCHAR(64) NOT NULL,
+  `salt` VARCHAR(64) NOT NULL,	
   `name` VARCHAR(45) NOT NULL,
   `firstname` VARCHAR(45) NOT NULL,
   `address` VARCHAR(45) NOT NULL,
@@ -559,31 +560,51 @@ VALUES (
     12.39,
     'images/Produkt_Logos/BrideCove.png'
   );
+
+
+  -- Salt generieren
+SET @salt = 'randomsalt';
+SET @password = '123';
+SET @hashedSalt = SHA2(@salt,256);
+SET @hpw = SHA2(CONCAT(@password, @hashedSalt),256);
+
+-- Salt und Hash dem Testbenutzer hinzufügen
+
+
+
+
 -- Insert `webshop`.`user`
-INSERT INTO `webshop`.`user` (username, password, name, firstname, address, email)
+INSERT INTO `webshop`.`user` (username, password, salt, name, firstname, address, email)
 VALUES (
     "Max69",
-    123,
+    @hpw,
+    @salt,
     "Max",
     "Mustermann",
     "Musterstrasse 11, 12345 Musterstadt",
     "maxmustermann@gmail.com"
   );
-INSERT INTO `webshop`.`user` (username, password, name, firstname, address, email)
+INSERT INTO `webshop`.`user` (username, password, salt, name, firstname, address, email)
 VALUES (
     "steffen",
-    123,
+    @hpw,
+    @salt,
     "Steffen",
     "Schlager",
     "Musterstrasse 11, 01234 Musterhausen",
     "steffen@e-business.com"
   );
-INSERT INTO `webshop`.`user` (username, password, name, firstname, address, email)
+INSERT INTO `webshop`.`user` (username, password, salt, name, firstname, address, email)
 VALUES (
     "Phil",
-    123,
-    "Philipp",
-    "Rechenbach",
-    "Teststraße 24, 0815 Testingarea",
+    @hpw,
+    @salt,
+    "Maximilian",
+    "Muster",
+    "Teststraße 24, 0815 Testarea",
     "muster@business.de"
   );
+
+
+
+

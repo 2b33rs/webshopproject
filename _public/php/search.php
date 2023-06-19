@@ -30,13 +30,8 @@
     $searchterm = "";
     if (isset($_GET['searchterm'])) {
       $input = $_GET['searchterm'];
-
-      //Preparing for SQL-Injection
-      $input = trim($input); // Leerzeichen werden entfernt
-      $blacklist = array("DROP", "DELETE", "UPDATE", "*", "<", ">", "&", "`", "$", "!", "|", "OR 1=1", "--", ";", "%"); // Unerwünschte Wörter
-      $input = str_ireplace($blacklist, "", $input); // Unerwünschte Wörter werden entfernt
-      $input = htmlspecialchars($input); // HTML-Code wird in Zeichen umgewandelt
-      $searchterm = $input;
+      include_once 'scripts/sql_InjectionPrevention.php';
+      $searchterm = sqlinjection($input);
 
     }
     //TODO: wofür ist das globale loggedIn?
@@ -67,30 +62,35 @@
         echo "<div class=' shadow p-3 mb-5 bg-white rounded' >
       <h5 class='card-title'><i class='bi bi-emoji-frown'></i> Es konten keine Ergebnisse für <i>'$searchterm'</i> gefunden werden.</h5>
       </div>";
-      }
+      } else {
+        echo "<div class=' shadow p-3 mb-5 bg-white rounded' >
+      <h5 class='card-title'><i class='bi bi-emoji-smile'></i> Es wurden " . $result->num_rows . " Ergebnisse für <i>'$searchterm'</i> gefunden.</h5>
+      </div>";
+        while ($row = $result->fetch_assoc()) {
+          echo "<div class='card shadow p-3 my-4 bg-white rounded' >
+                  <div class='row'>
+                    <div class='card-body col-md-8'>
+                      <h5 class='card-title'>" . $row['name'] . "</h5>
+                      <p class='card-text '>" . $row['description'] . "</p>
+                      <p class='card-text'>" . $row['price'] . "€</p>";
 
-      while ($row = $result->fetch_assoc()) {
-        echo "<div class='card shadow p-3 my-4 bg-white rounded' >
-                <div class='row'>
-                  <div class='card-body col-md-8'>
-                    <h5 class='card-title'>" . $row['name'] . "</h5>
-                    <p class='card-text '>" . $row['description'] . "</p>
-                    <p class='card-text'>" . $row['price'] . "€</p>";
+          if ($GLOBALS['loggedIn']) {
+            echo '    <button onclick="addToCart(' . $row['products_id'] . '); showNotification(Hinzugefügt)" class="btn btn-primary">Zum Warenkorb hinzufügen</button>';
+          } else {
+            echo "       <a href='php/login.php' class='btn btn-primary'>Zum Warenkorb hinzufügen (Login)</a>";
+          }
 
-        if ($GLOBALS['loggedIn']) {
-          echo '    <button onclick="addToCart(' . $row['products_id'] . '); showNotification(Hinzugefügt)" class="btn btn-primary">Zum Warenkorb hinzufügen</button>';
-        } else {
-          echo "       <a href='php/login.php' class='btn btn-primary'>Zum Warenkorb hinzufügen (Login)</a>";
-        }
-
-        echo "</div>
-                  <div class='col-md-4'>
-                    <img src='" . $row['images'] . "' class='img-fluid' style='max-height: 20vh; object-fit:contain;'>
+          echo "</div>
+                    <div class='col-md-4'>
+                      <img src='" . $row['images'] . "' class='img-fluid' style='max-height: 20vh; object-fit:contain;'>
+                    </div>
                   </div>
-                </div>
-              </div>";
+                </div>";
 
+        }
       }
+
+
 
 
     } else {

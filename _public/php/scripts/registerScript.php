@@ -1,12 +1,15 @@
 <?php
+include_once 'sql_InjectionPrevention.php';
 
 if (isset($_POST["submit"])) {
-    $usernametry = $_POST["username"];
-    $firstname = $_POST["firstname"];
-    $name = $_POST["name"];
-    $address = $_POST["address"];
-    $email = $_POST["email"];
-    $password = $_POST["passwordA"];
+    $usernametry = sqlinjection($_POST["username"]);
+    $firstname = sqlinjection($_POST["firstname"]);
+    $name = sqlinjection($_POST["name"]);
+    $address = sqlinjection($_POST["address"]);
+    $email = sqlinjection($_POST["email"]);
+    $salt = generateSalt();
+    $hsalt = hash('sha256',$salt);
+    $password = hash('sha256',$_POST["passwordA"] . $hsalt);	
 }
 
 $newUsername = "";
@@ -62,9 +65,9 @@ echo $newUsername;
 
 
 // Den aktualisierten Benutzernamen in die Datenbank einfügen
-$sql = "INSERT INTO user (username, password, name, firstname, email, address) VALUES (?, ?, ?, ?, ?, ?)";
+$sql = "INSERT INTO user (username, password, salt, name, firstname, email, address) VALUES (?, ?, ?, ?, ?, ?, ?)";
 $statement = $mysqli->prepare($sql);
-$statement->bind_param("ssssss", $newUsername, $password, $name, $firstname, $email, $address);
+$statement->bind_param("sssssss", $newUsername, $password, $salt, $name, $firstname, $email, $address);
 $statement->execute();
 $statement->close();
 // Verbindung zur Datenbank schließen
