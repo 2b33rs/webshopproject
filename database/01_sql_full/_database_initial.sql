@@ -29,10 +29,9 @@ CREATE TABLE IF NOT EXISTS `webshop`.`subcategorie` (
   `categroie_id` INT NOT NULL,
   `name` VARCHAR(255) NOT NULL,
   PRIMARY KEY (`subcategorie_id`),
-  INDEX `fk_subcategorie_categorie1_idx` (`categroie_id` ASC),
-  CONSTRAINT `fk_subcategorie_categorie1` 
+  CONSTRAINT `fk_subcategorie_categorie1`
     FOREIGN KEY (`categroie_id`)
-    REFERENCES `webshop`.`categorie` (`categroie_id`) 
+    REFERENCES `webshop`.`categorie` (`categroie_id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION
 );
@@ -46,49 +45,51 @@ CREATE TABLE IF NOT EXISTS `webshop`.`products` (
   `price` DECIMAL(10, 2) NOT NULL,
   `images` VARCHAR(255) NOT NULL,
   PRIMARY KEY (`products_id`),
-  INDEX `fk_products_subcategorie1_idx` (`subcategorie_id` ASC),
-  CONSTRAINT `fk_products_subcategorie1` FOREIGN KEY (`subcategorie_id`) REFERENCES `webshop`.`subcategorie` (`subcategorie_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-);
--- Table `webshop`.`cart`
-DROP TABLE IF EXISTS `webshop`.`cart`;
-CREATE TABLE IF NOT EXISTS `webshop`.`cart` (
-  `cart_id` INT AUTO_INCREMENT NOT NULL,
-  `user_id` INT NOT NULL,
-  PRIMARY KEY (`cart_id`),
-  INDEX `fk_cart_user1_idx` (`user_id` ASC),
-  CONSTRAINT `fk_cart_user1` FOREIGN KEY (`user_id`) REFERENCES `webshop`.`user` (`user_id`) ON DELETE CASCADE ON UPDATE NO ACTION
-);
+  CONSTRAINT `fk_products_subcategorie1`
+    FOREIGN KEY (`subcategorie_id`)
+    REFERENCES `webshop`.`subcategorie` (`subcategorie_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION);
+
 -- Table `webshop`.`orders`
 DROP TABLE IF EXISTS `webshop`.`orders`;
 CREATE TABLE IF NOT EXISTS `webshop`.`orders` (
-  `orders_id` INT AUTO_INCREMENT NOT NULL,
+  `orders_id` INT NOT NULL AUTO_INCREMENT,
   `invoice_id` BIGINT NOT NULL,
-  `user_id` INT NOT NULL,
+  `user_id` INT,
   `username` VARCHAR(45) NOT NULL,
   `products_id` INT NOT NULL,
   `name` VARCHAR(255) NOT NULL,
   `description` VARCHAR(255) NOT NULL,
-  `price` DECIMAL(10, 2) NOT NULL,
+  `price` DECIMAL(10,2) NOT NULL,
   `purchase_date` DATE NOT NULL,
   PRIMARY KEY (`orders_id`),
   CONSTRAINT `fk_orders_user1`
     FOREIGN KEY (`user_id`)
     REFERENCES `webshop`.`user` (`user_id`)
     ON DELETE SET NULL
-    ON UPDATE NO ACTION
-);
--- Table `webshop`.`cart_products`
-DROP TABLE IF EXISTS `webshop`.`cart_products`;
-CREATE TABLE IF NOT EXISTS `webshop`.`cart_products` (
-  `cart_products_id` INT AUTO_INCREMENT NOT NULL,
-  `cart_id` INT NOT NULL,
+    ON UPDATE NO ACTION);
+
+
+-- Table `webshop`.`cart`
+DROP TABLE IF EXISTS `webshop`.`cart` ;
+
+CREATE TABLE IF NOT EXISTS `webshop`.`cart` (
   `products_id` INT NOT NULL,
-  PRIMARY KEY (`cart_products_id`),
-  INDEX `fk_cart_products_cart1_idx` (`cart_id` ASC),
-  INDEX `fk_cart_products_products1_idx` (`products_id` ASC),
-  CONSTRAINT `fk_cart_products_cart1` FOREIGN KEY (`cart_id`) REFERENCES `webshop`.`cart` (`cart_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `fk_cart_products_products1` FOREIGN KEY (`products_id`) REFERENCES `webshop`.`products` (`products_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-);
+  `cart_id` INT NOT NULL AUTO_INCREMENT,
+  `user_id` INT,
+  PRIMARY KEY (`cart_id`, `products_id`, `user_id`),
+  CONSTRAINT `fk_cart_products_products1`
+    FOREIGN KEY (`products_id`)
+    REFERENCES `webshop`.`products` (`products_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_cart_products_user1`
+    FOREIGN KEY (`user_id`)
+    REFERENCES `webshop`.`user` (`user_id`)
+    ON DELETE CASCADE
+    ON UPDATE NO ACTION);
+    
 -- Insert `webshop`.`categorie`
 INSERT INTO `webshop`.`categorie` (`categroie_id`, `name`)
 VALUES (1, 'Kostenlose Cloud-Speicher');

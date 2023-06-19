@@ -7,7 +7,6 @@
 - subcategory
 - product
 - cart
-- cart_product
 - order
 - order_product
 
