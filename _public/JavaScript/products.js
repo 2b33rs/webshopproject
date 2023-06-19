@@ -7,6 +7,9 @@ function addToCart(productId) {
     if (xhr.readyState === 4 && xhr.status === 200) {
       // Hier kannst du die Antwort des Servers verarbeiten
       // z.B. eine Bestätigung anzeigen oder weitere Aktionen ausführen
+      var toastLiveExample = document.getElementById('liveToast');
+      var toast = bootstrap.Toast.getOrCreateInstance(toastLiveExample);
+      toast.show();
     }
   };
   xhr.send('products_id=' + productId);

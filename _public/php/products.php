@@ -91,66 +91,44 @@
       $statement->close();
       $mysqli->close();
 
-      /*
-      //iterate over $result
+
+      //iterate over $result with ajax!
       while ($row = $result->fetch_assoc()) {
         echo "<div class='card shadow p-3 my-4 bg-white rounded' >
-                <div class='row'>
-                  <div class='card-body col-md-8'>
-                    <h5 class='card-title'>" . $row['name'] . "</h5>
-                    <p class='card-text '>" . $row['description'] . "</p>
-                    <p class='card-text'>" . $row['price'] . "€</p>";
-
-        if ($GLOBALS['loggedIn']) {
-          echo "    <form method='POST' action='php/scripts/addToCartScript.php'>
-                      <input type='submit' name='add-to-cart' value='Zum Warenkorb hinzufügen' class='btn btn-primary'>
-                      <input type='hidden' name='products_id' value='" . $row['products_id'] . "'>
-                    </form>
-                  </div>
-                  <div class='col-md-4'>
-                    <img src='" . $row['images'] . "' class='img-fluid' style='max-height: 20vh; object-fit:contain;'>
-                  </div>
-                </div>
-              </div>";
-        } else
-          echo
-            "       <a href='php/login.php' class='btn btn-primary'>Zum Warenkorb hinzufügen (Login)</a>
-                  </div>
-                  <div class='col-md-4'>
-                    <img src='" . $row['images'] . "' class='img-fluid' style='max-height: 20vh; object-fit:contain;'>
-                  </div>
-                </div>
-              </div>";
-
-      }
-    }*/
-    //iterate over $result with ajax!
-    while ($row = $result->fetch_assoc()) {
-      echo "<div class='card shadow p-3 my-4 bg-white rounded' >
               <div class='row'>
                 <div class='card-body col-md-8'>
                   <h5 class='card-title'>" . $row['name'] . "</h5>
                   <p class='card-text '>" . $row['description'] . "</p>
                   <p class='card-text'>" . $row['price'] . "€</p>";
 
-      if ($GLOBALS['loggedIn']) {
-        echo '    <button onclick="addToCart(' . $row['products_id'] . '); showNotification(Hinzugefügt)" class="btn btn-primary">Zum Warenkorb hinzufügen</button>';
-      } else {
-        echo "       <a href='php/login.php' class='btn btn-primary'>Zum Warenkorb hinzufügen (Login)</a>";
-      }
+        if ($GLOBALS['loggedIn']) {
+          echo '    <button onclick="addToCart(' . $row['products_id'] . ')" class="btn btn-primary">Zum Warenkorb hinzufügen</button>';
+        } else {
+          echo "       <a href='php/login.php' class='btn btn-primary'>Zum Warenkorb hinzufügen (Login)</a>";
+        }
 
-      echo "</div>
+        echo "</div>
                 <div class='col-md-4'>
-                  <img src='" . $row['images'] . "' class='img-fluid' style='max-height: 20vh; object-fit:contain;'>
+                  <img src='" . $row['images'] . "' class='img-fluid produkt-images'>
                 </div>
               </div>
             </div>";
 
+      }
     }
-  }
-  ?>
+    ?>
 
-
+    <!-- Toast -->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3 m-3">
+      <div id="liveToast" class="toast align-items-center bg-success" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="d-flex">
+          <div class="toast-body text-white"><i class="bi bi-check-lg text-white"></i>
+            Artikel wurde zum Warenkorb hinzugefügt.
+          </div>
+          <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+      </div>
+    </div>
 
   </div>
 </main>
