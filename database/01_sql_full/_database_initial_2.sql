@@ -56,7 +56,7 @@ DROP TABLE IF EXISTS `webshop`.`orders`;
 CREATE TABLE IF NOT EXISTS `webshop`.`orders` (
   `orders_id` INT NOT NULL AUTO_INCREMENT,
   `invoice_id` BIGINT NOT NULL,
-  `user_id` INT NOT NULL,
+  `user_id` INT,
   `username` VARCHAR(45) NOT NULL,
   `products_id` INT NOT NULL,
   `name` VARCHAR(255) NOT NULL,
