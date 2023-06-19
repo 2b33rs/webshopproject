@@ -77,8 +77,8 @@ DROP TABLE IF EXISTS `webshop`.`cart` ;
 CREATE TABLE IF NOT EXISTS `webshop`.`cart` (
   `cart_id` INT NOT NULL AUTO_INCREMENT,
   `products_id` INT NOT NULL,
-  `user_id` INT NOT NULL,
-  PRIMARY KEY (`cart_id`),
+  `user_id` INT,
+  PRIMARY KEY (`cart_id`, `products_id`, `user_id`),
   CONSTRAINT `fk_cart_products_products1`
     FOREIGN KEY (`products_id`)
     REFERENCES `webshop`.`products` (`products_id`)
