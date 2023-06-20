@@ -3,23 +3,19 @@
 <?php
 //Datenbankverbindung
 
-$mysqli = new mysqli("localhost", "root", "", "webshop");
-if ($mysqli->connect_error) {
-    die("Verbindung fehlgeschlagen: " . $mysqli->connect_error);
-}
+include 'configs/dbConnect.php';
 $sql = "SELECT * FROM user WHERE user_id = ?";
 $stmt = $mysqli->prepare($sql);
 $stmt->bind_param("i", $_SESSION['user_id']);
 $stmt->execute();
 $result = $stmt->get_result();
 $row = $result->fetch_assoc();
+
 $username = $row['username'];
 $firstname = $row['firstname'];
 $name = $row['name'];
 $address = $row['address'];
 $email = $row['email'];
-//    $password = $row['password'];
-//    $password = password_hash($password, PASSWORD_DEFAULT);
 $stmt->close();
 $mysqli->close();
 

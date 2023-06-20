@@ -15,11 +15,7 @@ if (isset($_POST["submit"])) {
 $newUsername = "";
 $isSetNewUsername = false;
 
-$mysqli = new mysqli("localhost", "root", "", "webshop");
-if ($mysqli->connect_error) {
-    die("Verbindung fehlgeschlagen: " . $mysqli->connect_error);
-}
-
+include	'../configs/dbConnect.php';
 
 // Überprüfen, ob der Benutzername bereits existiert
 $sql = "SELECT username FROM user WHERE username = ?";
@@ -28,7 +24,6 @@ $statement->bind_param("s", $usernametry);
 $statement->execute();
 $result = $statement->get_result();
 $statement->close();
-//$mysqli->close();
 
 if ($result->num_rows > 0) {
     // Der Benutzername existiert bereits
@@ -41,7 +36,6 @@ if ($result->num_rows > 0) {
     $statement->execute();
     $result = $statement->get_result();
     $statement->close();
-    //$mysqli->close();
     $usernamesarray = [];
     while ($row = $result->fetch_assoc()) {
         $usernamesarray[] = $row["username"];

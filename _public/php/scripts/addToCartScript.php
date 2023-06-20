@@ -20,10 +20,7 @@ if (isset($_POST["products_id"])) {
 
 
 //fill cart with userid and productid
-$mysqli = new mysqli("localhost", "root", "", "webshop");
-if ($mysqli->connect_error) {
-    die("Verbindung fehlgeschlagen: " . $mysqli->connect_error);
-}
+include('../configs/dbConnect.php');
 $sql = "INSERT INTO cart (user_id, products_id) VALUES (?,?)";
 $statement = $mysqli->prepare($sql);
 $statement->bind_param("ii", $_SESSION["user_id"], $productId);

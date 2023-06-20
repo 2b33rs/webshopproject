@@ -2,10 +2,11 @@
     <div class="container">
         <?php
 
-        $mysqli = new mysqli("localhost", "root", "", "webshop");
-        if ($mysqli->connect_error) {
-            die("Verbindung fehlgeschlagen: " . $mysqli->connect_error);
-        }
+        include('configs/dbConnect.php');
+        //$mysqli = new mysqli("localhost", "root", "", "webshop");
+        //if ($mysqli->connect_error) {
+        //    die("Verbindung fehlgeschlagen: " . $mysqli->connect_error);
+        //}
 
         $sql = "SELECT * FROM cart WHERE user_id = ? ORDER BY `products_id` ASC";
         $statement = $mysqli->prepare($sql);
@@ -13,7 +14,7 @@
         $statement->execute();
         $result = $statement->get_result();
         $statement->close();
-        $mysqli->close();
+        
 
 
         if ($result->num_rows == 0) {
@@ -22,10 +23,7 @@
         } else {
             while ($row = $result->fetch_assoc()) {
 
-                $mysqli = new mysqli("localhost", "root", "", "webshop");
-                if ($mysqli->connect_error) {
-                    die("Verbindung fehlgeschlagen: " . $mysqli->connect_error);
-                }
+                
                 //get the product
                 $sql = "SELECT * FROM products WHERE products_id = ? ";
                 $statementPro = $mysqli->prepare($sql);
@@ -33,7 +31,7 @@
                 $statementPro->execute();
                 $resultPro = $statementPro->get_result();
                 $statementPro->close();
-                $mysqli->close();
+                
                 $rowPro = $resultPro->fetch_assoc();
 
 
@@ -57,11 +55,6 @@
                 </div>";
             }
 
-            $mysqli = new mysqli("localhost", "root", "", "webshop");
-            if ($mysqli->connect_error) {
-                die("Verbindung fehlgeschlagen: " . $mysqli->connect_error);
-            }
-
             $sql = "SELECT SUM(products.price) FROM webshop.cart JOIN webshop.products ON cart.products_id = products.products_id WHERE cart.user_id = ?;";
             $statement = $mysqli->prepare($sql);
             $statement->bind_param("i", $_SESSION["user_id"]);
@@ -69,7 +62,6 @@
             $statement->bind_result($sum);
             $statement->fetch();
             $statement->close();
-            $mysqli->close();
             echo '  <div class="container my-3 pt-3">
                             <div class="row">
                                 <div class="col-6">
@@ -87,7 +79,7 @@
 
 
         }
-
+        $mysqli->close();
 
 
 

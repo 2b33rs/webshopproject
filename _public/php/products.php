@@ -21,10 +21,8 @@
     }
 
 
-    $mysqli = new mysqli("localhost", "root", "", "webshop");
-    if ($mysqli->connect_error) {
-      die("Verbindung fehlgeschlagen: " . $mysqli->connect_error);
-    }
+    include 'configs/dbConnect.php';
+    
     $sql = "SELECT * FROM categorie";
     $statement = $mysqli->prepare($sql);
     $statement->execute();
@@ -49,10 +47,7 @@
 
     function getSubCategorie($categorie)
     {
-      $mysqli = new mysqli("localhost", "root", "", "webshop");
-      if ($mysqli->connect_error) {
-        die("Verbindung fehlgeschlagen: " . $mysqli->connect_error);
-      }
+      include 'configs/dbConnect.php';
 
       $sql = "SELECT * FROM subcategorie WHERE categroie_id = ?";
       $statement = $mysqli->prepare($sql);
@@ -78,10 +73,7 @@
 
     function getProducts($subCategorie)
     {
-      $mysqli = new mysqli("localhost", "root", "", "webshop");
-      if ($mysqli->connect_error) {
-        die("Verbindung fehlgeschlagen: " . $mysqli->connect_error);
-      }
+      include 'configs/dbConnect.php';
 
       $sql = "SELECT * FROM products WHERE subcategorie_id = ?";
       $statement = $mysqli->prepare($sql);

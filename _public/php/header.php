@@ -20,10 +20,7 @@ function getCartItemCount()
     if (!isset($_SESSION["user_id"])) {
         return 0;
     } else {
-        $mysqli = new mysqli("localhost", "root", "", "webshop");
-        if ($mysqli->connect_error) {
-            die("Verbindung fehlgeschlagen: " . $mysqli->connect_error);
-        }
+        include_once 'configs/dbConnect.php';
 
         $sql = "SELECT count(*) FROM cart WHERE user_id = ?";
         $statement = $mysqli->prepare($sql);
@@ -32,6 +29,7 @@ function getCartItemCount()
         $result = $statement->get_result();
         $row = $result->fetch_assoc();
         $statement->close();
+        $mysqli->close();
         return $row["count(*)"];
         
 

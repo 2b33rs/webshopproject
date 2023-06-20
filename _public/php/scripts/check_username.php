@@ -1,14 +1,13 @@
 <?php
 // Datenbankverbindung
-$mysqli = new mysqli("localhost", "root", "", "webshop");
-if ($mysqli->connect_error) {
-    die("Verbindung fehlgeschlagen: " . $mysqli->connect_error);
-}
+
 
 // Überprüfen, ob ein Benutzername übergeben wurde
 if (isset($_POST['username'])) {
     $username = $_POST['username'];
 
+    // Datenbankverbindung
+    include('../configs/dbConnect.php');
     // Vorbereiten und Ausführen der SELECT-Abfrage
     $sql = "SELECT * FROM user WHERE username = ?";
     $stmt = $mysqli->prepare($sql);

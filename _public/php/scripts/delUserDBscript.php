@@ -11,26 +11,29 @@ if (isset($_SESSION["username"])) {
     $username = $_SESSION["username"];
 
     //get the cart id
-    $mysqli = new mysqli("localhost", "root", "", "webshop");
-    if ($mysqli->connect_error) {
-        die("Verbindung fehlgeschlagen: " . $mysqli->connect_error);
-    }
+    include('../configs/dbConnect.php');
     $sql = "SELECT cart_id FROM cart WHERE user_id = ?";
     $statement = $mysqli->prepare($sql);
     $statement->bind_param("i", $_SESSION["user_id"]);
     $statement->execute();
     $result = $statement->get_result();
+    $statement->close();
+    
 
     while ($row = $result->fetch_assoc()) {
         $cart_id = $row["cart_id"];
+
+        
         $sql = "DELETE FROM cart WHERE cart_id = ?";
         $statement = $mysqli->prepare($sql);
         $statement->bind_param("i", $card_id);
         $statement->execute();
         $statement->close();
+        
     }
 
     //delete the user
+    
     $sql = "DELETE FROM user WHERE username = ?";
     $statement = $mysqli->prepare($sql);
     $statement->bind_param("s", $username);
@@ -43,10 +46,11 @@ if (isset($_SESSION["username"])) {
     } else {
         echo "Fehler beim Löschen des Benutzers.";
     }
+    $mysqli->close();
 }
 
 // Verbindung zur Datenbank schließen
-$mysqli->close();
+
 session_unset();
 session_destroy();
 header("Location: ../index.php")

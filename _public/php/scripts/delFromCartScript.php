@@ -10,11 +10,7 @@ if (!isset($_SESSION['username'])) {
     header("Location: ../login.php");
     exit;
 } else {
-    $mysqli = new mysqli("localhost", "root", "", "webshop");
-    if ($mysqli->connect_error) {
-        die("Verbindung fehlgeschlagen: " . $mysqli->connect_error);
-    }
-
+    include('../configs/dbConnect.php');
     $sql = "DELETE FROM cart WHERE cart_id = ? and user_id = ?";
     $statement = $mysqli->prepare($sql);
     $statement->bind_param("ii", $_POST["cart_id"], $_SESSION["user_id"]);

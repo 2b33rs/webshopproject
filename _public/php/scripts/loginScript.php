@@ -5,10 +5,8 @@ $username = "";
 if (isset($_POST["username"])) {
 	$username = sqlinjection($_POST["username"]);
 }
-$mysqli = new mysqli("localhost", "root", "", "webshop");
-if ($mysqli->connect_error) {
-	die("Verbindung fehlgeschlagen: " . $mysqli->connect_error);
-}
+
+include	'../configs/dbConnect.php';
 
 $password = "";
 if (isset($_POST["password"])) {
@@ -19,20 +17,18 @@ if (isset($_POST["password"])) {
 	$result = $statement->get_result();
 	$statement->close();
 	$salt = $result->fetch_assoc()["salt"];
-	$mysqli->close();
 	$hsalt = hash('sha256', $salt);
 	$password = hash('sha256', $_POST["password"] . $hsalt);
 }
 
-$mysqli = new mysqli("localhost", "root", "", "webshop");
-if ($mysqli->connect_error) {
-	die("Verbindung fehlgeschlagen: " . $mysqli->connect_error);
-}
+
 $sql = "SELECT user_id FROM user WHERE username=? AND PASSWORD=?";
 $statement = $mysqli->prepare($sql);
 $statement->bind_param("ss", $username, $password);
 $statement->execute();
 $result = $statement->get_result();
+$statement->close();
+$mysqli->close();
 
 if ($result->num_rows == 1) {
 	//redirect to profile

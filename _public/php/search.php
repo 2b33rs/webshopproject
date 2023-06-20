@@ -42,10 +42,10 @@
       } else {
         $loggedIn = false;
       }
-      $mysqli = new mysqli("localhost", "root", "", "webshop");
-      if ($mysqli->connect_error) {
-        die("Verbindung fehlgeschlagen: " . $mysqli->connect_error);
-      }
+
+      //Muss include sein, nicht include_once
+      include 'configs/dbConnect.php';
+
       $searchterm = mysqli_real_escape_string($mysqli, $searchterm);
       $likeSearchterm = "%" . $searchterm . "%";
       $sql = "SELECT * FROM products WHERE name LIKE ? OR description LIKE ?";
