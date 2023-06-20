@@ -39,6 +39,6 @@ if ($result->num_rows == 1) {
 
 } else {
 	//redirect to login page
-	header("location: ../login.php");
+	header("location: ../loginUnsuccessfull.php");
 }
 ?>

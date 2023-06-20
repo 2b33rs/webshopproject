@@ -1,0 +1,56 @@
+<head>
+    <link rel="stylesheet" href="css/login.css">
+    <script src="JavaScript/validation.js"></script>
+</head>
+<main>
+
+    <div class="container">
+        <!-- Login -->
+        <div>
+            <div class="card-body">
+                <h1 class="fw-bold pt-xl-5 pb-xl-3">Login</h1>
+
+                <form class="row g-3 needs-validation was-validated" action="php/scripts/loginScript.php" method="POST" novalidate>
+                    <div>
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" id="username" name="username" autofocus
+                                autocomplete="on" tabindex="1" required>
+                            <label for="username" class="form-label">Benutzername</label>
+
+                            <div class="invalid-feedback">
+                                Benutzername oder Passwort falsch, bitte erneut versuchen.
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="form-floating mb-3">
+                            <input type="password" class="form-control" id="password" name="password" autocomplete="off"
+                                tabindex="2" required>
+                            <label for="password" class="form-label">Passwort</label>
+
+                            <div class="invalid-feedback">
+                                Benutzername oder Passwort falsch, bitte erneut versuchen.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <input class="btn btn-primary" type="submit" name="submit" value="Login" tabindex="3">
+                    </div>
+                    <!-- Honeypot-Feld -->
+                    <div class="pothoney">
+                        <label for="pothoney">Unbedingt ausfüllen:</label>
+                        <input type="text" id="pothoney" name="pothoney" required>
+                    </div>
+                </form>
+
+                <div class="form-text">
+                    <br>
+                    <p>Kein Konto? <a href="php/register.php" tabindex="4">Registrieren</a></p>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</main>
