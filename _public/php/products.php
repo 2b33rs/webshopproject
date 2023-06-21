@@ -101,7 +101,7 @@
 
         echo "</div>
                 <div class='col-md-4'>
-                  <img src='" . $row['images'] . "' class='img-fluid produkt-images'>
+                  <img src='" . $row['images'] . "' class='img-fluid produkt-images' alt='Fehler'>
                 </div>
               </div>
             </div>";

@@ -42,7 +42,6 @@ footer{
 .add-icon{
     float: left;
     width: 60px;
-    display: inline-block;
     padding: 0px 5px;
 }
 .address-box .add-icon {
@@ -97,6 +96,11 @@ footer{
 
 /* Produkt-Bilder Positionierung: */
 .produkt-images{
+    max-height: 20vh;
+    object-fit:contain;
+}
+
+.searchedprodukts{
     max-height: 20vh;
     object-fit:contain;
 }
