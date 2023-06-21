@@ -3,7 +3,7 @@
 //Preparing for SQL-Injection und Cross-Site-Scripting
 function sqlinjection($input){
 $input = trim($input); // Leerzeichen werden entfernt
-$blacklist = array("DROP", "DELETE", "UPDATE", "*", "<", ">", "&", "`", "$", "!", "|", "OR 1=1", "--", ";", "%"); // Unerwünschte Wörter
+$blacklist = array("DROP", "DELETE", "UPDATE", "UNION", "*", "<", ">", "&", "`", "$", "!", "|", "OR 1=1", "--", ";", "%"); // Unerwünschte Wörter
 $input = str_ireplace($blacklist, "", $input); // Unerwünschte Wörter werden entfernt
 $input = htmlspecialchars($input); // HTML-Code wird in Zeichen umgewandelt
 $output = $input;
