@@ -455,14 +455,16 @@ INSERT INTO `webshop`.`products` (
     `subcategorie_id`,
     `name`,
     `description`,
-    `price`
+    `price`,
+    `images`
   )
 VALUES (
     21,
     7,
     '500px',
     'Online-Community für Fotografen',
-    12.99
+    12.99,
+    'images/Produkt_Logos/500px.svg'
   );
 INSERT INTO `webshop`.`products` (
     `products_id`,
