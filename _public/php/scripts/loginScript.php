@@ -35,6 +35,8 @@ if ($result->num_rows == 1) {
 	session_start();
 	$_SESSION["username"] = $username;
 	$_SESSION["user_id"] = $result->fetch_assoc()["user_id"];
+	require_once '../configs/log.php';
+	logEvent('Benutzer ' . $_SESSION["username"] . ' mit der ID ' . $_SESSION["user_id"] . ' hat sich angemeldet.');
 	header("location: ../index.php");
 
 } else {
