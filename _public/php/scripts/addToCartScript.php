@@ -2,8 +2,9 @@
   <script src="JavaScript/products.js"></script>
 </head>
 <?php
+include_once '../configs/config.php';
 session_start();
-if (isset($_SESSION['timestamp']) && (time() - $_SESSION['timestamp'] > 60)) {
+if (isset($_SESSION['timestamp']) && (time() - $_SESSION['timestamp'] > $maxTime)) {
     session_unset();
     session_destroy();
 }
