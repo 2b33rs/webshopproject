@@ -13,7 +13,7 @@ Dann wird immer wenn der Header geladen wird ein timestamp gespeichert:
 
 # index.php
 Die index.php-Seite direkt im webshopprojekt-Verzeichnis sorgt für eine direkte Weiterleitung auf "_public/php/index.php" .
-Das hat den Vorteil das User sich nicht den gesamten Pfad angeben müssen (http://localhost/webshopproject/_public/php/index.php), sondern der aufruf des ordners (http://localhost/webshopproject/) ausreichend ist. Grund dafür ist die eigenschaft des XAMPP, welcher immer die index.php im angegebenen Pfad automatich öffnet.
+Das hat den Vorteil das User sich nicht den gesamten Pfad angeben müssen (https://localhost/webshopproject/_public/php/index.php), sondern der aufruf des ordners (https://localhost/webshopproject/) ausreichend ist. Grund dafür ist die eigenschaft des XAMPP, welcher immer die index.php im angegebenen Pfad automatich öffnet.
 
 # Impressum
 ## Was muss ein Impressum enthalten?

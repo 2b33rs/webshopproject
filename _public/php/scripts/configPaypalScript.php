@@ -7,9 +7,9 @@
 define('PAYPAL_ID', 'phpwebshop@e-business.com');
 define('PAYPAL_SANDBOX', TRUE); //TRUE or FALSE 
 
-define('PAYPAL_RETURN_URL', 'http://localhost/webshopproject/_public/php/success.php');
-define('PAYPAL_CANCEL_URL', 'http://localhost/webshopproject/_public/php/cancel.php');
-define('PAYPAL_NOTIFY_URL', 'http://localhost/webshopproject/_public/php/ipn.php');
+define('PAYPAL_RETURN_URL', 'https://localhost/webshopproject/_public/php/success.php');
+define('PAYPAL_CANCEL_URL', 'https://localhost/webshopproject/_public/php/cancel.php');
+define('PAYPAL_NOTIFY_URL', 'https://localhost/webshopproject/_public/php/ipn.php');
 define('PAYPAL_CURRENCY', 'EUR');
 
 // Database configuration 

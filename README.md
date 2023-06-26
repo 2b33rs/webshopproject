@@ -21,7 +21,7 @@ To get the project up and running, follow the steps below:
 
 ### 4. Access the web application
 - Open your preferred web browser.
-- Enter the following URL in the address bar: http://localhost/webshopproject
+- Enter the following URL in the address bar: https://localhost/webshopproject
 - The web application should now be accessible, and you can begin using it.
 
 ## Aufgabenbeschreibung

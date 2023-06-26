@@ -1,5 +1,5 @@
 # weiterleitung zum public Ordner
 <?php
-header("Location: ./_public/php/index.php");
+header("Location: https://localhost/webshopproject/_public/php/index.php");
 exit();
 ?>
