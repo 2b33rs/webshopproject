@@ -1,12 +1,10 @@
-[2023-06-26 12:41:39] Benutzer Philmit der ID 3 hat sich angemeldet.
-[2023-06-26 12:43:32] Benutzer Phil mit der ID 3 hat sich angemeldet.
-[2023-06-26 12:59:48] Benutzer Phil mit der ID 3 hat sich angemeldet.
-[2023-06-26 13:03:31] SQL-Injection wurde versucht.
-[2023-06-26 13:04:34] SQL-Injection wurde versucht.
-[2023-06-26 13:35:14] Benutzer Phil mit der ID 3 hat sich angemeldet.
-[2023-06-26 13:37:03] SQL-Injection wurde versucht.
-[2023-06-26 13:37:35] Benutzer Phil mit der ID 3 hat sich angemeldet.
-[2023-06-26 13:37:46] SQL-Injection wurde versucht.
-[2023-06-26 13:39:03] SQL-Injection wurde versucht von Benutzer Phil mit der ID 3.
-[2023-06-26 13:39:03] SQL-Injection wurde versucht.
-[2023-06-26 13:50:14] Benutzer Phil mit der ID 3 hat sich angemeldet.
+Timestamp       Client-IP   Message
+
+[2023-06-26 14:20:19][::1] SQL-Injection wurde versucht.
+[2023-06-26 14:25:30][::1] SQL-Injection wurde versucht.
+[2023-06-26 14:25:30][::1] SQL-Injection wurde versucht.
+[2023-06-26 14:30:15][::1] Benutzer Phil mit der ID 3 hat sich angemeldet.
+[2023-06-26 14:32:30][::1] Benutzer Phil1 mit der ID 3 wurde registriert.
+[2023-06-26 14:32:40][::1] Benutzer Phil1 mit der ID 9 hat sich angemeldet.
+[2023-06-26 14:33:26][::1] Benutzer Phil2 mit der ID  wurde registriert.
+[2023-06-26 14:33:41][::1] Benutzer Phil2 mit der ID 10 hat sich angemeldet.

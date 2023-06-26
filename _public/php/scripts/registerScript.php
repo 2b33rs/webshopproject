@@ -1,6 +1,20 @@
 <?php
 include_once 'sql_InjectionPrevention.php';
 
+function generateSalt() {
+    // Zufällige Zeichenfolge für das Salz generieren
+    $characters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+    $salt = '';
+    $saltLength = 10;
+
+    for ($i = 0; $i < $saltLength; $i++) {
+        $index = rand(0, strlen($characters) - 1);
+        $salt .= $characters[$index];
+    }
+
+    return $salt;
+}
+
 if (isset($_POST["submit"])) {
     $usernametry = sqlinjection($_POST["username"]);
     $firstname = sqlinjection($_POST["firstname"]);
@@ -67,12 +81,17 @@ $statement->close();
 // Verbindung zur Datenbank schließen
 $mysqli->close();
 
-
 session_start();
 $_SESSION["username"] = $newUsername;
 $_SESSION['setUsername'] = $isSetNewUsername;
 $_SESSION['usernametry'] = $usernametry;
 
+//log
+require_once '../configs/log.php';
+logEvent('Benutzer ' . $_SESSION["username"] . ' mit der ID ' . $_SESSION["user_id"] . ' wurde registriert.');
+
+
 //Weiterleitung zur Login Seite
 header("Location: ../confirmRegistration.php");
+
 ?>
