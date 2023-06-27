@@ -12,6 +12,7 @@ To get the project up and running, follow the steps below:
 - Launch XAMPP after installation.
 - Start the Apache Server and MySQL Server from the XAMPP Control Panel.
 - Make sure both servers are running successfully without any errors.
+- Sometimes there is a MySQL-Error saying that the Port may be blocked. A Workaround that worked for us is to reinstall XAMPP to a different path.
 
 ### 3. Configure MySQL Server
 - Access the MySQL Admin panel by clicking the "Admin" button next to the MySQL Server in the XAMPP Control Panel.
