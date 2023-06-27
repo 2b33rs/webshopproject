@@ -25,6 +25,13 @@ To get the project up and running, follow the steps below:
 - Enter the following URL in the address bar: https://localhost/webshopproject
 - The web application should now be accessible, and you can begin using it.
 
+
+
+
+
+
+
+
 ## Aufgabenbeschreibung
 Ziel der Aufgabe ist die Entwicklung eines einfachen Web-Shops in PHP ohne
 Zuhilfenahme existierender PHP-Frameworks. Dabei müssen die im nächsten
